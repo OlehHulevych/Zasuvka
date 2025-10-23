@@ -1,3 +1,4 @@
+/*header*/
 *{
     margin:0;
     padding:0;
@@ -8,7 +9,7 @@ header{
     padding: 10px 40px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 100%;
     max-height: 100px;
     align-items: center;
@@ -20,32 +21,43 @@ header{
     display: flex;
     width: 20%;
 }
+.logo img {
+    width: 100%;
+    max-width: 70px;
+    max-height:70px ;
+}
 
 .logo h1{
     margin-left: 10px;
 }
 .search_bar{
-    width: 75%;
+    display: flex;
+    justify-content: center;
+    width: 70%;
     height: 100%;
 }
 .search_bar input{
-    width: 85%;
-    border-radius: 20px;
+    width: 80%;
+    border-bottom-left-radius:20px ;
+    border-top-left-radius:20px ;
     border: none;
     background-color: rgb(91, 89, 89);
     padding: 8px 20px;
     font-size: 16px;
 }
 h1{
-    width: 25%;
+    font-size: 2.8vw;
 }
 .user_buttons{
     width: 10%;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     font-size: 20px;
     transition: all 0.5s ease;
     
+}
+.user_buttons button:first-child{
+    display: none;
 }
 
 .user_buttons button{
@@ -64,7 +76,8 @@ h1{
     margin-left:1px;
     padding: 10px 10px;
     cursor: pointer;
-    border-radius: 5px;
+    border-bottom-right-radius:5px ;
+    border-top-right-radius:5px ;
     border:none;
     background: linear-gradient(to bottom left, #7eaefc, #2f66f1);
     transition: color 0.5s ease-in-out;
@@ -74,4 +87,54 @@ h1{
 .search_bar button:hover{
     background: rgb(0, 145, 255);
 }
+
+/*meadia-requests */
+@media (max-width:1000px) {
+    .logo h1{
+        margin-left:2px;
+    }
+
+    header{
+        padding:10px;
+    }
+}
+
+@media (max-width:768px){
+    .search_bar{
+        width: 60%;
+    }
+    .logo h1{
+        font-size:4vw;
+    }
+   
+}
+@media (max-width:490px) {
+    .search_bar{
+        display: none;
+    }
+    header{
+        overflow: hidden;
+        justify-content: space-between;
+    }
+    
+    .user_buttons{
+        width:50%;
+        justify-content: end;
+    }
+    .user_buttons button:first-child{
+         display: block;
+    }
+    .logo{
+        width: 50%;
+    }
+    .logo h1{
+      font-size: 6vw;
+      margin-left: 10px;  
+    }
+    .logo img{
+        width: 25%;
+    }
+}
+
+
 
