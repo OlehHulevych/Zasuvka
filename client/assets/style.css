@@ -3,6 +3,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: "Roboto";
 }
 
 header{
@@ -29,6 +30,7 @@ header{
 
 .logo h1{
     margin-left: 10px;
+    font-family: "Montserrat";
 }
 .search_bar{
     display: flex;
@@ -41,7 +43,7 @@ header{
     border-bottom-left-radius:20px ;
     border-top-left-radius:20px ;
     border: none;
-    background-color: rgb(91, 89, 89);
+    background-color: rgb(241, 239, 239);
     padding: 8px 20px;
     font-size: 16px;
 }
@@ -153,10 +155,15 @@ h1{
 }
 .categories ul li{
     cursor: pointer;
-    font-size: 1.43vw;
+    font-size: 1.15vw;
     text-transform: capitalize;
     text-decoration: none;
     list-style-type: none;
+    transition: all .5s ease;
+    font-weight: 400;
+}
+.categories ul li:hover{
+    text-decoration: underline;
 }
 
 /* media queries */
@@ -176,7 +183,7 @@ h1{
 .event_section{
     position: relative;
     width: 100%;
-    height: 55vh;
+    height: 50vh;
     background: url('.//backgrounds/event_background.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -196,6 +203,7 @@ h1{
     display: flex;
     justify-content: center;
     height: 100%;
+    color: white;
     position: absolute;
     z-index: 2;
 }
@@ -208,8 +216,7 @@ h1{
 }
 .event_information button{
     margin-top: 10px;
-    padding: 10px 30px;
-    color: black;
+    padding: 10px 30px;    
     border: none;
     border-radius: 10px;
     align-self: self-start;
@@ -273,15 +280,20 @@ h1{
 }
 .categorie_photo_item{
     width: 17%;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+.categorie_photo_item:hover{
+    transform: scale(1.05);
 }
 
 .categories_information{
     text-align: center;
     padding-top: 10px;
     padding-bottom: 30px;
-    border-bottom:1px solid rgba(255, 255, 255, 0.31);
-    border-left:1px solid rgba(255, 255, 255, 0.31);;
-    border-right:1px solid rgba(255, 255, 255, 0.31);
+    border-bottom:1px solid rgba(94, 90, 90, 0.31);
+    border-left:1px solid rgba(94, 90, 90, 0.31);;
+    border-right:1px solid rgba(94, 90, 90, 0.31);
     border-bottom-left-radius:20px;
     border-bottom-right-radius:20px;
 
@@ -310,6 +322,9 @@ h1{
     .photos_categories h2{
         font-size: 4vw;
     }
+    .categorie_name{
+        font-size: 3vw;
+    }
     .categorie_photo_item{
         width: 40%;
     }
@@ -331,5 +346,10 @@ h1{
     .categorie_photo_item{
         width: 70%;
     }
+@media screen and (max-width:380px){
+    .categorie_name{
+        font-size: 4.5vw;
+    }
+}
 }
 
