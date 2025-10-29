@@ -14,6 +14,7 @@
     <title>Zasuvka</title>
 </head>
 <body>
+   
     <header>
         <div class="logo">
             <img src="./assets/logo.png" alt="">
@@ -26,7 +27,7 @@
             </button>
         </form>
         <div class="user_buttons">
-             <button class="user_button">
+             <button id="mobile_search_button" class="user_button">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
             <button class="favorites_button">
@@ -37,7 +38,18 @@
             </button>
            
         </div>
+       
     </header>
+      <div class="mobile_search_bar_block" id="mobile_search_bar">
+                <form action="" class="mobile_search_bar">
+                    <div id="cancel_button" class="cancel_button">Cancel</div>
+                    <input type="text">
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+            </form>
+        </div>
+
     <main>
         <div class="categories">
             <ul>
@@ -139,7 +151,16 @@
                 
             </div>
         </div>
-        
     </main>
+    <footer>
+        
+            <img src="./assets/logo.png" alt="">
+        <h3>Zasuvka</h3>
+        
+        
+        <span>© 2025 Zasuvka. All rights reserved.</span>
+       
+    </footer>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>
