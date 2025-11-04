@@ -64,6 +64,7 @@ class User {
         $users = $this->getData();
         $filteredUsers = array_filter($users, fn($user)=>$user['id'] != $id);
         $this->saveData($filteredUsers);
+        $this->FavoriteList->delete($id);
         return true;
     }
 

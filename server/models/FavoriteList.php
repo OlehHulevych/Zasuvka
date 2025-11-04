@@ -9,7 +9,7 @@ class FavoriteList{
         $items = file_get_contents($this->file);
         return json_decode($items,true);
     }
-    private function saveData ($data)
+    public function saveData ($data)
     {
         file_put_contents($this->file, json_encode($data,JSON_PRETTY_PRINT));
         echo "The data is saved";
