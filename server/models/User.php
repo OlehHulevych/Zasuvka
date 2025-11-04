@@ -1,6 +1,12 @@
 <?php
+require_once __DIR__ . "/FavoriteList.php";
 class User {
     private $file = __DIR__ . "/../data/users.json";
+    private $FavoriteList;
+
+    public function __construct(){
+        $this->FavoriteList = new FavoriteList();
+    }
 
     private function getData(){
         if(file_exists($this->file)){
@@ -36,6 +42,7 @@ class User {
         $newUser = ["id"=>$newid, "name"=>$name, "email"=>$email, "photoPath" => $photoPath, "phone"=>$phone ];
         $items[] = $newUser;
         $this->saveData($items);
+        $this->FavoriteList->create($newid);
         return $newUser;
     }
 
