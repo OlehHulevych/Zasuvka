@@ -36,14 +36,36 @@ class User {
 
     }
 
-    public function create($name, $email, $photoPath, $phone){
+    public function create($name, $email, $photoPath, $phone, $password){
         $users = $this->getData();
         $newid = count($users) ? end($users)['id']+1:1;
-        $newUser = ["id"=>$newid, "name"=>$name, "email"=>$email, "photoPath" => $photoPath, "phone"=>$phone ];
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $newUser = ["id"=>$newid, "name"=>$name, "email"=>$email, "photoPath" => $photoPath, "phone"=>$phone, "password"=>$hashedPassword ];
         $items[] = $newUser;
         $this->saveData($items);
         $this->FavoriteList->create($newid);
         return $newUser;
+    }
+
+    public function login($email, $password){
+        $users = $this->getData();
+        $foundUser = null;
+        foreach ($users as $user){
+            if($user['email']==$email){
+                $foundUser = $user;
+            }
+        }
+        if($foundUser==null){
+            return null;
+        }
+        else{
+            if(password_verify($password, $foundUser['password'])){
+                return $foundUser;
+            }
+            else{
+                return null;
+            }
+        }
     }
 
     public function update($id,$name, $email, $photoPath, $phone){
