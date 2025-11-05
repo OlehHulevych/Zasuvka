@@ -9,11 +9,12 @@ class User {
     }
 
     private function getData(){
-        if(file_exists($this->file)){
-            file_put_contents($this->file,[]);
+        if(!file_exists($this->file)){
+            file_put_contents($this->file,json_encode([]));
         }
-        $items = file_get_contents($this->file);
-        return json_decode($items,true);
+        $items = json_decode(file_get_contents($this->file),true);
+        return $items?:[];
+
     }
     private function saveData ($data)
     {
@@ -37,7 +38,16 @@ class User {
     }
 
     public function create($name, $email, $photoPath, $phone, $password){
+        $checkuser = false;
         $users = $this->getData();
+        foreach ($users as $user){
+            if($user['email']==$email){
+                $checkuser = true;
+            }
+        }
+        if($checkuser){
+            return null;
+        }
         $newid = count($users) ? end($users)['id']+1:1;
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $newUser = ["id"=>$newid, "name"=>$name, "email"=>$email, "photoPath" => $photoPath, "phone"=>$phone, "password"=>$hashedPassword ];

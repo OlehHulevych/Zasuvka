@@ -3,11 +3,12 @@
 class FavoriteList{
     private $file = __DIR__ . "/../data/FavoriteLists.json";
     private function getData(){
-        if(file_exists($this->file)){
-            file_put_contents($this->file,[]);
+        if(!file_exists($this->file)){
+            file_put_contents($this->file,json_encode([]));
         }
-        $items = file_get_contents($this->file);
-        return json_decode($items,true);
+        $items = json_decode(file_get_contents($this->file),true);
+        return $items?:[];
+
     }
     public function saveData ($data)
     {
