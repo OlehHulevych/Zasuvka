@@ -14,6 +14,7 @@ class UserController
         $email = $_POST['email'] ?? null;
         $password = $_POST['password']?? null;
         $phone  = $_POST['phone']??null;
+        $role = $_POST['role'] ?? 'user';
 
         if(!$name || !$email || !$password || !$phone ){
             echo "checking";
@@ -36,7 +37,7 @@ class UserController
                 echo json_encode(["message"=>"Something went wrong on the server"]);
             }
             echo "creating";
-            $newUser = $this->User->create($name, $email, $photoPath, $phone, $password);
+            $newUser = $this->User->create($name, $email, $photoPath, $phone, $password, $role);
             if($newUser){
                 echo json_encode(["message"=>"The user is created", "user"=>$newUser], JSON_PRETTY_PRINT);
                 echo "success";
@@ -49,6 +50,34 @@ class UserController
 
         }
     }
+    public function login(){
+        $loggedUser = null;
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        if(!$email || !$password){
+            http_response_code(400);
+            echo json_encode(["message"=>"Something is missing"], JSON_PRETTY_PRINT);
+            return;
+        }
+        else{
+            $loggedUser = $this->User->login($email, $password);
+            if(!$loggedUser){
+                echo json_encode(["message"=>"Email or password is wrong"]);
+            }
+            else{
+                $_SESSION["user_id"] = $loggedUser['id'];
+                echo json_encode(["message"=>"login was succesfull "], JSON_PRETTY_PRINT);
+            }
+        }
+    }
+
+    /*public function update(){
+        $userId =
+        if($_SESSION['user_id']){
+
+        }
+    }*/
 
 
 }

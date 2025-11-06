@@ -37,7 +37,7 @@ class User {
 
     }
 
-    public function create($name, $email, $photoPath, $phone, $password){
+    public function create($name, $email, $photoPath, $phone, $password, $role){
         $checkuser = false;
         $users = $this->getData();
         foreach ($users as $user){
@@ -50,7 +50,7 @@ class User {
         }
         $newid = count($users) ? end($users)['id']+1:1;
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $newUser = ["id"=>$newid, "name"=>$name, "email"=>$email, "photoPath" => $photoPath, "phone"=>$phone, "password"=>$hashedPassword ];
+        $newUser = ["id"=>$newid, "name"=>$name, "email"=>$email, "photoPath" => $photoPath, "phone"=>$phone, "password"=>$hashedPassword, "role"=>$role ];
         $items[] = $newUser;
         $this->saveData($items);
         $this->FavoriteList->create($newid);
