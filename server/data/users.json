@@ -1,11 +1,20 @@
 [
     {
         "id": 1,
+        "name": "Taras",
+        "email": "Tarashulevic@gmail.com",
+        "photoPath": "\/uploads\/avatars\/Taras_oleg@gmail.com_user.jpg",
+        "phone": "47908903428",
+        "password": "$2y$12$JRZIRxxQuryxuN6ZV1aF2ebMiWusNnCY294OrjuEawpII1jgcPfim",
+        "role": "user"
+    },
+    {
+        "id": 2,
         "name": "Oleh",
-        "email": "oleg@gmail.com",
-        "photoPath": "\/uploads\/avatarsOleh_oleg@gmail.com_user.jpg",
-        "phone": "607788192",
-        "password": "$2y$12$AUZQgZtD1q6KPBUPajeuc.Wv6n6CHLpSuHozq9OC3BR7DwO2Vl1f2",
+        "email": "oleghulevic@gmail.com",
+        "photoPath": "\/uploads\/avatars\/Oleh_oleg@gmail.com_user.jpg",
+        "phone": "47908903428",
+        "password": "$2y$12$uXfA33bghr1w1xsPMJRBiuLlCL9Nfwcd\/NY152ICDPolcysiWfx5W",
         "role": "user"
     }
 ]

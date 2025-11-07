@@ -51,8 +51,8 @@ class User {
         $newid = count($users) ? end($users)['id']+1:1;
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $newUser = ["id"=>$newid, "name"=>$name, "email"=>$email, "photoPath" => $photoPath, "phone"=>$phone, "password"=>$hashedPassword, "role"=>$role ];
-        $items[] = $newUser;
-        $this->saveData($items);
+        $users[] = $newUser;
+        $this->saveData($users);
         $this->FavoriteList->create($newid);
         return $newUser;
     }
@@ -78,19 +78,29 @@ class User {
         }
     }
 
-    public function update($id,$name, $email, $photoPath, $phone){
+    public function update($id,$name, $email,  $phone, $password){
         $users = $this->getData();
-        foreach ($users as $user){
-             if($user==$id){
-                 $user['name'] = $name;
-                 $user['email'] = $email;
-                 $user['photoPath'] = $photoPath;
-                 $user['phone'] = $phone;
-                 $this->saveData($users);
-                 return $user;
+        $updatedUser = null;
+
+        foreach ($users as &$user){
+             if($user['id']==$id){
+                 $user['name'] = $name ?? $user['name'];
+                 $user['email'] = $email ?? $user['email'];
+                 $user['phone'] = $phone ?? $user['phone'];
+                 $user['password'] = $password?password_hash($password, PASSWORD_DEFAULT) : $user['password'];
+                 $updatedUser = $user;
+                 break;
              }
         }
-        return null;
+        if(isset($updatedUser)){
+            echo "The user is updated";
+            $this->saveData($users);
+            return $updatedUser;
+        }
+        else{
+            return null;
+        }
+
     }
     public function delete($id){
         $users = $this->getData();

@@ -6,11 +6,14 @@ $method = $_SERVER['REQUEST_METHOD'];
 $userController = new UserController();
 
 
-if($uri=="/register" && $method === 'POST'){
+if($uri=="/user/register" && $method === 'POST'){
     $userController->register();
 }
-elseif($uri=="/login" && $method === 'POST'){
+elseif($uri=="/user/login" && $method === 'POST'){
     $userController->login();
+}
+elseif($uri=="/user" && $method === 'PUT'){
+    $userController->update();
 }
 else{
     http_response_code(400);
