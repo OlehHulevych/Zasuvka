@@ -117,6 +117,35 @@ class UserController
 
 
     }
+    public function updateAvatar(){
+        if(!isset($_SESSION['user_id'])){
+            http_response_code(404);
+            echo json_encode(["message"=>"The user is not logged"]);
+        }
+        $id = $_SESSION['user_id'];
+        $user = $this->User->getUserById($id);
+
+
+        if(isset($_FILES['photo'])){
+            $uploadDir = __DIR__ . "/../uploads/avatars/";
+            $filename = basename($user['photoPath']);
+            $targetPath = $uploadDir . $filename;
+            if(file_exists($targetPath)){
+                unlink($targetPath);
+                move_uploaded_file($_FILES['photo']['tmp_name'], $targetPath);
+                echo json_encode(["message"=>"The avatar of user is updated"]);
+                return;
+            }
+            else{
+                http_response_code(500);
+                echo json_encode(["message"=>"Something went wrong"]);
+            }
+        }
+        else{
+            http_response_code(400);
+            echo json_encode(["message"=>"There is no any photo"]);
+        }
+    }
 
 
 }

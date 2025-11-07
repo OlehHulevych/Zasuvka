@@ -15,6 +15,9 @@ elseif($uri=="/user/login" && $method === 'POST'){
 elseif($uri=="/user" && $method === 'PUT'){
     $userController->update();
 }
+elseif ($uri == "/user/avatar" && $method === 'POST'){
+    $userController->updateAvatar();
+}
 else{
     http_response_code(400);
     echo json_encode(["message"=>"The route is not existing"]);
