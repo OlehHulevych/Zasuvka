@@ -23,7 +23,7 @@ class User {
     }
 
     public function getAll(){
-       return $this->file;
+       return $this->getData();
 
     }
     public function getUserById($id){

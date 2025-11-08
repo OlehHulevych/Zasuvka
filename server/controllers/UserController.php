@@ -91,17 +91,7 @@ class UserController
             http_response_code(400);
             echo json_encode(["message"=>"The user is not found"]);
         }
-        /*if(isset($_FILES['photo'])){
-            $uploadDir = __DIR__ . "/../uploads/avatars/";
-            $filename = basename($foundedUser['photoPath']);
-            $targetPath = $uploadDir . $filename;
-            if(file_exists($targetPath)){
-                unlink($targetPath);
-                move_uploaded_file($_FILES['photo']['tmp_name'], $targetPath);
-                $photoPath = "/uploads/avatars/" . $filename;
-            }
 
-        }*/
         echo "This is id: " . $id;
         $updatedUser = $this->User->update($id, $name, $email, $phone, $password);
         if($updatedUser){
@@ -145,6 +135,41 @@ class UserController
             http_response_code(400);
             echo json_encode(["message"=>"There is no any photo"]);
         }
+    }
+    public function getALl(){
+        if(!isset($_SESSION['user_id'])){
+            http_response_code(404);
+            echo json_encode(["message"=>"The user is not loged in"]);
+            return;
+        }
+        $admin = $this->User->getUserById($_SESSION['user_id'], JSON_PRETTY_PRINT);
+        if($admin['role'] !== 'admin'){
+            http_response_code(404);
+            echo json_encode(["message"=>"Access denied"], JSON_PRETTY_PRINT);
+            return;
+        }
+        $users = $this->User->getAll();
+        echo json_encode(["users"=>$users]);
+
+    }
+
+    public function authorize ():void{
+        if(!isset($_SESSION['user_id'])){
+            http_response_code(404);
+            echo json_encode(["message"=>"The is not logged"], JSON_PRETTY_PRINT);
+        }
+        $user = $this->User->getUserById($_SESSION['user_id']);
+        if(!$user){
+            http_response_code(500);
+            echo json_encode(["message"=>"Something went wrong"], JSON_PRETTY_PRINT);
+
+        }
+        echo json_encode(["message"=>"The data is retrieved", "user"=>$user], JSON_PRETTY_PRINT);
+    }
+    public function logout(){
+        session_destroy();
+        http_response_code(200);
+        echo json_encode(["message"=>"The user is logged out"]);
     }
 
 

@@ -18,6 +18,15 @@ elseif($uri=="/user" && $method === 'PUT'){
 elseif ($uri == "/user/avatar" && $method === 'POST'){
     $userController->updateAvatar();
 }
+elseif ($uri == '/user' && $method === 'GET'){
+    $userController->getALl();
+}
+elseif($uri == "/user/authorize" && $method === "GET"){
+    $userController->authorize();
+}
+elseif($uri == "/user/logout" && $method == "GET"){
+    $userController->logout();
+}
 else{
     http_response_code(400);
     echo json_encode(["message"=>"The route is not existing"]);

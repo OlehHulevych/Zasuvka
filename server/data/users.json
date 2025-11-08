@@ -16,5 +16,14 @@
         "phone": "47908903428",
         "password": "$2y$12$uXfA33bghr1w1xsPMJRBiuLlCL9Nfwcd\/NY152ICDPolcysiWfx5W",
         "role": "user"
+    },
+    {
+        "id": 3,
+        "name": "Darth Vader",
+        "email": "vader@gmail.com",
+        "photoPath": "\/uploads\/avatars\/Darth Vader_vader@gmail.com_avatar.png",
+        "phone": "607788192",
+        "password": "$2y$12$dzT.tdy7k\/FcYryQT5IX0Oqx5HMqL3zCcFxVzRzoPhh0QLr4SvpKu",
+        "role": "admin"
     }
 ]
