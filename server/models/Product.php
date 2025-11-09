@@ -20,8 +20,17 @@ class Product{
         echo "The data is saved";
     }
 
-    public function getAll(){
-        return $this->getData();
+    public function getAll($page, $category=null ){
+        $items = $this->getData();
+        if(!$category){
+            return $this->paginate($items, $page);
+
+        }
+        else{
+            $filteredItems = array_filter($items, fn($item)=> $item.$category==$category);
+            return $this->paginate($filteredItems,$page);
+        }
+
     }
     public function getById($id){
         $products = $this->getData();
@@ -35,11 +44,11 @@ class Product{
 
 
 
-    public function create($name, $userId, $currency, $price, $photos, $description){
+    public function create($name, $userId, $currency, $price, $photos, $description, $category){
         $products = $this->getData();
         $newId= count($products)?end($products)['id']+1:1;
         $productUser = $this->User->getUserById($userId);
-        $newProduct = ["id"=>$newId,"name"=>$name, "userId"=>$userId, "photos"=>$photos, "price"=>$price, "author"=>$productUser['name'], "phone"=>$productUser['phone'], "currency"=>$currency, "description"=>$description];
+        $newProduct = ["id"=>$newId,"name"=>$name, "userId"=>$userId, "photos"=>$photos, "price"=>$price, "author"=>$productUser['name'], "phone"=>$productUser['phone'], "currency"=>$currency, "description"=>$description, "category"=>$category];
         $products[] = $newProduct;
         $this->saveData($products);
         return $newProduct;
@@ -60,6 +69,15 @@ class Product{
             }
         }
         return null;
+    }
+
+    private function paginate($items, $page){
+        $limit = 5;
+        $total = count($items);
+        $totalPages = ceil($total/$limit);
+        $offset = ($page-1)*$limit;
+        $paginated = array_slice($items, $offset,$limit);
+        return ["items"=>$paginated, "totalPages"=>$totalPages, "page"=>$page];
     }
     public function delete($id){
         $products = $this->getData();
