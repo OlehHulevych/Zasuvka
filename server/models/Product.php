@@ -20,15 +20,18 @@ class Product{
         echo "The data is saved";
     }
 
-    public function getAll($page, $category=null ){
+    public function getAll($page, $category=null , $search=null ){
         $items = $this->getData();
-        if(!$category){
-            return $this->paginate($items, $page);
-
+        if($category){
+            $filteredItems = array_filter($items, fn($item)=> $item['category']==$category);
+            return $this->paginate($filteredItems,$page);
+        }
+        elseif($search){
+            $filteredItems = array_filter($items,  fn($item)=>str_contains(strtolower($item['name']), strtolower($search)));
+            return $this->paginate($filteredItems,$page);
         }
         else{
-            $filteredItems = array_filter($items, fn($item)=> $item.$category==$category);
-            return $this->paginate($filteredItems,$page);
+            return $this->paginate($items, $page);
         }
 
     }
