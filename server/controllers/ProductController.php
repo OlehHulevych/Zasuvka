@@ -19,14 +19,9 @@ class ProductController
     }
 
     public function getAll(){
-        if(!isset($_SESSION['user_id'])){
-            http_response_code(403);
-            echo json_encode(["message"=>"The user is not authorized"]);
-        }
-        $limit = 5;
         $category = $_GET['category'];
         $page  = $_GET['page'];
-        $products = $this->Product->getAll($category, $page);
+        $products = $this->Product->getAll($page, $category);
         echo json_encode(["message"=>"The products are retrieved", "products"=>$products]);
 
     }

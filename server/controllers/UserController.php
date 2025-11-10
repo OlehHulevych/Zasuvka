@@ -22,7 +22,6 @@ class UserController
             echo json_encode(["message"=>"Something is missing.Please check once again"], JSON_PRETTY_PRINT);
             return;
         }
-        echo "next step";
         $photoPath = null;
         if(isset($_FILES['photo'])){
             $uploadDir = __DIR__ . "/../uploads/avatars/";
