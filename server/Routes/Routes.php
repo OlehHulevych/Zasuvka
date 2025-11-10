@@ -30,6 +30,9 @@ elseif($uri == "/user/authorize" && $method === "GET"){
 elseif($uri == "/user/logout" && $method == "GET"){
     $userController->logout();
 }
+elseif ($uri == "/user" && $method == "DELETE"){
+    $userController->delete();
+}
 elseif($uri=="/product" && $method === "GET"){
     $productController->getAll();
 }

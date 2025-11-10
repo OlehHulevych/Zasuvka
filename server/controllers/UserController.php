@@ -170,6 +170,21 @@ class UserController
         http_response_code(200);
         echo json_encode(["message"=>"The user is logged out"]);
     }
+    public function delete(){
+        if(!$_SESSION['user_id']){
+            http_response_code(403);
+            echo json_encode(["message"=>"The user is not logged"]);
+        }
+        $idForDeleting = $_GET['id'];
+        $user = $this->User->getUserById($_SESSION['user_id']);
+        if($user['role']=='admin' || $user['id']==$idForDeleting){
+            $status = $this->User->delete($idForDeleting);
+            echo json_encode(["message"=>"The user was deleted", "status"=>$status], JSON_PRETTY_PRINT);
+        }
+        else{
+            echo json_encode(["message"=>"No acsess"]);
+        }
+    }
 
 
 }
