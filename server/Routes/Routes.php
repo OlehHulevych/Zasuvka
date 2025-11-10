@@ -36,6 +36,9 @@ elseif($uri=="/product" && $method === "GET"){
 elseif($uri=="/product" && $method==="POST"){
     $productController->create();
 }
+elseif($uri =="/product/id" && $method === "GET"){
+    $productController->getProductById();
+}
 
 else{
     http_response_code(400);

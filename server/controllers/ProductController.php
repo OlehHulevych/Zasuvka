@@ -25,6 +25,17 @@ class ProductController
         echo json_encode(["message"=>"The products are retrieved", "products"=>$products]);
 
     }
+    public function getProductById(){
+        $id = $_GET['id'];
+        $product = $this->Product->getById($id);
+        if(!$product){
+            http_response_code(404);
+            echo json_encode(["message"=>"The product is not found"], JSON_PRETTY_PRINT);
+        }
+        else{
+            echo json_encode(["message"=>"The product is found", "product"=>$product]);
+        }
+    }
     public function create(){
         if(!isset($_SESSION['user_id'])){
             http_response_code(403);
