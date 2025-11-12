@@ -74,5 +74,56 @@ class ProductController
         }
 
     }
+    public function update(){
+        if(!isset($_SESSION['user_id'])){
+            http_response_code(403);
+            echo json_encode(["message"=>"access is denied"], JSON_PRETTY_PRINT);
+        }
+        $productId = $_POST['id'] ?? null;
+        $name = $_POST['name'] ?? null;
+        $price = $_POST['price'] ?? null;
+        $currency = $_POST['currency'] ?? null;
+        $description = $_POST['description'] ?? null;
+        $deletePhotos = $_POST['delete_photos'] ?? null;
+        $newPhotosForProduct = $_POST['new_photos'] ?? null;
+
+        if(isset($_FILES['delete_photos'])){
+            $deletePhotos = $_POST['delete_photos'];
+            if(!is_array($deletePhotos)){
+                $deletePhotos = explode(',', $deletePhotos);
+            }
+            foreach ($deletePhotos as $deletePhoto) {
+                $fullPath = __DIR__ . '/..' . $deletePhoto;
+                if(file_exists($fullPath)){
+                    unlink($fullPath);
+                }
+            }
+        }
+        if(isset($_FILES['new_photos'])){
+
+            $newPhotos = $_POST['new_photos'];
+            if(!is_array($_POST['new_photos'])){
+                $newPhotos = explode('/', $newPhotos);
+            }
+            foreach ($newPhotos['name'] as $key=>$originalName){
+                $filename = $name . "_" . $key . "_" . basename($originalName);
+                $tmp_name = $newPhotos['tmp_name'][$key];
+                $targetPath = __DIR__ . "/../uploads/products/" . $filename;
+                if(move_uploaded_file($tmp_name, $targetPath)){
+                    $newPhotosForProduct[] = '/uploads/products' . $filename;
+                }
+
+            }
+        }
+
+        $updatedProduct = $this->Product->update($productId, $_SESSION['user_id'], $name, $currency, $price, $description, $deletePhotos,$newPhotosForProduct );
+        if($updatedProduct){
+            echo json_encode(['message'=>"The product is updated", "updatedProduct"=>$updatedProduct], JSON_PRETTY_PRINT);
+        }
+        else{
+            http_response_code(400);
+            echo json_encode(["message"=>"The product is not updated"],JSON_PRETTY_PRINT);
+        }
+    }
 
 }

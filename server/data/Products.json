@@ -1,19 +1,17 @@
 [
     {
         "id": 1,
-        "name": "Samsung phone",
+        "name": "Huawei phone",
         "userId": 3,
-        "photos": [
-            "\/uploads\/products\/Samsung phone_0_Back.png",
-            "\/uploads\/products\/Samsung phone_1_camera.png",
-            "\/uploads\/products\/Samsung phone_2_Front.png",
-            "\/uploads\/products\/Samsung phone_3_product.png"
-        ],
+        "photos": {
+            "2": "\/uploads\/products\/Samsung phone_2_Front.png",
+            "3": "\/uploads\/products\/Samsung phone_3_product.png"
+        },
         "price": "150",
         "author": "Darth Vader",
         "phone": "607788192",
         "currency": "$",
-        "description": "The new model of samsung corporation in briliant state",
+        "description": "The new model of xiomi corporation in briliant state",
         "category": "Electronics"
     }
 ]

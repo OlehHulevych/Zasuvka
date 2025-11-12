@@ -58,15 +58,37 @@ class Product{
 
     }
 
-    public function update($id, $name, $currency, $price, $photos, $description){
+    public function update($id, $userId, $name, $currency, $price, $description, $deletePhotos, $newPhotos){
         $products = $this->getData();
-        foreach ($products as $product){
+        foreach ($deletePhotos as $deletePhoto){
+            echo "This is" . $deletePhoto;
+        }
+        foreach ($products as &$product){
             if($product['id']==$id){
-                $product['name'] = $name;
-                $product['currency'] = $currency;
-                $product['price'] = $price;
-                $product['photos'] = $photos;
-                $product[$description] = $description;
+                if($product['userId']!==$userId){
+
+                    return null;
+                }
+                $product['name'] = $name ?? $product['name'];
+                $product['currency'] = $currency ?? $product['currency'];
+                $product['price'] = $price ?? $product['price'];
+                $product['description'] = $description?? $product['description'];
+                if (!empty($deletePhotos)) {
+                    foreach ($deletePhotos as $deletePhoto){
+                        $newArray = array_filter($product['photos'], fn($photo)=>$photo != $deletePhoto);
+                        $product['photos'] = $newArray;
+
+                    }
+
+
+                }
+                if($newPhotos){
+                    foreach ($newPhotos as $newPhoto){
+                        $product['photos'][] = $newPhoto;
+                    }
+                }
+
+
                 $this->saveData($products);
                 return $product;
             }
