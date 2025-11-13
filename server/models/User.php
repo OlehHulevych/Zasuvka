@@ -104,6 +104,12 @@ class User {
     }
     public function delete($id){
         $users = $this->getData();
+        $userForDeleting  = $this->getUserById($id);
+        $photo = $userForDeleting['photoPath'];
+        $fullPath = __DIR__ . "/../" . $photo;
+        if(file_exists($fullPath)){
+            unlink($fullPath);
+        }
         $filteredUsers = array_filter($users, fn($user)=>$user['id'] != $id);
         $this->saveData($filteredUsers);
         $this->FavoriteList->delete($id);
