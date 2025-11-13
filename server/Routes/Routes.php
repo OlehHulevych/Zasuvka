@@ -46,6 +46,10 @@ elseif($uri == "/product/update" && $method==="POST"){
     $productController->update();
 }
 
+elseif ($uri == "/product" && $method === "DELETE"){
+    $productController->delete();
+}
+
 else{
     http_response_code(400);
     echo json_encode(["message"=>"The route is not existing"]);

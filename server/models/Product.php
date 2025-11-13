@@ -104,8 +104,20 @@ class Product{
         $paginated = array_slice($items, $offset,$limit);
         return ["items"=>$paginated, "totalPages"=>$totalPages, "page"=>$page];
     }
-    public function delete($id){
+    public function delete($id, $userId){
         $products = $this->getData();
+        $productForDeleting = $this->getById($id);
+        $photos = $productForDeleting['photos'];
+        foreach ($photos as $photo){
+            $fullPath = __DIR__ . "/.." . $photo;
+            if(file_exists($fullPath)){
+                unlink($fullPath);
+            }
+        }
+        $user = $this->User->getUserById($userId);
+        if($productForDeleting['userId'] != $userId || $user['role'] != "admin"){
+            return false;
+        }
         $filteredProducts = array_filter($products, fn($product)=>$product['id'] != $id);
         $this->saveData($filteredProducts);
         return true;

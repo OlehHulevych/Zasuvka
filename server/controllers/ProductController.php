@@ -123,5 +123,21 @@ class ProductController
             echo json_encode(["message"=>"The product is not updated"],JSON_PRETTY_PRINT);
         }
     }
+    public function delete(){
+        if(!isset($_SESSION['user_id'])){
+            echo "access is denied";
+        }
+        $id = $_GET['id'];
+        $result = $this->Product->delete($id, $_SESSION['user_id']);
+        if($result){
+            echo json_encode(["message"=>"The product was deleted", "status"=>$result], JSON_PRETTY_PRINT);
+        }
+        else{
+            http_response_code(401);
+            echo json_encode(["message"=>"Access denied"], JSON_PRETTY_PRINT);
+        }
+
+
+    }
 
 }

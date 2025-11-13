@@ -1,17 +1,1 @@
-[
-    {
-        "id": 1,
-        "name": "Samsung phone",
-        "userId": 3,
-        "photos": {
-            "2": "\/uploads\/products\/Samsung phone_2_Front.png",
-            "3": "\/uploads\/products\/Samsung phone_3_product.png"
-        },
-        "price": "150",
-        "author": "Darth Vader",
-        "phone": "607788192",
-        "currency": "$",
-        "description": "The new model of xiomi corporation in briliant state",
-        "category": "Electronics"
-    }
-]
+[]
