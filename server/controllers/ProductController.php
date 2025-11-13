@@ -87,13 +87,11 @@ class ProductController
         $deletePhotos = $_POST['delete_photos'] ?? null;
         $newPhotosForProduct = $_POST['new_photos'] ?? null;
 
-        if(isset($_FILES['delete_photos'])){
+        if(isset($_POST['delete_photos'])){
             $deletePhotos = $_POST['delete_photos'];
-            if(!is_array($deletePhotos)){
-                $deletePhotos = explode(',', $deletePhotos);
-            }
             foreach ($deletePhotos as $deletePhoto) {
-                $fullPath = __DIR__ . '/..' . $deletePhoto;
+                $fullPath = __DIR__ . '/../' . $deletePhoto;
+                echo "Hello Everybody";
                 if(file_exists($fullPath)){
                     unlink($fullPath);
                 }
@@ -101,8 +99,8 @@ class ProductController
         }
         if(isset($_FILES['new_photos'])){
 
-            $newPhotos = $_POST['new_photos'];
-            if(!is_array($_POST['new_photos'])){
+            $newPhotos = $_FILES['new_photos'];
+            if(!is_array($_FILES['new_photos'])){
                 $newPhotos = explode('/', $newPhotos);
             }
             foreach ($newPhotos['name'] as $key=>$originalName){
@@ -110,7 +108,7 @@ class ProductController
                 $tmp_name = $newPhotos['tmp_name'][$key];
                 $targetPath = __DIR__ . "/../uploads/products/" . $filename;
                 if(move_uploaded_file($tmp_name, $targetPath)){
-                    $newPhotosForProduct[] = '/uploads/products' . $filename;
+                    $newPhotosForProduct[] = '/uploads/products/' . $filename;
                 }
 
             }

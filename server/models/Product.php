@@ -60,9 +60,9 @@ class Product{
 
     public function update($id, $userId, $name, $currency, $price, $description, $deletePhotos, $newPhotos){
         $products = $this->getData();
-        foreach ($deletePhotos as $deletePhoto){
-            echo "This is" . $deletePhoto;
-        }
+//        foreach ($deletePhotos as $deletePhoto){
+//            echo "This is" . $deletePhoto;
+//        }
         foreach ($products as &$product){
             if($product['id']==$id){
                 if($product['userId']!==$userId){
