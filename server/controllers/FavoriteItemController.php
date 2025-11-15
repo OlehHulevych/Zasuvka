@@ -44,4 +44,21 @@ class FavoriteItemController{
             echo json_encode(["message"=>"The list is received", "list"=>$list], JSON_PRETTY_PRINT);
         }
     }
+    public function deleteFavorite(){
+        if(!isset($_SESSION['user_id'])){
+            http_response_code(401);
+            echo json_encode(["message"=>"Access denies.User is not authorized"], JSON_PRETTY_PRINT);
+        }
+        $id = $_GET['id'];
+        $result = $this->FavoriteListItem->delete($id, $_SESSION['user_id']);
+        if(!$result){
+            http_response_code(400);
+            echo json_encode(["message"=>"Something went wrong"], JSON_PRETTY_PRINT);
+        }
+        else{
+            echo json_encode(["message"=>"Item was deleted"], JSON_PRETTY_PRINT);
+        }
+
+    }
 }
+

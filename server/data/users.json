@@ -7,5 +7,14 @@
         "phone": "608819232",
         "password": "$2y$12$AgDq1Q8HAbqNvM16hUPE3Ox6NEqYr.E9nQwElH0Svw\/BQBL.LYdPa",
         "role": "user"
+    },
+    {
+        "id": 2,
+        "name": "Oleh",
+        "email": "hulevych@gmail.com",
+        "photoPath": "\/uploads\/avatars\/Oleh_hulevych@gmail.com_user.jpg",
+        "phone": "608819232",
+        "password": "$2y$12$ixWUWxNu47GXYuin6Wn3SOe\/BCKqQ1CfTyWy38PujTVXn9ps7gINe",
+        "role": "user"
     }
 ]

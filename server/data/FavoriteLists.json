@@ -1,17 +1,7 @@
 [
     {
         "id": 1,
-        "userId": 1,
-        "items": [
-            {
-                "id": 1,
-                "name": "Car Audi 100 1985",
-                "price": "3000",
-                "currency": "$",
-                "photo": "\/uploads\/products\/Car Audi 100 1985_0_audi_general.jpg",
-                "productId": 1,
-                "FavoriteListId": 1
-            }
-        ]
+        "userId": 2,
+        "items": []
     }
 ]

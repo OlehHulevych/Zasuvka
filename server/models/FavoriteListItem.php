@@ -34,8 +34,15 @@ class FavoriteListItem
 
     public function delete($id, $userId){
         $favoriteList = $this->FavoriteList->getByUserId($userId);
-        $FilteredFavoriteList = array_filter($favoriteList['items'], fn($item)=> $item['id'] !=$id);
-        $this->FavoriteList->saveData($FilteredFavoriteList);
+        $FilteredFavoriteList = array_filter($favoriteList['items'], fn($item)=> $item['id'] != $id);
+        $favoriteLists = $this->FavoriteList->getAll();
+
+        foreach ($favoriteLists as &$list){
+            if($list['userId'] == $userId){
+                $list['items'] = $FilteredFavoriteList;
+            }
+        }
+        $this->FavoriteList->saveData($favoriteLists);
         return true;
     }
 
