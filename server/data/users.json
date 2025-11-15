@@ -1,1 +1,11 @@
-[]
+[
+    {
+        "id": 1,
+        "name": "Taraas",
+        "email": "taras@gmail.com",
+        "photoPath": "\/uploads\/avatars\/Taraas_taras@gmail.com_avatar.png",
+        "phone": "608819232",
+        "password": "$2y$12$AgDq1Q8HAbqNvM16hUPE3Ox6NEqYr.E9nQwElH0Svw\/BQBL.LYdPa",
+        "role": "user"
+    }
+]

@@ -1,12 +1,14 @@
 <?php
 require_once __DIR__ . "/../controllers/UserController.php";
 require_once  __DIR__ ."/../controllers/ProductController.php";
+require_once __DIR__ . "/../controllers/FavoriteItemController.php";
 
 $uri  = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = str_replace('/server', '', $uri);
 $method = $_SERVER['REQUEST_METHOD'];
 $userController = new UserController();
 $productController = new ProductController();
+$favoriteItemController = new FavoriteItemController();
 
 
 
@@ -49,6 +51,9 @@ elseif($uri == "/product/update" && $method==="POST"){
 
 elseif ($uri == "/product" && $method === "DELETE"){
     $productController->delete();
+}
+elseif ($uri == "/favoriteItem" && $method === "GET"){
+    $favoriteItemController->create();
 }
 
 else{

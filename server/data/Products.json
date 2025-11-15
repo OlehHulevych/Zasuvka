@@ -1,1 +1,18 @@
-[]
+[
+    {
+        "id": 1,
+        "name": "Car Audi 100 1985",
+        "userId": 1,
+        "photos": [
+            "\/uploads\/products\/Car Audi 100 1985_0_audi_general.jpg",
+            "\/uploads\/products\/Car Audi 100 1985_1_audi_old.jpeg",
+            "\/uploads\/products\/Car Audi 100 1985_2_audi_sport.jpeg"
+        ],
+        "price": "3000",
+        "author": "Taraas",
+        "phone": "608819232",
+        "currency": "$",
+        "description": "This car is amazing espossialy when it is your first car.The car can bring many feeling and create new moments",
+        "category": "Cars"
+    }
+]
