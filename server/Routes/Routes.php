@@ -52,10 +52,13 @@ elseif($uri == "/product/update" && $method==="POST"){
 elseif ($uri == "/product" && $method === "DELETE"){
     $productController->delete();
 }
-elseif ($uri == "/favoriteItem" && $method === "GET"){
+elseif ($uri == "/favoriteItem" && $method === "POST"){
     $favoriteItemController->create();
 }
 
+elseif($uri == "/favoriteItem" && $method === "GET"){
+    $favoriteItemController->getFavorites();
+}
 else{
     http_response_code(400);
     echo json_encode(["message"=>"The route is not existing"]);

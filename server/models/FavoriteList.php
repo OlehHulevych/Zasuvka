@@ -19,6 +19,23 @@ class FavoriteList{
     public function getAll(){
         return $this->getData();
     }
+
+    public function getAllById($userId){
+        $favoriteList =null;
+        $all = $this->getAll();
+        foreach ($all as &$list){
+            if($list['userId'] == $userId){
+                $favoriteList = $list;
+            }
+        }
+        if(!$favoriteList){
+            return null;
+        }
+        else{
+            return $favoriteList;
+        }
+
+    }
     public function getByUserId($userId){
         $favoriteLists = $this->getAll();
         foreach ($favoriteLists as $favoriteList){
