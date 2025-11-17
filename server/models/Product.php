@@ -35,6 +35,17 @@ class Product{
         }
 
     }
+
+    public function getCountOfProducts()
+    {
+        $items = $this->getData();
+        if($items){
+            return count($items);
+        }
+        else{
+            null;
+        }
+    }
     public function getById($id){
         $products = $this->getData();
         foreach ($products as $product){
@@ -115,12 +126,16 @@ class Product{
             }
         }
         $user = $this->User->getUserById($userId);
-        if($productForDeleting['userId'] != $userId || $user['role'] != "admin"){
+        //print_r($user);
+        if($productForDeleting['userId'] == $userId or $user['role'] == "admin"){
+            $filteredProducts = array_filter($products, fn($product)=>$product['id'] != $id);
+            $this->saveData($filteredProducts);
+            return true;
+        }
+        else{
             return false;
         }
-        $filteredProducts = array_filter($products, fn($product)=>$product['id'] != $id);
-        $this->saveData($filteredProducts);
-        return true;
+
     }
 
 }

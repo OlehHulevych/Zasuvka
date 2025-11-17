@@ -26,6 +26,22 @@ class User {
        return $this->getData();
 
     }
+
+    public function getAllUser($page){
+        $users = $this->getData();
+        $userPaginated = $this->paginate($users, $page);
+        if($userPaginated){
+            return $userPaginated;
+        }
+        else{
+            return null;
+        }
+    }
+
+    public function getCountOfUsers(){
+        $users =$this->getData();
+        return count($users);
+    }
     public function getUserById($id){
         $users = $this->getData();
         foreach ($users as $user){
@@ -56,6 +72,8 @@ class User {
         $this->FavoriteList->create($newid);
         return $newUser;
     }
+
+
 
     public function login($email, $password){
         $users = $this->getData();
@@ -101,6 +119,14 @@ class User {
             return null;
         }
 
+    }
+    private function paginate($items, $page){
+        $limit = 5;
+        $total = count($items);
+        $totalPages = ceil($total/$limit);
+        $offset = ($page-1)*$limit;
+        $paginated = array_slice($items, $offset,$limit);
+        return ["items"=>$paginated, "totalPages"=>$totalPages, "page"=>$page];
     }
     public function delete($id){
         $users = $this->getData();

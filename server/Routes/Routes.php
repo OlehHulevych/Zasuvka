@@ -2,6 +2,7 @@
 require_once __DIR__ . "/../controllers/UserController.php";
 require_once  __DIR__ ."/../controllers/ProductController.php";
 require_once __DIR__ . "/../controllers/FavoriteItemController.php";
+require_once  __DIR__ . "/../controllers/AdminController.php";
 
 $uri  = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = str_replace('/server', '', $uri);
@@ -9,6 +10,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 $userController = new UserController();
 $productController = new ProductController();
 $favoriteItemController = new FavoriteItemController();
+$adminController = new AdminController();
 
 
 
@@ -62,6 +64,32 @@ elseif($uri == "/favoriteItem" && $method === "GET"){
 elseif($uri == "/favoriteItem" && $method === "DELETE"){
     $favoriteItemController->deleteFavorite();
 }
+elseif ($uri == "/admin/register" && $method === "POST"){
+    $adminController->register();
+}
+elseif ($uri == "/admin/login" && $method === "POST"){
+    $adminController->login();
+}
+elseif($uri == "/admin/user" && $method === "GET"){
+    $adminController->getAllUsers();
+}
+elseif($uri == "/admin/user/count" && $method === "GET"){
+    $adminController->getCounOfUsers();
+}
+elseif($uri == "/admin/user" && $method === "DELETE"){
+    $adminController->deleteUser();
+}
+
+elseif($uri == "/admin/product" && $method === "GET"){
+    $adminController->getAllProducts();
+}
+elseif($uri == "/admin/product/count" && $method === "GET"){
+    $adminController->getCounOfProducts();
+}
+elseif($uri == "/admin/product" && $method === "DELETE"){
+    $adminController->deleteProduct();
+}
+
 else{
     http_response_code(400);
     echo json_encode(["message"=>"The route is not existing"]);
