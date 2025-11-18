@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded",async()=>{
     const data = await response.json();
     //console.log(data)
     console.log(data)
-    let container = document.getElementById("ad_container");
+    let box = document.getElementById("ad_container");
     let productHtml = '';
     
-    container.innerHTML = data.products.items.map(item=>{
+    box.innerHTML = data.products.items.map(item=>{
 
     })
 })
