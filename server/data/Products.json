@@ -1,1 +1,111 @@
-[]
+[
+    {
+        "id": 1,
+        "name": "Car Audi",
+        "userId": 4,
+        "photos": [
+            "\/uploads\/products\/Car Audi_0_audi_general.jpg",
+            "\/uploads\/products\/Car Audi_1_audi_old.jpeg",
+            "\/uploads\/products\/Car Audi_2_audi_sport.jpeg"
+        ],
+        "price": 3000,
+        "author": "Hulevych",
+        "phone": "608819232",
+        "currency": "$",
+        "description": "This car is amazing espossialy when it is your first car.The car can bring many feeling and create new moments",
+        "category": "Cars"
+    },
+    {
+        "id": 2,
+        "name": "Phone Samsung",
+        "userId": 4,
+        "photos": [
+            "\/uploads\/products\/Phone Samsung_0_Back.png",
+            "\/uploads\/products\/Phone Samsung_1_camera.png",
+            "\/uploads\/products\/Phone Samsung_2_Front.png",
+            "\/uploads\/products\/Phone Samsung_3_product.png"
+        ],
+        "price": " 2000",
+        "author": "Hulevych",
+        "phone": "608819232",
+        "currency": "K\u010d",
+        "description": "This car is amazing espossialy when it is your first car.The car can bring many feeling and create new moments",
+        "category": "Electronics"
+    },
+    {
+        "id": 3,
+        "name": "Car Bugati",
+        "userId": 4,
+        "photos": [
+            "\/uploads\/products\/Car Bugati_0_51909.jpg",
+            "\/uploads\/products\/Car Bugati_1_bugatti_1.jpg",
+            "\/uploads\/products\/Car Bugati_2_bugatti_2.jpg"
+        ],
+        "price": " 200",
+        "author": "Hulevych",
+        "phone": "608819232",
+        "currency": "K\u010d",
+        "description": "This car is amazing espossialy when it is your first car.The car can bring many feeling and create new moments",
+        "category": "Cars"
+    },
+    {
+        "id": 4,
+        "name": "Iphone",
+        "userId": 4,
+        "photos": [
+            "\/uploads\/products\/Iphone_0_iphone-17-pro-colors.png",
+            "\/uploads\/products\/Iphone_1_pexels-jessbaileydesign-788946.jpg",
+            "\/uploads\/products\/Iphone_2_X2yBu0m.png"
+        ],
+        "price": "1300",
+        "author": "Hulevych",
+        "phone": "608819232",
+        "currency": "$",
+        "description": "There is new iphone 32, the top phone of 2033.New design, more power and bigger price",
+        "category": "Electronics"
+    },
+    {
+        "id": 5,
+        "name": "Clothes of new season",
+        "userId": 4,
+        "photos": [
+            "\/uploads\/products\/Clothes of new season_0_pexels-kaip-996329.jpg",
+            "\/uploads\/products\/Clothes of new season_1_pexels-karola-g-4495705.jpg",
+            "\/uploads\/products\/Clothes of new season_2_pexels-pixabay-52518.jpg"
+        ],
+        "price": "1300",
+        "author": "Hulevych",
+        "phone": "608819232",
+        "currency": "$",
+        "description": "Meet your new uniform. The [Product Name] is designed for the morning commute, the weekend coffee run, and everything in between. Made from breathable, ultra-soft [Material], it fits perfectly from day one\u2014no break-in required.",
+        "category": "Clothes"
+    },
+    {
+        "id": 6,
+        "name": "Grand theft auto 5",
+        "userId": 4,
+        "photos": [
+            "\/uploads\/products\/Grand theft auto 5_0_Grand_Theft_Auto_V.png"
+        ],
+        "price": "400",
+        "author": "Hulevych",
+        "phone": "608819232",
+        "currency": "K\u010d",
+        "description": "When a young street hustler, a retired bank robber, and a terrifying psychopath find themselves entangled with some of the most frightening and deranged elements of the criminal underworld, the U.S. government, and the entertainment industry, they must pull off a series of dangerous heists to survive in a ruthless city in which they can trust no one\u2014least of all each other.",
+        "category": "Digital goods"
+    },
+    {
+        "id": 7,
+        "name": "Call of duty 4",
+        "userId": 4,
+        "photos": [
+            "\/uploads\/products\/Call of duty 4_0_Call_of_Duty_4_Modern_Warfare.jpg"
+        ],
+        "price": "400",
+        "author": "Hulevych",
+        "phone": "608819232",
+        "currency": "K\u010d",
+        "description": "The rules of engagement have been rewritten. From the shadows of Chernobyl to the heat of the Middle East, you are the silent professional standing between order and global collapse.\n\nJoin the SAS and US Marines in a gripping race against a rogue ultranationalist threat. In this war, there are no front lines\u2014only the mission. Check your corners, watch your six, and trust your squad.",
+        "category": "Digital goods"
+    }
+]

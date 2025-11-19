@@ -19,11 +19,11 @@ class ProductController
     }
 
     public function getAll(){
-        $category = $_GET['category'];
-        $search = $_GET['search'];
-        $page  = $_GET['page'];
+        $category = $_GET['category'] ?? null;
+        $search = $_GET['search'] ?? null;
+        $page  = $_GET['page'] ?? null;
         $products = $this->Product->getAll($page, $category, $search);
-        echo json_encode(["message"=>"The products are retrieved", "products"=>$products]);
+        echo json_encode(["message"=>"The products are retrieved", "products"=>$products], JSON_PRETTY_PRINT);
 
     }
     public function getProductById(){

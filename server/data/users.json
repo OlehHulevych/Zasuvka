@@ -16,5 +16,14 @@
         "phone": "608819232",
         "password": "$2y$12$rh0Mp8XOy7RaW7wlrzgxlekcBYhC0eJSQIR4QYUt0P2t3obdVurZa",
         "role": "admin"
+    },
+    "3": {
+        "id": 4,
+        "name": "Hulevych",
+        "email": "oleg@gmail.com",
+        "photoPath": "\/uploads\/avatars\/Hulevych_oleg@gmail.com_admin.png",
+        "phone": "608819232",
+        "password": "$2y$12$5xIcxbh4NgjeWYJVljuCM.BtMps\/CLWB7GXMEMxFYVGweJLdDSpqS",
+        "role": "user"
     }
 }
