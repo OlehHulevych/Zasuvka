@@ -28,8 +28,11 @@ document.addEventListener("DOMContentLoaded",async()=>{
     let productHtml = '';
     
     data.products.items.forEach((item)=>{
+        
         productHtml += ` <div class="ad_item">
-                    <div class="image_container"></div>
+                    <div class="img_container">
+                        <img src="${config.API_STATIC}${item.photos[0]}" alt="">
+                    </div>
                     <div class="ad_information">
                         <div class="ad_name">${item.name}</div>
                         <div class="ad_state">Used</div>
@@ -37,6 +40,8 @@ document.addEventListener("DOMContentLoaded",async()=>{
                         <div class="ad_author">${item.author}</div>
                     </div> 
                        </div>`
+
+
 
     })
     box.innerHTML = productHtml;
