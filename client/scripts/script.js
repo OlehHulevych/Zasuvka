@@ -27,7 +27,19 @@ document.addEventListener("DOMContentLoaded",async()=>{
     let box = document.getElementById("ad_container");
     let productHtml = '';
     
-    box.innerHTML = data.products.items.map(item=>{
+    data.products.items.forEach((item)=>{
+        productHtml += ` <div class="ad_item">
+                    <div class="image_container"></div>
+                    <div class="ad_information">
+                        <div class="ad_name">${item.name}</div>
+                        <div class="ad_state">Used</div>
+                        <div class="ad_price">${item.price} ${item.currency}</div>
+                        <div class="ad_author">${item.author}</div>
+                    </div> 
+                       </div>`
 
     })
+    box.innerHTML = productHtml;
 })
+
+//                    <img src="${config.API_STATIC}${item.photos[0]}" alt="">
