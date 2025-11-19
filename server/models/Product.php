@@ -108,7 +108,7 @@ class Product{
     }
 
     private function paginate($items, $page){
-        $limit = 5;
+        $limit = 10;
         $total = count($items);
         $totalPages = ceil($total/$limit);
         $offset = ($page-1)*$limit;

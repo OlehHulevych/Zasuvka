@@ -53,9 +53,10 @@ class ProductController
         foreach ($_FILES['photos']['name'] as $key=>$originalName){
             $filename = $name . "_" . $key . "_" . basename($originalName);
             $tmpName = $_FILES['photos']['tmp_name'][$key];
-            $targetPath = $uploadDir . $filename;
+            $formatedName = str_replace(" ", "_", $filename);
+            $targetPath = $uploadDir . $formatedName;
             if(move_uploaded_file($tmpName , $targetPath)){
-                $photos[] = '/uploads/products/' . $filename;
+                $photos[] = '/uploads/products/' . $formatedName;
             }
             else{
                 echo "The photo is not saved";
@@ -70,7 +71,7 @@ class ProductController
         }
         else{
             http_response_code(500);
-            echo json_encode(["message"=>"Something went wrong"]);
+            echo json_encode(["message"=>"Something went wrong"], JSON_PRETTY_PRINT);
         }
 
     }
@@ -106,9 +107,10 @@ class ProductController
             foreach ($newPhotos['name'] as $key=>$originalName){
                 $filename = $name . "_" . $key . "_" . basename($originalName);
                 $tmp_name = $newPhotos['tmp_name'][$key];
-                $targetPath = __DIR__ . "/../uploads/products/" . $filename;
+                $formatedName = str_replace(" ", "_", $filename);
+                $targetPath = __DIR__ . "/../uploads/products/" . $formatedName;
                 if(move_uploaded_file($tmp_name, $targetPath)){
-                    $newPhotosForProduct[] = '/uploads/products/' . $filename;
+                    $newPhotosForProduct[] = '/uploads/products/' . $formatedName;
                 }
 
             }

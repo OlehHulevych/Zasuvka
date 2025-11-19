@@ -4,9 +4,9 @@
         "name": "Car Audi",
         "userId": 4,
         "photos": [
-            "\/uploads\/products\/Car Audi_0_audi_general.jpg",
-            "\/uploads\/products\/Car Audi_1_audi_old.jpeg",
-            "\/uploads\/products\/Car Audi_2_audi_sport.jpeg"
+            "\/uploads\/products\/Car_Audi_0_audi_general.jpg",
+            "\/uploads\/products\/Car_Audi_1_audi_old.jpeg",
+            "\/uploads\/products\/Car_Audi_2_audi_sport.jpeg"
         ],
         "price": 3000,
         "author": "Hulevych",
@@ -20,10 +20,10 @@
         "name": "Phone Samsung",
         "userId": 4,
         "photos": [
-            "\/uploads\/products\/Phone Samsung_0_Back.png",
-            "\/uploads\/products\/Phone Samsung_1_camera.png",
-            "\/uploads\/products\/Phone Samsung_2_Front.png",
-            "\/uploads\/products\/Phone Samsung_3_product.png"
+            "\/uploads\/products\/Phone_Samsung_0_Back.png",
+            "\/uploads\/products\/Phone_Samsung_1_camera.png",
+            "\/uploads\/products\/Phone_Samsung_2_Front.png",
+            "\/uploads\/products\/Phone_Samsung_3_product.png"
         ],
         "price": " 2000",
         "author": "Hulevych",
@@ -37,9 +37,9 @@
         "name": "Car Bugati",
         "userId": 4,
         "photos": [
-            "\/uploads\/products\/Car Bugati_0_51909.jpg",
-            "\/uploads\/products\/Car Bugati_1_bugatti_1.jpg",
-            "\/uploads\/products\/Car Bugati_2_bugatti_2.jpg"
+            "\/uploads\/products\/Car_Bugati_0_51909.jpg",
+            "\/uploads\/products\/Car_Bugati_1_bugatti_1.jpg",
+            "\/uploads\/products\/Car_Bugati_2_bugatti_2.jpg"
         ],
         "price": " 200",
         "author": "Hulevych",
@@ -69,9 +69,9 @@
         "name": "Clothes of new season",
         "userId": 4,
         "photos": [
-            "\/uploads\/products\/Clothes of new season_0_pexels-kaip-996329.jpg",
-            "\/uploads\/products\/Clothes of new season_1_pexels-karola-g-4495705.jpg",
-            "\/uploads\/products\/Clothes of new season_2_pexels-pixabay-52518.jpg"
+            "\/uploads\/products\/Clothes_of_new_season_0_pexels-kaip-996329.jpg",
+            "\/uploads\/products\/Clothes_of_new_season_1_pexels-karola-g-4495705.jpg",
+            "\/uploads\/products\/Clothes_of_new_season_2_pexels-pixabay-52518.jpg"
         ],
         "price": "1300",
         "author": "Hulevych",
@@ -85,7 +85,7 @@
         "name": "Grand theft auto 5",
         "userId": 4,
         "photos": [
-            "\/uploads\/products\/Grand theft auto 5_0_Grand_Theft_Auto_V.png"
+            "\/uploads\/products\/Grand_theft_auto_5_0_Grand_Theft_Auto_V.png"
         ],
         "price": "400",
         "author": "Hulevych",
@@ -99,7 +99,7 @@
         "name": "Call of duty 4",
         "userId": 4,
         "photos": [
-            "\/uploads\/products\/Call of duty 4_0_Call_of_Duty_4_Modern_Warfare.jpg"
+            "\/uploads\/products\/Call_of_duty_4_0_Call_of_Duty_4_Modern_Warfare.jpg"
         ],
         "price": "400",
         "author": "Hulevych",
@@ -107,5 +107,20 @@
         "currency": "K\u010d",
         "description": "The rules of engagement have been rewritten. From the shadows of Chernobyl to the heat of the Middle East, you are the silent professional standing between order and global collapse.\n\nJoin the SAS and US Marines in a gripping race against a rogue ultranationalist threat. In this war, there are no front lines\u2014only the mission. Check your corners, watch your six, and trust your squad.",
         "category": "Digital goods"
+    },
+    {
+        "id": 8,
+        "name": "Ford Focus",
+        "userId": 4,
+        "photos": [
+            "\/uploads\/products\/Ford_Focus_0_2018_Ford_Focus_ST-Line_EcoBoost_1.0.jpg",
+            "\/uploads\/products\/Ford_Focus_1_images.jpeg"
+        ],
+        "price": "5000",
+        "author": "Hulevych",
+        "phone": "608819232",
+        "currency": "$",
+        "description": "The rules of engagement have been rewritten. From the shadows of Chernobyl to the heat of the Middle East, you are the silent professional standing between order and global collapse.\n\nJoin the SAS and US Marines in a gripping race against a rogue ultranationalist threat. In this war, there are no front lines\u2014only the mission. Check your corners, watch your six, and trust your squad.",
+        "category": null
     }
 ]
