@@ -3,7 +3,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    font-family: "Roboto";
+    font-family: "Roboto", serif;
 }
 
 
@@ -31,7 +31,7 @@ header{
 
 .logo h1{
     margin-left: 10px;
-    font-family: "Montserrat";
+    font-family: "Montserrat", serif;
 }
 .search_bar{
     display: flex;
@@ -189,9 +189,9 @@ h1{
     position: relative;
     width: 100%;
     height: 50vh;
-    background: url('.//backgrounds/event_background.jpg');
+
     background-size: 100% 100%;
-    background-repeat: no-repeat;
+
 }
 .event_section::after{
   content: "";
@@ -354,7 +354,7 @@ h1{
     }
     .categories_inner{
         justify-content: center;
-        padding: 0px;
+        padding: 0;
     }
 
     
@@ -438,7 +438,7 @@ h1{
     gap: 0.4vw;
     position: relative;
     padding: 20px 7px;
-    font-family: "Roboto";
+    font-family: "Roboto", serif;
     border-bottom:1px solid rgba(94, 90, 90, 0.31);
     border-left:1px solid rgba(94, 90, 90, 0.31);;
     border-right:1px solid rgba(94, 90, 90, 0.31);
@@ -522,7 +522,7 @@ h1{
 @media screen and (max-width:769px){
     .ad_listing_inner{
         gap: 1rem;
-        justify-content: none;
+        justify-content: unset;
     }
     .ad_item{
         width: 30%;
@@ -584,13 +584,13 @@ footer{
     min-height: 20vh;
     background-color: #111827;
     color: white;
-    font-family: "Roboto";
+    font-family: "Roboto", serif;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 1rem;
-    padding: 20px 0px;
+    padding: 20px 0;
 }
 
 footer h3{
@@ -663,13 +663,13 @@ footer h3{
     width: 8%;
     cursor: pointer;
     border: none;
-    padding: 8px 0px;
+    padding: 8px 0;
     border-bottom-right-radius:10px ;
     border-top-right-radius:10px ;
 }
 .mobile_search_bar .cancel_button{
     color: white;
-    font-family: "Roboto";
+    font-family: "Roboto", serif;
     cursor: pointer;
     font-size: 20px;
 }
@@ -678,7 +678,7 @@ footer h3{
 }
 @media (max-width:375px){
     .mobile_search_bar_block{
-        padding: 0px;
+        padding: 0;
     }
     .mobile_search_bar{
         padding: 15px 5px;
@@ -692,9 +692,134 @@ footer h3{
     }
     .mobile_search_bar button{
         width: 12%;
-        padding: 4px 0px;
+        padding: 4px 0;
     }
 }
+
+/*user menu bar */
+.user_menu{
+    transition: all .3s ease-in-out;
+    transform: scale(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10000;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.user_menu.active{
+    transform: scale(1);
+}
+
+.user_menu_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+    height: 40vh;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 40px;
+
+
+}
+
+.user_menu_container a{
+    width: 200px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 15px;
+    background-color: #2f66f1;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+
+}
+
+.user_menu_container a:hover,
+.user_menu_container a:focus{
+    color: black;
+    transform: scale(1.05);
+    background-color: #6994f3;
+
+}
+.user_menu_container i:focus,
+.user_menu_container i:hover{
+    transform: scale(1.1);
+}
+
+.user_menu_container i{
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    position: absolute;
+    font-size: 24px;
+    top: 5%;
+    right: 5%;
+    color: black;
+}
+
+@media screen and (max-width: 520px){
+    .user_menu_container{
+        width: 80%;
+        height: 30vh;
+    }
+
+    .user_menu_container a {
+        width: 250px;
+        font-size: 20px;
+    }
+
+    .user_menu_container i {
+        top:10%;
+        right: 10%;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:420px){
+    .user_menu_container a{
+        width: 200px;
+    }
+    .user_menu_container i {
+        top:10%;
+        right: 5%;
+        font-size: 18px;
+    }
+}
+@media screen and (max-height: 1580px) {
+    .user_menu_container{
+        height: 20vh;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .user_menu_container{
+        height: 50vh;
+
+    }
+
+}
+@media screen and (max-height: 450px) {
+    .user_menu_container{
+        height: 50vh;
+
+    }
+
+}
+
+
 
 
 

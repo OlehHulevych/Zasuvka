@@ -12,6 +12,18 @@ document.getElementById('cancel_button').addEventListener('click',(e)=>{
     mobileSearchBar.classList.remove('active')
 })
 
+//user menu functionality
+let user_button = document.getElementById("user_button")
+let user_menu =  document.getElementById("user_menu");
+let user_menu_cancel_menu = document.getElementById("user_menu_cancel_button")
+user_button.addEventListener("click", ()=>{
+    user_menu.classList.add("active");
+})
+user_menu_cancel_menu.addEventListener("click", ()=>{
+    user_menu.classList.remove("active");
+})
+
+//loading content
 document.addEventListener("DOMContentLoaded",async()=>{
     const response = await fetch(config.API_URL + "/product",{
         method:"GET",
