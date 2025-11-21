@@ -5,7 +5,7 @@ require_once __DIR__ . "/../controllers/FavoriteItemController.php";
 require_once  __DIR__ . "/../controllers/AdminController.php";
 
 $uri  = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$uri = str_replace('/server', '', $uri);
+$uri = str_replace('/Zasuvka/server', '', $uri);
 $method = $_SERVER['REQUEST_METHOD'];
 $userController = new UserController();
 $productController = new ProductController();

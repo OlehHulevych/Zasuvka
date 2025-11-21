@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/Zasuvka/client/assets/style_reg.css">
+</head>
+<body>
+    <div class="block">
+        <div class="header">
+            <img class="logo" src="logo.png " alt="🛍️">
+            <h1>Zásuvka</h1>
+        </div>
+        
+        <p class="text1">Vytvořte si účet a začněte nakupovat</p>
+        
+        <form>
+            <label for="name">Jméno a příjmení</label>
+            <input class="inputs" type="text" id="name" name="name" required>
+        
+            <label for="email">Email</label>
+            <input class="inputs" type="email" id="email" name="email" required>
+        
+            <label for="phone">Telefonní číslo</label>
+            <input class="inputs" type="tel" id="phone" name="phone" required>
+
+            <label for="password">Heslo</label>
+            <input class="inputs" type="password" id="password" name="password" required>
+
+            
+            <input class="checkbox" type="checkbox" id="checkbox" name="checkbox" required>
+            <label class="checkbox-label" for="checkbox">Souhlasím s Podmínkami služby a Zásadami ochrany osobních údajů</label>
+            
+            <button type="submit">Vytvořit účet</button>
+        </form>
+        
+        <p class="text2">Již máte účet? <a href="/Zasuvka/client/login.html">Přihlaste se zde</a></p>
+    </div>
+</body>
+</html>

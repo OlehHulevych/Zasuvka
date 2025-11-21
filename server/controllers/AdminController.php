@@ -14,10 +14,10 @@ class AdminController{
 
     public function register(){
 
-        $name = $_POST['name'] ?? null;
-        $email = $_POST['email'] ?? null;
-        $password = $_POST['password']?? null;
-        $phone  = $_POST['phone']??null;
+        $name = trim($_POST['name']) ?? null;
+        $email = trim($_POST['email']) ?? null;
+        $password = trim($_POST['password'])?? null;
+        $phone  = trim($_POST['phone'])??null;
         $role = "admin";
 
         if(!$name || !$email || !$password || !$phone ){
@@ -54,8 +54,8 @@ class AdminController{
     }
     public function login(){
         $loggedUser = null;
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+        $email = trim($_POST['email']);
+        $password = trim($_POST['password']);
 
         if(!$email || !$password){
             http_response_code(400);
@@ -78,9 +78,13 @@ class AdminController{
         }
     }
     public function getAllProducts(){
-        $category = $_GET['category'];
-        $search = $_GET['search'];
-        $page  = $_GET['page'];
+        $category = trim($_GET['category']) ?? null;
+        $search = $_GET['search'] ?? null;
+        $page  = $_GET['page'] ?? null;
+        if(!isset($search)){
+            http_response_code(400);
+            echo json_encode(["message"=>"There is no search query"]);
+        }
         $products = $this->Product->getAll($page, $category, $search);
         echo json_encode(["message"=>"The products are retrieved", "products"=>$products], JSON_PRETTY_PRINT);
 
@@ -119,6 +123,9 @@ class AdminController{
             http_response_code(403);
             echo json_encode(["message"=>"Access denied"], JSON_PRETTY_PRINT);
         }
+        if(!isset($_GET['page'])){
+            http_response_code(400);
+        }
         $page = $_GET['page'];
         $users = $this->User->getAllUser($page);
         if($users){
@@ -135,8 +142,13 @@ class AdminController{
             http_response_code(401);
             echo json_encode(["message"=>"The user is not authorized"],JSON_PRETTY_PRINT);
         }
+        if(!isset($_GET['id'])){
+            http_response_code(400);
+            echo json_encode(["message"=>"The ID is not found"]);
+        }
 
         $id = $_GET['id'];
+
         $result = $this->Product->delete($id, $_SESSION['user_id']);
         if($result){
             echo json_encode(["message"=>"The item was deleted", "result"=>$result],JSON_PRETTY_PRINT);
@@ -151,9 +163,20 @@ class AdminController{
             http_response_code(401);
             echo json_encode(["message"=>"The user is not authorized"],JSON_PRETTY_PRINT);
         }
+        if(!isset($_GET['user_id'])){
+            http_response_code(400);
+            echo json_encode(["message"=>"The user id is not found"]);
+        }
         $id = $_GET['user_id'];
         $result = $this->User->delete($id);
-        echo json_encode(["message"=>"The user is deleted", "result"=>$result]);
+        if($result){
+            echo json_encode(["message"=>"The user is deleted", "result"=>$result]);
+
+        }
+        else{
+            http_response_code(500);
+            echo json_encode(["Something went wring"]);
+        }
     }
 
 
