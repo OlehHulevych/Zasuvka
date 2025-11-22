@@ -17,10 +17,9 @@ class UserController
         $role = $_POST['role'] ?? 'user';
 
         if(!$name || !$email || !$password || !$phone ){
-            echo "checking";
-            http_response_code(400);
+            http_response_code(404);
             echo json_encode(["message"=>"Something is missing.Please check once again"], JSON_PRETTY_PRINT);
-            return;
+
         }
         $photoPath = null;
         if(isset($_FILES['photo'])){
@@ -33,18 +32,17 @@ class UserController
             }
             else{
                 http_response_code(500);
-                echo json_encode(["message"=>"Something went wrong on the server"]);
+                echo json_encode(["message"=>"Something went wrong on the server"],JSON_PRETTY_PRINT);
             }
-            echo "creating";
             $newUser = $this->User->create($name, $email, $photoPath, $phone, $password, $role);
             if($newUser){
                 echo json_encode(["message"=>"The user is created", "user"=>$newUser], JSON_PRETTY_PRINT);
-                echo "success";
+
             }
             else{
-                http_response_code(400);
+                http_response_code(404);
                 echo json_encode(["message"=>"Something went wrong"], JSON_PRETTY_PRINT);
-                echo "error";
+
             }
 
         }

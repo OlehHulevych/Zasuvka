@@ -19,7 +19,7 @@ class User {
     private function saveData ($data)
     {
         file_put_contents($this->file, json_encode($data,JSON_PRETTY_PRINT));
-        echo "The data is saved";
+
     }
 
     public function getAll(){

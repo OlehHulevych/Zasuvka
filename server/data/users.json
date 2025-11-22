@@ -25,5 +25,41 @@
         "phone": "608819232",
         "password": "$2y$12$5xIcxbh4NgjeWYJVljuCM.BtMps\/CLWB7GXMEMxFYVGweJLdDSpqS",
         "role": "user"
+    },
+    "4": {
+        "id": 5,
+        "name": "Artem",
+        "email": "artem@gmail.com",
+        "photoPath": "\/uploads\/avatars\/Artem_artem@gmail.com_cs.jpg",
+        "phone": "+4206078999127",
+        "password": "$2y$10$NtCEdKybdbLS5d0UQpHfqeFc5\/l0sR2wX\/8Uuq4OT3IPyAtac7F8K",
+        "role": "user"
+    },
+    "5": {
+        "id": 6,
+        "name": "Andriy",
+        "email": "Andriy@gmail.com",
+        "photoPath": "\/uploads\/avatars\/Andriy_Andriy@gmail.com_avatar.png",
+        "phone": "+4206078999127",
+        "password": "$2y$12$ViOR9.HBz03g3speHgKcE.msVjZ9phHGb9OJ9l1R1ZF\/evTVKQqDO",
+        "role": "user"
+    },
+    "6": {
+        "id": 7,
+        "name": "Igor",
+        "email": "Igor@gmail.com",
+        "photoPath": "\/uploads\/avatars\/Igor_Igor@gmail.com_cs.jpg",
+        "phone": "+4206078999127",
+        "password": "$2y$10$hBR4f5v070IxsLs2ZV4yh.QuWEQWUttDILtvkC\/7ev6HuKn8JPvo.",
+        "role": "user"
+    },
+    "7": {
+        "id": 8,
+        "name": "Zelensky",
+        "email": "Zelensky@gmail.com",
+        "photoPath": "\/uploads\/avatars\/Zelensky_Zelensky@gmail.com_cs.jpg",
+        "phone": "+4206078999127",
+        "password": "$2y$10$oiKQKwGpnX.zElX5qt350uwlMD5jltzV7pQcOAxn74LWB8JABQ2FW",
+        "role": "user"
     }
 }
