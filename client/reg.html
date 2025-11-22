@@ -18,8 +18,10 @@
         </div>
         
         <p class="text1">Vytvořte si účet a začněte nakupovat</p>
-        
-        <form>
+        <div class="warning_block">
+            The password is not filled
+        </div>
+        <form id="registration-form" method="post" enctype="multipart/form-data">
             <label for="name">Jméno a příjmení</label>
             <input class="inputs" type="text" id="name" name="name" required>
         
@@ -35,11 +37,15 @@
             
             <input class="checkbox" type="checkbox" id="checkbox" name="checkbox" required>
             <label class="checkbox-label" for="checkbox">Souhlasím s Podmínkami služby a Zásadami ochrany osobních údajů</label>
-            
+            <label for="photo">Photo for avatar</label>
+            <input class="hidden_input" type="file" name="photo" id="photo" accept="image/*">
+            <label for="photo" class="custom_button">Zvolte foto</label>
             <button type="submit">Vytvořit účet</button>
         </form>
         
         <p class="text2">Již máte účet? <a href="/Zasuvka/client/login.html">Přihlaste se zde</a></p>
     </div>
+ <script src ="/Zasuvka/client/scripts/ButtonScript.js"></script>
+    <script type="module" src = "/Zasuvka/client/scripts/authScript.js"></script>
 </body>
 </html>
