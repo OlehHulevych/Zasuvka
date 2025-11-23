@@ -59,6 +59,7 @@ h1{
     transition: all 0.5s ease;
     
 }
+
 .user_buttons button:first-child{
     display: none;
 }
@@ -69,6 +70,8 @@ h1{
     padding: 5px;
 
 }
+
+
 
 .user_buttons button:hover{
     border-radius: 10px;
@@ -90,6 +93,11 @@ h1{
 .search_bar button:hover{
     background: rgb(0, 145, 255);
 }
+.user_button.hidden{
+    display: none;
+
+}
+
 
 /*meadia-requests */
 @media (max-width:1000px) {

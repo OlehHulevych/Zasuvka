@@ -57,6 +57,18 @@ document.addEventListener("DOMContentLoaded",async()=>{
 
     })
     box.innerHTML = productHtml;
+    const userResponse = await fetch(config.API_URL+"/user/authorize",{
+        method:"GET"
+    });
+    if(userResponse.ok){
+        let user_button = document.querySelector(".user_button")
+        const data = await userResponse.json();
+        console.log(data);
+    }
+    else{
+        const data = await userResponse.json();
+        console.log(data)
+    }
 })
 
 //                    <img src="${config.API_STATIC}${item.photos[0]}" alt="">
