@@ -21,7 +21,7 @@
         
         <p class="text1">Vítejte zpět! Přihlaste se ke svému účtu</p>
         
-        <form>
+        <form id="login_form" method="post" enctype="multipart/form-data">
             <label for="email">Email</label>
             <input class="inputs" type="email" id="email" name="email" required>
 
@@ -29,10 +29,7 @@
             <input class="inputs" type="password" id="password" name="password" required>
 
             
-            <input class="checkbox" type="checkbox" id="checkbox" name="checkbox" required>
-            <label class="checkbox-label" for="checkbox">Zapamatovat si mě</label>
 
-            <a href="reg.html" class="forgot-password">Zapomněli jste heslo?</a>
             
             <button type="submit">Přihlasit se</button>
         </form>
@@ -41,5 +38,6 @@
 
         <p class="text2">Nemáte účet? <a href="/Zasuvka/client/reg.html">Vytvořte si ho zde</a></p>
     </div>
+    <script type="module" src ="/Zasuvka/client/scripts/Login.js"></script>
 </body>
 </html>
