@@ -97,6 +97,21 @@ h1{
     display: none;
 
 }
+.user_profile{
+    border-radius:50px;
+    display: none;
+}
+
+.user_profile.active{
+    display: inline-block;
+}
+
+.user_avatar{
+    max-width: 40px;
+    max-height: 40px;
+    object-fit: cover;
+
+}
 
 
 /*meadia-requests */

@@ -60,11 +60,11 @@ class UserController
         else{
             $loggedUser = $this->User->login($email, $password);
             if(!$loggedUser){
-                echo json_encode(["message"=>"Email or password is wrong"]);
+                echo json_encode(["message"=>"Email or password is wrong"],JSON_PRETTY_PRINT);
             }
             else{
                 $_SESSION["user_id"] = $loggedUser['id'];
-                echo json_encode(["message"=>"login was succesfull "], JSON_PRETTY_PRINT);
+                echo json_encode(["message"=>"login was succesfull","user_id"=>$loggedUser['id']], JSON_PRETTY_PRINT);
             }
         }
     }

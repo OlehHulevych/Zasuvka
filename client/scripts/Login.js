@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", (e)=>{
                 window.location.href = "/Zasuvka/client"
             }
             else{
-                const data = await response.json;
+                const data = await response.json();
                 console.log(data.message);
             }
         }

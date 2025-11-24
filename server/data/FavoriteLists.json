@@ -18,20 +18,5 @@
         "id": 4,
         "userId": 5,
         "items": []
-    },
-    {
-        "id": 5,
-        "userId": 6,
-        "items": []
-    },
-    {
-        "id": 6,
-        "userId": 7,
-        "items": []
-    },
-    {
-        "id": 7,
-        "userId": 8,
-        "items": []
     }
 ]

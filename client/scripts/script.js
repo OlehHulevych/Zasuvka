@@ -12,6 +12,7 @@ document.getElementById('cancel_button').addEventListener('click',(e)=>{
     mobileSearchBar.classList.remove('active')
 })
 
+
 //user menu functionality
 let user_button = document.getElementById("user_button")
 let user_menu =  document.getElementById("user_menu");
@@ -61,14 +62,40 @@ document.addEventListener("DOMContentLoaded",async()=>{
         method:"GET"
     });
     if(userResponse.ok){
-        let user_button = document.querySelector(".user_button")
         const data = await userResponse.json();
         console.log(data);
+        const {user} = data;
+        sessionStorage.setItem('user_name', user.name)
+        sessionStorage.setItem('user_email', user.email)
+        sessionStorage.setItem('user_phone', user.phone)
+        sessionStorage.setItem('photoPath', user.photoPath);
+
+
+
+
+
+
+
     }
     else{
         const data = await userResponse.json();
         console.log(data)
     }
+
+
+    //user profile functionality
+    const manage_button = document.getElementById("manage_user_button")
+    if(sessionStorage.getItem('user_id')){
+        manage_button.classList.add('hidden');
+        const photoPath = sessionStorage.getItem('photoPath')
+        const avatarPhoto = document.querySelector('.user_avatar')
+        const user_profile = document.querySelector(".user_profile")
+        user_profile.classList.add('active')
+        avatarPhoto.src = config.API_STATIC + photoPath;
+    }
+
 })
+
+
 
 //                    <img src="${config.API_STATIC}${item.photos[0]}" alt="">
