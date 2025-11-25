@@ -8,10 +8,10 @@
 
 
 header{
-    padding: 10px 40px;
+    padding: 10px 30px 10px 10px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 100%;
     max-height: 100px;
     align-items: center;
@@ -52,8 +52,10 @@ h1{
     font-size: 2.8vw;
 }
 .user_buttons{
-    width: 10%;
+    width: 25%;
     display: flex;
+    gap:10px;
+    align-items: center;
     justify-content: end;
     font-size: 20px;
     transition: all 0.5s ease;
@@ -70,6 +72,7 @@ h1{
     padding: 5px;
 
 }
+
 
 
 
@@ -101,6 +104,26 @@ h1{
     border-radius:50px;
     display: none;
 }
+a.add_product_button{
+    display: none;
+    padding: 10px 15px;
+    background-color: #7eaefc;
+    border-radius: 10px;
+    font-family: "Roboto", serif;
+    color: black;
+    text-decoration: none;
+    transition:all .2s ease-in-out;
+    font-weight: 500;
+
+}
+a.add_product_button.active{
+    display: inline-block;
+}
+
+a.add_product_button:hover{
+    background-color: #764ba2;
+    color: white;
+}
 
 .user_profile.active{
     display: inline-block;
@@ -113,6 +136,20 @@ h1{
 
 }
 
+@media screen and (max-width: 1130px) {
+    a.add_product_button{
+        font-size: 14px;
+        padding: 8px 5px;
+
+
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .search_bar{
+        width: 50%;
+    }
+}
 
 /*meadia-requests */
 @media (max-width:1000px) {
@@ -126,19 +163,24 @@ h1{
 }
 
 @media (max-width:768px){
+
+    a.add_product_button{
+        font-size: 12px;
+    }
     .search_bar{
-        width: 60%;
-    }
-    .logo h1{
-        font-size:4vw;
-    }
-     .logo{
         width: 40%;
+    }
+    .user_buttons{
+        width: 30%;
     }
     
    
 }
-@media (max-width:580px) {
+@media (max-width:590px) {
+    a.add_product_button{
+        padding: 5px;
+        font-size: 16px;
+    }
     .search_bar{
         display: none;
     }
@@ -165,6 +207,7 @@ h1{
         width: 25%;
     }
 }
+
 
 
 /*categories section */

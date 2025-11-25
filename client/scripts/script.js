@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded",async()=>{
                     </div>
                     <div class="ad_information">
                         <div class="ad_name">${item.name}</div>
-                        <div class="ad_state">Used</div>
                         <div class="ad_price">${item.price} ${item.currency}</div>
                         <div class="ad_author">${item.author}</div>
                     </div> 
@@ -82,6 +81,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
         console.log(data)
     }
 
+    const add_product_button = document.querySelector('a.add_product_button')
 
     //user profile functionality
     const manage_button = document.getElementById("manage_user_button")
@@ -92,7 +92,23 @@ document.addEventListener("DOMContentLoaded",async()=>{
         const user_profile = document.querySelector(".user_profile")
         user_profile.classList.add('active')
         avatarPhoto.src = config.API_STATIC + photoPath;
+        add_product_button.classList.add('active')
     }
+
+    let x = window.matchMedia("(max-width:590px)")
+    console.log(x)
+    x.addEventListener("change", ()=>{
+        if(x.matches){
+            add_product_button.innerHTML = "<i class=\"fa-solid fa-plus\"></i>"
+        }
+        else{
+            add_product_button.innerHTML = "Add Product"
+        }
+
+
+    })
+
+
 
 })
 
