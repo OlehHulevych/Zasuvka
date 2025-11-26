@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vytvořit nový product</title>
+    <link rel="stylesheet" href="/Zasuvka/client/assets/style_create.css">
+</head>
+<body>
+    <div class="block">
+        <div class="header">
+            <h1>Vytvořit nový produkt</h1>
+        </div>
+        
+        <p class="text1">Vyplňte níže uvedené údaje pro přidání produktu</p>
+        
+        <form id="Add_Product_Form" method="POST" enctype="multipart/form-data">
+            <label for="name">Název produktu <span>*</span></label>
+            <input class="inputs" type="text" id="name" name="name" placeholder="Zadejte název produktu" required>
+            <label for="category-select">Kategorie</label>
+            <select class="inputs" name="category" id="category-select" required >
+                <option value="" hidden selected disabled>Zvolte Kategorii</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Cars">Cars</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Digital goods">Digital goods</option>
+            </select>
+        
+        <div class="price-input">
+            <label for="price">Cena <span>*</span></label>
+            <input class="inputs" type="number" id="price" name="price" min="0" placeholder="0,00" required>
+        </div>
+        
+            <label for="description">Popis</label>
+            <textarea class="inputs" type="text" id="description" name="description" placeholder="Popište vlastnosti, výhody a specifikace produktu..."></textarea>
+
+            <label for="photos">Fotografie produktu</label>
+            <input class="inputs" type="file" id="photos" name="photos[]" multiple>
+
+            <button type="submit">Vytvořit product</button>
+        </form>
+    </div>
+    <script type="module" src="/Zasuvka/client/scripts/AddProduct.js"></script>
+</body>
+</html>

@@ -55,7 +55,6 @@ class UserController
         if(!$email || !$password){
             http_response_code(400);
             echo json_encode(["message"=>"Something is missing"], JSON_PRETTY_PRINT);
-            return;
         }
         else{
             $loggedUser = $this->User->login($email, $password);

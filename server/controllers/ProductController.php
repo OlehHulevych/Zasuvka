@@ -43,12 +43,15 @@ class ProductController
             echo json_encode(["message"=>"The user is not authorized"]);
         }
         $id = $_SESSION['user_id'];
-        $name = $_POST['name'];
-        $category = $_POST['category'];
-        $currency = $_POST['currency'];
-        $price = $_POST['price'];
-        $description = $_POST['description'];
+        $name = trim($_POST['name']);
+        $category = trim($_POST['category']);
+        $price = trim($_POST['price']);
+        $description = trim($_POST['description']);
         $photos = [];
+        if(!$name || !$category || !$price || !$description){
+            echo json_encode(["message"=>"Something is missing"], JSON_PRETTY_PRINT);
+        }
+
         $uploadDir =  __DIR__ . "/../uploads/products/";
         foreach ($_FILES['photos']['name'] as $key=>$originalName){
             $filename = $name . "_" . $key . "_" . basename($originalName);
@@ -65,7 +68,7 @@ class ProductController
         }
 
 
-        $newProduct = $this->Product->create($name, $id, $currency, $price, $photos, $description, $category);
+        $newProduct = $this->Product->create($name, $id, $price, $photos, $description, $category);
         if($newProduct){
             echo json_encode(['message'=>"The product is created", 'product'=>$newProduct], JSON_PRETTY_PRINT);
         }
@@ -83,7 +86,6 @@ class ProductController
         $productId = $_POST['id'] ?? null;
         $name = $_POST['name'] ?? null;
         $price = $_POST['price'] ?? null;
-        $currency = $_POST['currency'] ?? null;
         $description = $_POST['description'] ?? null;
         $deletePhotos = $_POST['delete_photos'] ?? null;
         $newPhotosForProduct = $_POST['new_photos'] ?? null;
@@ -116,7 +118,7 @@ class ProductController
             }
         }
 
-        $updatedProduct = $this->Product->update($productId, $_SESSION['user_id'], $name, $currency, $price, $description, $deletePhotos,$newPhotosForProduct );
+        $updatedProduct = $this->Product->update($productId, $_SESSION['user_id'], $name,  $price, $description, $deletePhotos,$newPhotosForProduct );
         if($updatedProduct){
             echo json_encode(['message'=>"The product is updated", "updatedProduct"=>$updatedProduct], JSON_PRETTY_PRINT);
         }

@@ -17,7 +17,6 @@ class Product{
     private function saveData ($data)
     {
         file_put_contents($this->file, json_encode($data,JSON_PRETTY_PRINT));
-        echo "The data is saved";
     }
 
     public function getAll($page, $category=null , $search=null ){
@@ -43,7 +42,7 @@ class Product{
             return count($items);
         }
         else{
-            null;
+            return null;
         }
     }
     public function getById($id){
@@ -58,18 +57,18 @@ class Product{
 
 
 
-    public function create($name, $userId, $currency, $price, $photos, $description, $category){
+    public function create($name, $userId,  $price, $photos, $description, $category){
         $products = $this->getData();
         $newId= count($products)?end($products)['id']+1:1;
         $productUser = $this->User->getUserById($userId);
-        $newProduct = ["id"=>$newId,"name"=>$name, "userId"=>$userId, "photos"=>$photos, "price"=>$price, "author"=>$productUser['name'], "phone"=>$productUser['phone'], "currency"=>$currency, "description"=>$description, "category"=>$category];
+        $newProduct = ["id"=>$newId,"name"=>$name, "userId"=>$userId, "photos"=>$photos, "price"=>$price, "author"=>$productUser['name'], "phone"=>$productUser['phone'], "description"=>$description, "category"=>$category];
         $products[] = $newProduct;
         $this->saveData($products);
         return $newProduct;
 
     }
 
-    public function update($id, $userId, $name, $currency, $price, $description, $deletePhotos, $newPhotos){
+    public function update($id, $userId, $name, $price, $description, $deletePhotos, $newPhotos){
         $products = $this->getData();
 //        foreach ($deletePhotos as $deletePhoto){
 //            echo "This is" . $deletePhoto;
@@ -81,7 +80,6 @@ class Product{
                     return null;
                 }
                 $product['name'] = $name ?? $product['name'];
-                $product['currency'] = $currency ?? $product['currency'];
                 $product['price'] = $price ?? $product['price'];
                 $product['description'] = $description?? $product['description'];
                 if (!empty($deletePhotos)) {

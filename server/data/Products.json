@@ -1,21 +1,5 @@
 [
     {
-        "id": 1,
-        "name": "Car Audi",
-        "userId": 4,
-        "photos": [
-            "\/uploads\/products\/Car_Audi_0_audi_general.jpg",
-            "\/uploads\/products\/Car_Audi_1_audi_old.jpeg",
-            "\/uploads\/products\/Car_Audi_2_audi_sport.jpeg"
-        ],
-        "price": 3000,
-        "author": "Hulevych",
-        "phone": "608819232",
-        "currency": "$",
-        "description": "This car is amazing espossialy when it is your first car.The car can bring many feeling and create new moments",
-        "category": "Cars"
-    },
-    {
         "id": 2,
         "name": "Phone Samsung",
         "userId": 4,
@@ -28,7 +12,6 @@
         "price": " 2000",
         "author": "Hulevych",
         "phone": "608819232",
-        "currency": "K\u010d",
         "description": "This car is amazing espossialy when it is your first car.The car can bring many feeling and create new moments",
         "category": "Electronics"
     },
@@ -44,7 +27,6 @@
         "price": " 200",
         "author": "Hulevych",
         "phone": "608819232",
-        "currency": "K\u010d",
         "description": "This car is amazing espossialy when it is your first car.The car can bring many feeling and create new moments",
         "category": "Cars"
     },
@@ -60,7 +42,6 @@
         "price": "1300",
         "author": "Hulevych",
         "phone": "608819232",
-        "currency": "$",
         "description": "There is new iphone 32, the top phone of 2033.New design, more power and bigger price",
         "category": "Electronics"
     },
@@ -76,7 +57,6 @@
         "price": "1300",
         "author": "Hulevych",
         "phone": "608819232",
-        "currency": "$",
         "description": "Meet your new uniform. The [Product Name] is designed for the morning commute, the weekend coffee run, and everything in between. Made from breathable, ultra-soft [Material], it fits perfectly from day one\u2014no break-in required.",
         "category": "Clothes"
     },
@@ -90,7 +70,6 @@
         "price": "400",
         "author": "Hulevych",
         "phone": "608819232",
-        "currency": "K\u010d",
         "description": "When a young street hustler, a retired bank robber, and a terrifying psychopath find themselves entangled with some of the most frightening and deranged elements of the criminal underworld, the U.S. government, and the entertainment industry, they must pull off a series of dangerous heists to survive in a ruthless city in which they can trust no one\u2014least of all each other.",
         "category": "Digital goods"
     },
@@ -104,7 +83,6 @@
         "price": "400",
         "author": "Hulevych",
         "phone": "608819232",
-        "currency": "K\u010d",
         "description": "The rules of engagement have been rewritten. From the shadows of Chernobyl to the heat of the Middle East, you are the silent professional standing between order and global collapse.\n\nJoin the SAS and US Marines in a gripping race against a rogue ultranationalist threat. In this war, there are no front lines\u2014only the mission. Check your corners, watch your six, and trust your squad.",
         "category": "Digital goods"
     },
@@ -119,8 +97,22 @@
         "price": "5000",
         "author": "Hulevych",
         "phone": "608819232",
-        "currency": "$",
         "description": "The rules of engagement have been rewritten. From the shadows of Chernobyl to the heat of the Middle East, you are the silent professional standing between order and global collapse.\n\nJoin the SAS and US Marines in a gripping race against a rogue ultranationalist threat. In this war, there are no front lines\u2014only the mission. Check your corners, watch your six, and trust your squad.",
-        "category": null
+        "category": "Cars"
+    },
+    {
+        "id": 9,
+        "name": "Audi 100",
+        "userId": 4,
+        "photos": [
+            "\/uploads\/products\/Audi_100_0_audi_general.jpg",
+            "\/uploads\/products\/Audi_100_1_audi_old.jpeg",
+            "\/uploads\/products\/Audi_100_2_audi_sport.jpeg"
+        ],
+        "price": "30000",
+        "author": "Hulevych",
+        "phone": "608819232",
+        "description": "The Audi 100 and Audi 200 (and sometimes called Audi 5000 in North America and Audi 500 in some markets like New Zealand and South Africa) are primarily mid-size\/executive cars manufactured and marketed by the Audi division of the Volkswagen Group. The car was made from 1968 to 1997 across four generations (C1\u2013C4), with a two-door model available in the first and second generation (C1-C2), and a five-door model available in the last three generations (C2\u2013C4).They also made an 100 Avant in the 1970s.",
+        "category": "Cars"
     }
 ]

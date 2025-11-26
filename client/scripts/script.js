@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
                     </div>
                     <div class="ad_information">
                         <div class="ad_name">${item.name}</div>
-                        <div class="ad_price">${item.price} ${item.currency}</div>
+                        <div class="ad_price">${item.price} Kč</div>
                         <div class="ad_author">${item.author}</div>
                     </div> 
                        </div>`
