@@ -15,6 +15,10 @@ class UserController
         $password = $_POST['password']?? null;
         $phone  = $_POST['phone']??null;
         $role = $_POST['role'] ?? 'user';
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            http_response_code(400);
+            echo json_encode(["message"=>"Bad format of email"],JSON_PRETTY_PRINT);
+        }
 
         if(!$name || !$email || !$password || !$phone ){
             http_response_code(404);

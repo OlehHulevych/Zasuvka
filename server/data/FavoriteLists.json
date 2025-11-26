@@ -18,5 +18,10 @@
         "id": 4,
         "userId": 5,
         "items": []
+    },
+    {
+        "id": 5,
+        "userId": 6,
+        "items": []
     }
 ]

@@ -34,5 +34,14 @@
         "phone": "+4206078999127",
         "password": "$2y$10$eKuaj1t1mvVldGTyTh4vn.EuiKSmcSe3PH41pT9Vvp5ft0wQZfpz6",
         "role": "user"
+    },
+    "5": {
+        "id": 6,
+        "name": "Tomio",
+        "email": "tomioOkamura@gmail.com",
+        "photoPath": "\/uploads\/avatars\/Tomio_tomioOkamura@gmail.com_images.jpeg",
+        "phone": "+4206699038493289044398904830298",
+        "password": "$2y$10$oxMFPgvYpliXxp9jSgY.0e0FxR.hTzc.tBjzKNDfw\/r4mGL7oCyeS",
+        "role": "user"
     }
 }

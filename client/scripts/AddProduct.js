@@ -5,13 +5,12 @@ import {config} from "./config.js";
         window.location.href = ""
     }
 })*/
-
+const warning_block = document.querySelector("div.warning_block")
 const addForm = document.getElementById("Add_Product_Form")
 addForm.addEventListener('submit', async(e)=>{
     e.preventDefault();
     const newFormData = new FormData(addForm);
     console.log(newFormData)
-
         const response = await fetch(config.API_URL + "/product", {
             method:"POST",
             body:newFormData,
@@ -20,6 +19,7 @@ addForm.addEventListener('submit', async(e)=>{
         if(response.ok){
             const data = await response.json();
             console.log(data);
+            window.location.href = "/Zasuvka/client/"
         }
         else{
             console.log(response)
