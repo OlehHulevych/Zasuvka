@@ -210,6 +210,10 @@ a.add_product_button:hover{
     .logo img{
         width: 25%;
     }
+    .user_avatar{
+        width: 40px;
+        height: 40px;
+    }
 }
 
 

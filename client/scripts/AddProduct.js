@@ -1,10 +1,10 @@
 import {config} from "./config.js";
 
-/*document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded",()=>{
     if(sessionStorage.getItem('user_id')==null){
-        window.location.href = ""
+        window.location.href = "/Zasuvka/client/login.html"
     }
-})*/
+})
 const warning_block = document.querySelector("div.warning_block")
 const addForm = document.getElementById("Add_Product_Form")
 addForm.addEventListener('submit', async(e)=>{
