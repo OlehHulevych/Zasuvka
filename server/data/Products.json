@@ -9,7 +9,7 @@
             "\/uploads\/products\/Phone_Samsung_2_Front.png",
             "\/uploads\/products\/Phone_Samsung_3_product.png"
         ],
-        "price": " 2000",
+        "price": 2000,
         "author": "Hulevych",
         "phone": "608819232",
         "description": "This car is amazing espossialy when it is your first car.The car can bring many feeling and create new moments",
@@ -24,7 +24,7 @@
             "\/uploads\/products\/Car_Bugati_1_bugatti_1.jpg",
             "\/uploads\/products\/Car_Bugati_2_bugatti_2.jpg"
         ],
-        "price": " 200",
+        "price": 200,
         "author": "Hulevych",
         "phone": "608819232",
         "description": "This car is amazing espossialy when it is your first car.The car can bring many feeling and create new moments",
@@ -39,7 +39,7 @@
             "\/uploads\/products\/Iphone_1_pexels-jessbaileydesign-788946.jpg",
             "\/uploads\/products\/Iphone_2_X2yBu0m.png"
         ],
-        "price": "1300",
+        "price": 1300,
         "author": "Hulevych",
         "phone": "608819232",
         "description": "There is new iphone 32, the top phone of 2033.New design, more power and bigger price",
@@ -54,7 +54,7 @@
             "\/uploads\/products\/Clothes_of_new_season_1_pexels-karola-g-4495705.jpg",
             "\/uploads\/products\/Clothes_of_new_season_2_pexels-pixabay-52518.jpg"
         ],
-        "price": "1300",
+        "price": 1300,
         "author": "Hulevych",
         "phone": "608819232",
         "description": "Meet your new uniform. The [Product Name] is designed for the morning commute, the weekend coffee run, and everything in between. Made from breathable, ultra-soft [Material], it fits perfectly from day one\u2014no break-in required.",
@@ -67,7 +67,7 @@
         "photos": [
             "\/uploads\/products\/Grand_theft_auto_5_0_Grand_Theft_Auto_V.png"
         ],
-        "price": "400",
+        "price": 400,
         "author": "Hulevych",
         "phone": "608819232",
         "description": "When a young street hustler, a retired bank robber, and a terrifying psychopath find themselves entangled with some of the most frightening and deranged elements of the criminal underworld, the U.S. government, and the entertainment industry, they must pull off a series of dangerous heists to survive in a ruthless city in which they can trust no one\u2014least of all each other.",
@@ -80,7 +80,7 @@
         "photos": [
             "\/uploads\/products\/Call_of_duty_4_0_Call_of_Duty_4_Modern_Warfare.jpg"
         ],
-        "price": "400",
+        "price": 400,
         "author": "Hulevych",
         "phone": "608819232",
         "description": "The rules of engagement have been rewritten. From the shadows of Chernobyl to the heat of the Middle East, you are the silent professional standing between order and global collapse.\n\nJoin the SAS and US Marines in a gripping race against a rogue ultranationalist threat. In this war, there are no front lines\u2014only the mission. Check your corners, watch your six, and trust your squad.",
@@ -94,7 +94,7 @@
             "\/uploads\/products\/Ford_Focus_0_2018_Ford_Focus_ST-Line_EcoBoost_1.0.jpg",
             "\/uploads\/products\/Ford_Focus_1_images.jpeg"
         ],
-        "price": "5000",
+        "price": 5000,
         "author": "Hulevych",
         "phone": "608819232",
         "description": "The rules of engagement have been rewritten. From the shadows of Chernobyl to the heat of the Middle East, you are the silent professional standing between order and global collapse.\n\nJoin the SAS and US Marines in a gripping race against a rogue ultranationalist threat. In this war, there are no front lines\u2014only the mission. Check your corners, watch your six, and trust your squad.",
@@ -109,10 +109,25 @@
             "\/uploads\/products\/Audi_100_1_audi_old.jpeg",
             "\/uploads\/products\/Audi_100_2_audi_sport.jpeg"
         ],
-        "price": "30000",
+        "price": 30000,
         "author": "Hulevych",
         "phone": "608819232",
         "description": "The Audi 100 and Audi 200 (and sometimes called Audi 5000 in North America and Audi 500 in some markets like New Zealand and South Africa) are primarily mid-size\/executive cars manufactured and marketed by the Audi division of the Volkswagen Group. The car was made from 1968 to 1997 across four generations (C1\u2013C4), with a two-door model available in the first and second generation (C1-C2), and a five-door model available in the last three generations (C2\u2013C4).They also made an 100 Avant in the 1970s.",
         "category": "Cars"
+    },
+    {
+        "id": 10,
+        "name": "Gucci clothes",
+        "userId": 6,
+        "photos": [
+            "\/uploads\/products\/Gucci_clothes_0_92af397ac2de2bf71ae3dc3836d8e3e7.jpg",
+            "\/uploads\/products\/Gucci_clothes_1_HeroCategory-Mobile_Gucci-DIGITAL-STORIES-OCT25-250918-GUCCI-FW25-10-258_001_Default.jpeg",
+            "\/uploads\/products\/Gucci_clothes_2_images.jpeg"
+        ],
+        "price": 500,
+        "author": "Tomio",
+        "phone": "+4206699038493289044398904830298",
+        "description": "Gucci was founded in 1921 by Guccio Gucci (1881\u20131953) in Florence, Tuscany. Under the direction of Aldo Gucci (son of Guccio), Gucci became a global brand, and was considered emblematic of the Italian economic miracle. Following family feuds during the 1980s, the Gucci family was entirely ousted from the capital of the company by 1993. After this crisis, the brand was revived and in 1999 Gucci became a subsidiary of the French conglomerate PPR, which later renamed itself to Kering.",
+        "category": "Digital goods"
     }
 ]

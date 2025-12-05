@@ -21,8 +21,10 @@ class ProductController
     public function getAll(){
         $category = $_GET['category'] ?? null;
         $search = $_GET['search'] ?? null;
-        $page  = $_GET['page'] ?? null;
-        $products = $this->Product->getAll($page, $category, $search);
+        $page  = $_GET['page'] ?? 0;
+        $lowcost = $_GET['low_cost'] ?? 0;
+        $bigcost = $_GET["big_cost"] ?? 0;
+        $products = $this->Product->getAll($page, $category, $search, (int)$lowcost, (int)$bigcost);
         echo json_encode(["message"=>"The products are retrieved", "products"=>$products], JSON_PRETTY_PRINT);
 
     }
@@ -45,7 +47,7 @@ class ProductController
         $id = $_SESSION['user_id'];
         $name = trim($_POST['name']);
         $category = trim($_POST['category']);
-        $price = trim($_POST['price']);
+        $price = (int)$_POST['price'];
         $description = trim($_POST['description']);
         $photos = [];
         if(!$name || !$category || !$price || !$description){

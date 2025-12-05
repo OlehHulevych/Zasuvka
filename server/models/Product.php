@@ -19,19 +19,31 @@ class Product{
         file_put_contents($this->file, json_encode($data,JSON_PRETTY_PRINT));
     }
 
-    public function getAll($page, $category=null , $search=null ){
+    public function getAll($page, $category=null , $search=null, $lowcost=null, $bigcost=null ){
+
         $items = $this->getData();
         if($category){
-            $filteredItems = array_filter($items, fn($item)=> $item['category']==$category);
-            return $this->paginate($filteredItems,$page);
+            $items = array_filter($items, fn($item)=> $item['category']==$category);
+
         }
-        elseif($search){
-            $filteredItems = array_filter($items,  fn($item)=>str_contains(strtolower($item['name']), strtolower($search)));
-            return $this->paginate($filteredItems,$page);
+        if($search){
+            $items = array_filter($items,  fn($item)=>str_contains(strtolower($item['name']), strtolower($search)));
+
         }
-        else{
-            return $this->paginate($items, $page);
+        if($lowcost || $bigcost){
+            if($bigcost && !$lowcost){
+                $items = array_filter($items, fn($item)=>$item['price']<=$bigcost);
+            }
+            else if($lowcost && !$bigcost){
+                $items = array_filter($items,fn($item)=>$item['price']>$lowcost);
+            }
+            else{
+                $items = array_filter($items, fn($item)=> $item['price']>=$lowcost && $item['price']<=$bigcost);
+            }
         }
+
+        return $this->paginate($items, $page);
+
 
     }
 
@@ -80,7 +92,7 @@ class Product{
                     return null;
                 }
                 $product['name'] = $name ?? $product['name'];
-                $product['price'] = $price ?? $product['price'];
+                $product['price'] = (int)$price ?? $product['price'];
                 $product['description'] = $description?? $product['description'];
                 if (!empty($deletePhotos)) {
                     foreach ($deletePhotos as $deletePhoto){
