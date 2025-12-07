@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Zasuvka/client/assets/style_profil.css">
+    <title>Můj profil</title>
+</head>
+<body>
+    <div class="blockView">
+        <h2 class="text1">Můj profil</h2>
+        <div class="text2">Spravujte své osobní údaje</div>
+
+        <img class="avatar" id="avatar"  src="" alt="foto">
+        <div class="name text2">Jan Kočí</div>
+
+
+        <label for="email">Email</label>
+        <input class="inputs" type="email" id="email" name="email" value="Kočí52@cvut.ru" disabled>
+
+        <label for="phone">Telefonní číslo</label>
+        <input class="inputs" type="tel" id="phone" name="phone" value="722 345 609" disabled>
+
+        <label for="password">Heslo</label>
+        <input class="inputs" type="password" id="password" name="password" value="⬤⬤⬤⬤⬤⬤⬤⬤" disabled>
+
+        <div class="btn">    
+            <button class="edit">Upravit profil</button>
+        </div>
+    </div>
+
+    <form class="blockView2">
+        <h2 class="text1">Správa profilu</h2>
+        <div class="text2">Spravujte své osobní údaje</div>
+
+        <div class="avatar-block">
+            <img class="avatar" src="/Zasuvka/client/assets/photos/monesy.jpg" alt="foto">
+
+            <label for="avatar-input" class="camera-button" title="Změnit fotografii">
+                <img src="/Zasuvka/client/assets/photos/free-icon-camera-685655(2).png" alt="Camera" class="camera-icon">
+            </label>
+            <input type="file" id="avatar-input" class="avatar-input">
+        </div>
+
+        <label for="name">Jméno a příjmení</label>
+        <input class="inputs inputs2" type="text" id="name" name="name" value="Jan Kočí">
+
+        <label for="email">Email</label>
+        <input class="inputs inputs2" type="email" id="email" name="email" value="Kočí52@cvut.ru">
+
+        <label for="phone">Telefonní číslo</label>
+        <input class="inputs inputs2" type="tel" id="phone" name="phone" value="722 345 609">
+
+        <label for="password">Heslo</label>
+        <input class="inputs inputs2" type="password" id="password" name="password" value="⬤⬤⬤⬤⬤⬤⬤⬤">
+
+        <div class="btn">
+            <button type="button" class="cansel btn2">Zrušit</button>
+            <button type="submit" class="save btn2">Uložit</button>
+        </div>
+    </form>
+    <script type="module" src="/Zasuvka/client/scripts/profil.js"></script>
+</body>
+</html>

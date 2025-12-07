@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    cursor: default;
+}
+
+body {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.blockView {
+    background: #f7f6f6;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    max-width: 400px;
+    width: 90%;
+    height: 90%;
+}
+
+.avatar-block {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px auto;
+}
+
+.avatar {
+    border: 1px solid #bdc4cb;
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+    background: #e4e8ec;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.camera-button {
+    margin: 0;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 36px;
+    height: 36px;
+    background-color: #0a66ff;;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid #f7f6f6;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.camera-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+.camera-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.avatar-input {
+    display: none;
+}
+
+.avatar-block:hover .avatar {
+    transition: all 0.2s ease;
+    opacity: 0.9; }
+
+.text1 {
+    text-align: center;
+    color: #667eea;
+    font-size: 25px;
+}
+
+.text2 {
+    text-align: center;
+    margin: 12px 0 20px 0  ;
+    font-size: 15px;
+    color: #666;
+}
+
+.name {
+    font-size: 20px;
+    color: #333;
+    font-family: sans-serif;
+}
+
+label {
+    display: block;
+    margin: 0 0 8px 0;
+    color: #555;
+    font-size: 15px;
+}
+
+.inputs {
+    width: 100%;
+    padding: 13px 10px;
+    border: 1px solid #bdc4cb;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #e4e8ec;
+    margin: auto auto 20px auto;
+    color: #333;
+}
+
+.btn {
+    display: flex;
+    justify-content: end;
+}
+
+button {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 0;
+    cursor:pointer;
+    background: #0a66ff;
+    color: #fff;
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.03);
+    background-color: #2980b9;
+}
+
+.blockView2 {
+    display: none;
+    background: #f7f6f6;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    max-width: 400px;
+    width: 90%;
+}
+
+.inputs2 {
+    background: #f7f6f6;
+
+}
+
+
+.inputs2:focus {
+    transition: all 0.3s;
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(97, 123, 239, 0.1);
+    cursor: text;
+}
+
+.inputs2:hover {
+    cursor: text;
+}
+
+.btn2 {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.cansel {
+    background-color: #bac0ca;
+    position: relative;
+    right: 10px;
+}
+
+.cansel:hover {
+    background-color: #9ea4ad;
+}
