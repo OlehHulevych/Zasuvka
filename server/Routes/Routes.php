@@ -23,9 +23,7 @@ elseif($uri=="/user/login" && $method === 'POST'){
 elseif($uri=="/user" && $method === 'PUT'){
     $userController->update();
 }
-elseif ($uri == "/user/avatar" && $method === 'POST'){
-    $userController->updateAvatar();
-}
+
 elseif ($uri == '/user' && $method === 'GET'){
     $userController->getALl();
 }
