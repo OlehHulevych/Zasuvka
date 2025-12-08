@@ -20,7 +20,7 @@ if($uri=="/user/register" && $method === 'POST'){
 elseif($uri=="/user/login" && $method === 'POST'){
     $userController->login();
 }
-elseif($uri=="/user" && $method === 'PUT'){
+elseif($uri=="/user/update" && $method === 'POST'){
     $userController->update();
 }
 

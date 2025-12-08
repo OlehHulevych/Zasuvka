@@ -18,20 +18,58 @@ cancel.addEventListener('click', () => {
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    let name = document.querySelector("input.inputs.inputs2#name")
+
     let name2 = document.querySelector(".name");
-    let email = document.querySelector("input.inputs.inputs2#email");
-    let phone = document.querySelector("input.inputs.inputs2#phone");
+    let email = document.querySelector("#email");
+    let phone = document.querySelector("#phone");
     let avatar = document.querySelector(".avatar#avatar");
 
     if(!sessionStorage.getItem("user_id")){
         window.location.href = "/Zasuvka/client/index.html"
     }
-    name.value = sessionStorage.getItem("user_name")
+
     name2.textContent = sessionStorage.getItem("user_name")
     email.value = sessionStorage.getItem("user_email")
     phone.value = sessionStorage.getItem("user_phone")
     avatar.src = config.API_STATIC + sessionStorage.getItem("photoPath")
 
-    let updateButton = document.getElementById()
+    let updateForm = document.getElementById("update_form")
+    updateForm.addEventListener("submit", async (e)=>{
+        e.preventDefault()
+        const formData = new FormData(updateForm)
+        for (const [key, value] of [...formData.entries()]) {
+            // 1. Handle String Inputs (Trim and check for empty)
+            if (typeof value === 'string') {
+                if (value.trim() === "") {
+                    formData.delete(key);
+                }
+            }
+            // 2. Handle File Inputs (Check if size is 0)
+            else if (value instanceof File) {
+                if (value.size === 0) {
+                    formData.delete(key);
+                }
+            }
+        }
+
+
+
+        console.log(formData)
+
+
+
+        const response = await fetch(config.API_URL+"/user/update",{
+            method:"POST",
+            body:formData,
+            credentials:"include"
+        })
+        if(response.ok){
+            const result = await response.json()
+            console.log(result)
+            window.location.href = "/Zasuvka/client"
+        }
+        else{
+            console.log(response)
+        }
+    })
 })

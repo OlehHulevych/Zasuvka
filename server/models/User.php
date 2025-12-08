@@ -105,13 +105,12 @@ class User {
                  $user['name'] = $name ?? $user['name'];
                  $user['email'] = $email ?? $user['email'];
                  $user['phone'] = $phone ?? $user['phone'];
-                 $user['password'] = $password?password_hash($password, PASSWORD_DEFAULT) : $user['password'];
+                 $user['password'] = $password ? password_hash($password, PASSWORD_DEFAULT) : $user['password'];
                  $updatedUser = $user;
                  break;
              }
         }
         if(isset($updatedUser)){
-            echo "The user is updated";
             $this->saveData($users);
             return $updatedUser;
         }

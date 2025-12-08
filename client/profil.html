@@ -12,47 +12,45 @@
         <div class="text2">Spravujte své osobní údaje</div>
 
         <img class="avatar" id="avatar"  src="" alt="foto">
-        <div class="name text2">Jan Kočí</div>
+        <div class="name text2"></div>
 
 
         <label for="email">Email</label>
-        <input class="inputs" type="email" id="email" name="email" value="Kočí52@cvut.ru" disabled>
+        <input class="inputs" type="email" id="email" name="email"  disabled>
 
         <label for="phone">Telefonní číslo</label>
         <input class="inputs" type="tel" id="phone" name="phone" value="722 345 609" disabled>
 
-        <label for="password">Heslo</label>
-        <input class="inputs" type="password" id="password" name="password" value="⬤⬤⬤⬤⬤⬤⬤⬤" disabled>
 
         <div class="btn">    
             <button class="edit">Upravit profil</button>
         </div>
     </div>
 
-    <form class="blockView2">
+    <form class="blockView2" id="update_form" enctype="multipart/form-data" method="post">
         <h2 class="text1">Správa profilu</h2>
         <div class="text2">Spravujte své osobní údaje</div>
 
         <div class="avatar-block">
             <img class="avatar" src="/Zasuvka/client/assets/photos/monesy.jpg" alt="foto">
 
-            <label for="avatar-input" class="camera-button" title="Změnit fotografii">
+            <label for="photo" class="camera-button" title="Změnit fotografii">
                 <img src="/Zasuvka/client/assets/photos/free-icon-camera-685655(2).png" alt="Camera" class="camera-icon">
             </label>
-            <input type="file" id="avatar-input" class="avatar-input">
+            <input type="file" id="photo" name = "photo" class="avatar-input">
         </div>
 
         <label for="name">Jméno a příjmení</label>
-        <input class="inputs inputs2" type="text" id="name" name="name" value="Jan Kočí">
+        <input class="inputs inputs2" type="text" id="name" name="name"  >
 
         <label for="email">Email</label>
-        <input class="inputs inputs2" type="email" id="email" name="email" value="Kočí52@cvut.ru">
+        <input class="inputs inputs2" type="email" id="email" name="email" >
 
         <label for="phone">Telefonní číslo</label>
-        <input class="inputs inputs2" type="tel" id="phone" name="phone" value="722 345 609">
+        <input class="inputs inputs2" type="tel" id="phone" name="phone"  >
 
         <label for="password">Heslo</label>
-        <input class="inputs inputs2" type="password" id="password" name="password" value="⬤⬤⬤⬤⬤⬤⬤⬤">
+        <input class="inputs inputs2" type="password" id="password" name="password" >
 
         <div class="btn">
             <button type="button" class="cansel btn2">Zrušit</button>

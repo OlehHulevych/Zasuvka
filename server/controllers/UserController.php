@@ -90,7 +90,7 @@ class UserController
         $foundedUser = $this->User->getUserById($id);
         if(!$foundedUser){
             http_response_code(400);
-            echo json_encode(["message"=>"The user is not found","status"=>false]);
+            echo json_encode(["message"=>"The user is not found","status"=>false],JSON_PRETTY_PRINT);
         }
         if(isset($_FILES['photo'])){
             $uploadDir = __DIR__ . "/../uploads/avatars/";
@@ -104,16 +104,13 @@ class UserController
             }
             else{
                 http_response_code(500);
-                echo json_encode(["message"=>"Something went wrong","status"=>false]);
+                echo json_encode(["message"=>"Something went wrong with photo","status"=>false],JSON_PRETTY_PRINT);
             }
         }
-        else{
-            http_response_code(400);
-            echo json_encode(["message"=>"There is no any photo","status"=>false]);
-        }
 
 
-        echo "This is id: " . $id;
+
+        //echo "This is id: " . $id;
         $updatedUser = $this->User->update($id, $name, $email, $phone, $password);
         if($updatedUser){
             echo json_encode(["message"=>"The user is updated", "user"=>$updatedUser, "status"=>true], JSON_PRETTY_PRINT);
