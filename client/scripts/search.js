@@ -1,9 +1,15 @@
 import {config} from "./config";
 
-export const searchFunction = async (e,query)=>{
+export const searchFunction = async (e)=>{
+    const queryString = window.location.search
+    const urlParams = new URLSearchParams(queryString)
+    const query  = urlParams.get('query')?urlParams.get('query'):null
+    const category =  urlParams.get('category')?urlParams.get('category'):null
+    const lowCost = urlParams.get('lowcost')?urlParams.get('lowcost'):null
+    const bigCost = urlParams.get('bigcost')?urlParams.get('bigcost'):null
     e.preventDefault()
     let container = document.getElementsByClassName(".container")
-    const response = await fetch(config.API_URL+`/product?search=${query}`,{
+    const response = await fetch(config.API_URL+`/product?search=${query}&category=${category}&big_cost=${bigCost}&low_cost=${lowCost}`,{
         method:"GET",
         headers:{
             'Content-Type':'application/json'
@@ -43,3 +49,5 @@ export const searchFunction = async (e,query)=>{
     }
 
 }
+
+document.addEventListener("DOMContentLoaded", searchFunction)

@@ -51,6 +51,11 @@ header{
 h1{
     font-size: 2.8vw;
 }
+.favorites_button a {
+    text-decoration: none;
+    color: black;
+    text-underline: none;
+}
 .user_buttons{
     width: 25%;
     display: flex;

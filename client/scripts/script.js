@@ -24,6 +24,27 @@ user_menu_cancel_menu.addEventListener("click", ()=>{
     user_menu.classList.remove("active");
 })
 
+let searchBarForm = document.getElementById("search_bar")
+
+searchBarForm.addEventListener("submit",(e)=>{
+    e.preventDefault()
+    const query = searchBarForm.elements['search'].value;
+    window.location.href = `/Zasuvka/client/result.html?query=${encodeURIComponent(query)}`
+})
+
+const category_buttons = document.querySelectorAll(".category-item");
+
+category_buttons.forEach((category_button)=>{
+    category_button.addEventListener("click",(e)=>{
+        e.preventDefault()
+        const query = category_button.dataset.category;
+        window.location.href = `/Zasuvka/client/result.html?category=${encodeURIComponent(query)}`
+    })
+})
+
+
+
+
 //loading content
 document.addEventListener("DOMContentLoaded",async()=>{
     const response = await fetch(config.API_URL + "/product",{
