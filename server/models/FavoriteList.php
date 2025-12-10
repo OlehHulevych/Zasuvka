@@ -38,7 +38,7 @@ class FavoriteList{
     }
     public function getByUserId($userId){
         $favoriteLists = $this->getAll();
-        foreach ($favoriteLists as $favoriteList){
+        foreach ($favoriteLists as &$favoriteList){
             if($favoriteList['userId'] == $userId){
                 return $favoriteList;
             }
