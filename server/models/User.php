@@ -127,6 +127,29 @@ class User {
         $paginated = array_slice($items, $offset,$limit);
         return ["items"=>$paginated, "totalPages"=>$totalPages, "page"=>$page];
     }
+    public function promoteToAdminOrUser(int $id){
+        $users = $this->getData();
+        $updatedUser = null;
+        foreach($users as &$user){
+            if($user['id']==$id){
+                $updatedUser = $user;
+                if($user['role']=='user'){
+                    $user['role'] = 'admin';
+                }
+                else{
+                    $user['role'] = 'user';
+                }
+
+            }
+        }
+        if(isset($updatedUser)){
+            $this->saveData($users);
+            return $updatedUser;
+        }
+        else{
+            return null;
+        }
+    }
     public function delete($id){
         $users = $this->getData();
         $userForDeleting  = $this->getUserById($id);

@@ -33,7 +33,7 @@
         "photoPath": "\/uploads\/avatars\/Taras_taras@gmail.com_avatar.png",
         "phone": "+4206078999127",
         "password": "$2y$10$eKuaj1t1mvVldGTyTh4vn.EuiKSmcSe3PH41pT9Vvp5ft0wQZfpz6",
-        "role": "user"
+        "role": "admin"
     },
     "5": {
         "id": 6,
@@ -43,5 +43,14 @@
         "phone": "+4206078999127",
         "password": "$2y$10$oxMFPgvYpliXxp9jSgY.0e0FxR.hTzc.tBjzKNDfw\/r4mGL7oCyeS",
         "role": "user"
+    },
+    "6": {
+        "id": 7,
+        "name": "Oleh",
+        "email": "adminoleh@gmail.com",
+        "photoPath": "\/uploads\/avatars\/Oleh_adminoleh@gmail.com_admin.png",
+        "phone": "666888999",
+        "password": "$2y$10$vIpwD1DTbJL8OoGdznnAJOIUW..lxQxRPPujY6P4VBscRlO2.OD9W",
+        "role": "admin"
     }
 }

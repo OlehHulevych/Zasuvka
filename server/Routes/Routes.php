@@ -56,20 +56,11 @@ elseif ($uri == "/favoriteItem" && $method === "POST"){
     $favoriteItemController->create();
 }
 
-elseif($uri == "/favoriteItem" && $method === "GET"){
-    $favoriteItemController->getFavorites();
-}
-elseif($uri == "/favoriteItem" && $method === "DELETE"){
-    $favoriteItemController->deleteFavorite();
-}
-elseif ($uri == "/admin/register" && $method === "POST"){
-    $adminController->register();
-}
-elseif ($uri == "/admin/login" && $method === "POST"){
-    $adminController->login();
-}
 elseif($uri == "/admin/user" && $method === "GET"){
     $adminController->getAllUsers();
+}
+elseif($uri == "/admin/user/promote" && $method === "GET"){
+    $adminController->toPromote();
 }
 elseif($uri == "/admin/user/count" && $method === "GET"){
     $adminController->getCounOfUsers();
