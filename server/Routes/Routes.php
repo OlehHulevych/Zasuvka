@@ -58,6 +58,13 @@ elseif ($uri == "/product" && $method === "DELETE"){
 elseif ($uri == "/favoriteItem" && $method === "POST"){
     $favoriteItemController->create();
 }
+elseif($uri == "/favorites" && $method ==="GET"){
+    $favoriteItemController->getFavorites();
+}
+
+elseif($uri == "/favoriteItem" && $method ==="DELETE"){
+   $favoriteItemController->deleteFavorite();
+}
 
 elseif($uri == "/admin/user" && $method === "GET"){
     $adminController->getAllUsers();

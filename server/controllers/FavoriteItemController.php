@@ -19,7 +19,7 @@ class FavoriteItemController{
             http_response_code(401);
             echo json_encode(["message"=>"Access denies.User is not authorized"], JSON_PRETTY_PRINT);
         }
-        $productId = $_POST['productId'];
+        $productId = $_GET['id'];
         $result = $this->FavoriteListItem->create($_SESSION['user_id'], $productId);
         if($result){
             echo json_encode(["message"=>"the favorite item was created", "favoriteItem"=>$result]);

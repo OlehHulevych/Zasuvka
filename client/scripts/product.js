@@ -1,4 +1,6 @@
 import {config} from "./config.js";
+import {checkInProducts} from "./checkProductInFavorites.js";
+import {addOrDeleteProductFromFavorites} from "./addProductToFavorites.js";
 
 
 const contactButton = document.querySelector(".contact-button");
@@ -62,6 +64,10 @@ document.addEventListener("DOMContentLoaded", async (e)=>{
     if(response.ok){
         const data = await response.json();
         await parsingProduct(data.item.name, data.item.description, data.item.photos, data.item.price,data.item.userId)
+        const isInFavorites = await checkInProducts(data.item.id);
+        if(isInFavorites){
+            document.getElementById("favoriteCheckbox").checked = true;
+        }
 
     }
 
@@ -73,4 +79,13 @@ document.addEventListener("DOMContentLoaded", async (e)=>{
             mainImage.src = smallImg.src;
         });
     });
+    const favoriteCheckBox = document.getElementById("favoriteCheckbox");
+    favoriteCheckBox.addEventListener("click", async ()=>{
+        if(!favoriteCheckBox.checked){
+            await addOrDeleteProductFromFavorites(true, product_id)
+        }
+        else{
+            await addOrDeleteProductFromFavorites(false,product_id)
+        }
+    })
 })

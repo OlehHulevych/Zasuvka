@@ -22,7 +22,17 @@
     {
         "id": 5,
         "userId": 6,
-        "items": []
+        "items": [
+            {
+                "id": 1,
+                "name": null,
+                "price": null,
+                "currency": null,
+                "photo": null,
+                "productId": null,
+                "FavoriteListId": 5
+            }
+        ]
     },
     {
         "id": 6,
