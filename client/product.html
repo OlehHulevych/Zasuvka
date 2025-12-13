@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="/Zasuvka/client/assets/style_product.css">
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <button class="back-button" id="backButton">
+                <a href="/Zasuvka/client/">← Zpět na hlavní stránku</a>
+            </button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="container">
+            <div class="container2">
+
+                <div class="images">
+                    <div class="main-image-container">
+                        <img id="main_photo" src="/Zasuvka/client/assets/photos/Snímek obrazovky 2025-12-10 125017.png"
+                                alt="Hlavní fotografie produktu"
+                                class="main-image">
+                    </div>
+                    <div id="image_container" class="images2-container">
+                        <button class="foto-button">
+                            <img src="/Zasuvka/client/assets/photos/Snímek obrazovky 2025-12-10 125017.png" alt="foto1" class="image2">
+                        </button>
+                        <button class="foto-button">
+                            <img src="/Zasuvka/client/assets/photos/Snímek obrazovky 2025-12-08 124112.png" alt="foto1" class="image2">
+                        </button>
+                        <button class="foto-button">
+                            <img src="/Zasuvka/client/assets/photos/monesy.jpg" alt="foto2" class="image2">
+                        </button>
+                        <button class="foto-button">
+                            <img src="/Zasuvka/client/assets/photos/monesy.jpg" alt="foto3" class="image2">
+                        </button>
+                        <button class="foto-button">
+                            <img src="/Zasuvka/client/assets/photos/monesy.jpg" alt="foto4" class="image2">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="info-container">
+                    <div class="product-card">
+
+                        <div class="price-container">
+                            <div class="price-text">
+                                <div id="product_price" class="price">52 Kč</div>
+                            </div>
+                            <div class="actions">
+                                <input type="checkbox" id="favoriteCheckbox" class="favorite-checkbox">
+                                <label for="favoriteCheckbox" class="favorite-button" aria-label="Přidat do oblíbených">
+                                    <svg class="heart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                    </svg>
+                                </label>
+                            </div>
+                        </div>
+
+                        <h1 id="product_name" class="product-title">CzechYou Company</h1>
+                        <div class="description-container">
+                            <h2 class="title">Popis</h2>
+                            <p id="product_description" class="text">
+                                CzechYou - провідна мовна школа Чехії, яка спеціалізується на ефективній підготовці студентів із різних країн до вступу до чеських середніх шкіл та університетів.
+                                Ми пропонуємо навчання чеської мови з професійними викладачами, які є носіями мови та мають багаторічний досвід роботи.
+                                Підготовку з профільних предметів проводять випускники відповідних чеських вишів, що забезпечує високий рівень знань та успішний вступ. 
+                                У CzechYou також доступні курси для дорослих, які хочуть вивчити чеську мову з нуля.
+                                Якість послуг CzechYou підтверджена акредитацією Міністерства освіти Чехії, співпрацею з Біржею праці та престижними державними університетами. 
+                                Ми розробили для іноземних студентів спеціальні програми, адаптовані під вимоги чеських навчальних закладів, що допомагає нашим учням досягати високих результатів.
+                            </p>
+                        </div>
+
+                        <div class="seller">
+                            <h2 class="title">Prodávající</h2>
+                            <div class="seller-info">
+                                <img id="product_seller_photo" src="/Zasuvka/client/assets/photos/Snímek obrazovky 2025-12-10 124832.png"
+                                        alt="Fotografie prodávajícího"
+                                        class="avatar">
+                                <div id="product_seller_name" class="seller-name">Vladímir Novák</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info" id="contactInfo">
+                                <p id="product_seller_phone" class="phone-number">WhatsApp: +420 777 123 456</p>
+                        </div>
+
+                        <div class="contact-section">
+                            <button class="contact-button">Zobrazit kontakt</button>
+                        </div>
+
+                        <div class="contact-section">
+                            <button class="contact-button cansel-button">Skryt kontakt</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="scripts/product.js"></script>
+</body>
+</html>

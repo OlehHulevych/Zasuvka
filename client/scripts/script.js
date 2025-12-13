@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
                         <img src="${config.API_STATIC}${item.photos[0]}" alt="">
                     </div>
                     <div class="ad_information">
-                        <div class="ad_name">${item.name}</div>
+                        <a href="/Zasuvka/client/product.html?id=${item.id}" class="ad_name">${item.name}</a>
                         <div class="ad_price">${item.price} Kč</div>
                         <div class="ad_author">${item.author}</div>
                     </div> 

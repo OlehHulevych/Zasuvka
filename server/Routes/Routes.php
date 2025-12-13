@@ -27,6 +27,9 @@ elseif($uri=="/user/update" && $method === 'POST'){
 elseif ($uri == '/user' && $method === 'GET'){
     $userController->getALl();
 }
+elseif ($uri == '/user/id' && $method === 'GET'){
+    $userController->getById();
+}
 elseif($uri == "/user/authorize" && $method === "GET"){
     $userController->authorize();
 }

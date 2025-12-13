@@ -36,7 +36,7 @@ class ProductController
             echo json_encode(["message"=>"The product is not found"], JSON_PRETTY_PRINT);
         }
         else{
-            echo json_encode(["message"=>"The product is found", "product"=>$product]);
+            echo json_encode(["message"=>"The product is found", "item"=>$product]);
         }
     }
     public function create(){

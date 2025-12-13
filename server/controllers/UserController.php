@@ -156,6 +156,16 @@ class UserController
         }
         echo json_encode(["message"=>"The data is retrieved", "user"=>$user], JSON_PRETTY_PRINT);
     }
+
+    public function getById():void{
+        $user = $this->User->getUserById($_GET['id']);
+        if(!$user){
+            http_response_code(500);
+            echo json_encode(["message"=>"Something went wrong"], JSON_PRETTY_PRINT);
+
+        }
+        echo json_encode(["message"=>"The data is retrieved", "user"=>$user], JSON_PRETTY_PRINT);
+    }
     public function logout(){
         session_destroy();
         http_response_code(200);

@@ -1,0 +1,76 @@
+import {config} from "./config.js";
+
+
+const contactButton = document.querySelector(".contact-button");
+const contactInfo = document.querySelector(".contact-info")
+const canselButton = document.querySelector(".cansel-button")
+
+contactButton.addEventListener("click", function() {
+    contactInfo.style.display = "flex"
+    canselButton.style.display = "block"
+    contactButton.style.display = "none"
+} )
+
+canselButton.addEventListener("click", function() {
+    contactInfo.style.display = "none"
+    canselButton.style.display = "none"
+    contactButton.style.display = "block"
+})
+
+
+
+
+const parsingProduct = async (name,description,photos,price,userId) =>{
+    document.getElementById("product_name").innerText = name;
+    document.getElementById("product_description").innerText = description
+    document.getElementById("product_price").innerText = price+"Kč";
+
+    const response = await fetch(config.API_URL+`/user/id?id=${userId}`);
+    if(response.ok){
+        const data = await response.json();
+        const user = data.user;
+        document.getElementById("product_seller_name").innerText = user.name;
+        document.getElementById("product_seller_phone").innerText = "Whatsapp "+user.phone
+        document.getElementById("product_seller_photo").src = config.API_STATIC+user.photoPath;
+    }
+
+    let imageSelectorContainer = document.getElementById("image_container");
+    let imageContainerHTML = ``
+    console.log(photos)
+    for(let photo of photos){
+        imageContainerHTML+=`<button class="foto-button">
+                            <img src="${config.API_STATIC}${photo}" alt="foto1" class="image2">
+                        </button>`
+    }
+
+    imageSelectorContainer.innerHTML = imageContainerHTML;
+    document.getElementById("main_photo").src=config.API_STATIC+photos[0];
+}
+
+
+
+
+document.addEventListener("DOMContentLoaded", async (e)=>{
+    const newUrlParams = new URLSearchParams(window.location.search);
+    const product_id = newUrlParams.get("id");
+    const response = await fetch(config.API_URL+`/product/id?id=${product_id}`,{
+        headers:{
+            "Content-Type":"application/json"
+        },
+        method:"GET"
+    });
+    if(response.ok){
+        const data = await response.json();
+        await parsingProduct(data.item.name, data.item.description, data.item.photos, data.item.price,data.item.userId)
+
+    }
+
+    const mainImage = document.querySelector(".main-image");
+    const images2 = document.querySelectorAll(".image2");
+
+    images2.forEach(smallImg => {
+        smallImg.addEventListener("click", function() {
+            mainImage.src = smallImg.src;
+        });
+    });
+})
