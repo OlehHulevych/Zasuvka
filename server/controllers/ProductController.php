@@ -39,6 +39,21 @@ class ProductController
             echo json_encode(["message"=>"The product is found", "item"=>$product]);
         }
     }
+    public function getProductByUserId(){
+        if(!isset($_SESSION['user_id'])){
+            http_response_code(403);
+            echo json_encode(["message"=>"The user is not authorized"]);
+        }
+        $userId = $_SESSION['user_id'];
+        $items = $this->Product->getByUserId($userId);
+        if(!isset($items)){
+            http_response_code(404);
+            echo json_encode(["message"=>"Something went wrong"], JSON_PRETTY_PRINT);
+        }
+        else{
+            echo json_encode(["message"=>"Something went wrong", "items"=>$items], JSON_PRETTY_PRINT);
+        }
+    }
     public function create(){
         if(!isset($_SESSION['user_id'])){
             http_response_code(403);

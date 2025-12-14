@@ -55,6 +55,9 @@ elseif($uri == "/product/update" && $method==="POST"){
 elseif ($uri == "/product" && $method === "DELETE"){
     $productController->delete();
 }
+elseif ($uri == "/productByUser" && $method === "GET"){
+    $productController->getProductByUserId();
+}
 elseif ($uri == "/favoriteItem" && $method === "POST"){
     $favoriteItemController->create();
 }

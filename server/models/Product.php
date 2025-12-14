@@ -66,6 +66,10 @@ class Product{
         }
         return null;
     }
+    public function getByUserId($userId){
+        $products = $this->getData();
+        return array_filter($products, fn($product)=>$product["userId"]==$userId);
+    }
 
 
 
@@ -79,6 +83,7 @@ class Product{
         return $newProduct;
 
     }
+
 
     public function update($id, $userId, $name, $price, $description, $deletePhotos, $newPhotos){
         $products = $this->getData();

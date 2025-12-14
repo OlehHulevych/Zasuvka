@@ -22,17 +22,7 @@
     {
         "id": 5,
         "userId": 6,
-        "items": [
-            {
-                "id": 1,
-                "name": "Car Bugati",
-                "price": 200,
-                "currency": null,
-                "photo": "\/uploads\/products\/Car_Bugati_0_51909.jpg",
-                "productId": 3,
-                "FavoriteListId": 5
-            }
-        ]
+        "items": []
     },
     {
         "id": 6,

@@ -34,7 +34,7 @@ class FavoriteListItem
 
     public function delete($id, $userId){
         $favoriteList = $this->FavoriteList->getByUserId($userId);
-        $FilteredFavoriteList = array_filter($favoriteList['items'], fn($item)=> $item['id'] != $id);
+        $FilteredFavoriteList = array_filter($favoriteList['items'], fn($item)=> $item['productId'] != $id);
         $favoriteLists = $this->FavoriteList->getAll();
 
         foreach ($favoriteLists as &$list){

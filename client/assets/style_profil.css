@@ -182,3 +182,14 @@ button:hover {
 .cansel:hover {
     background-color: #9ea4ad;
 }
+
+button.my_products_button{
+    margin-left: 10px;
+    cursor: pointer;
+}
+button.my_products_button a{
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+
+}
