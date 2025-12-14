@@ -25,11 +25,11 @@
         "items": [
             {
                 "id": 1,
-                "name": null,
-                "price": null,
+                "name": "Car Bugati",
+                "price": 200,
                 "currency": null,
-                "photo": null,
-                "productId": null,
+                "photo": "\/uploads\/products\/Car_Bugati_0_51909.jpg",
+                "productId": 3,
                 "FavoriteListId": 5
             }
         ]

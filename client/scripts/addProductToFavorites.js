@@ -5,7 +5,7 @@ export const addOrDeleteProductFromFavorites = async (condition, id) =>{
             headers:{
                 "Content-Type":"application/json"
             },
-            method:condition?"POST":"DELETE",
+            method:condition?"DELETE":"POST",
             credentials:"include"
         });
         if(response.ok){

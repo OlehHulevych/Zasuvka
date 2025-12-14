@@ -13,7 +13,7 @@ if(sessionStorage.getItem("user_id")!=null){
         const data = await response.json();
         const favoriteList = data.list.items;
         for(let item of favoriteList){
-            if(item.id === productId){
+            if(item.productId === productId){
                 return true;
             }
         }

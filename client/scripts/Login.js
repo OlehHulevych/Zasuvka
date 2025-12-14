@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", (e)=>{
             else{
                 const data = await response.json();
                 console.log(data.message);
+                document.querySelector(".warning").classList.add("active")
             }
         }
         catch (error){

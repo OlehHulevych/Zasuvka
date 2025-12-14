@@ -52,7 +52,6 @@ class UserController
         }
     }
     public function login(){
-        $loggedUser = null;
         $email = $_POST['email'];
         $password = $_POST['password'];
 
@@ -62,12 +61,13 @@ class UserController
         }
         else{
             $loggedUser = $this->User->login($email, $password);
-            if(!$loggedUser){
-                echo json_encode(["message"=>"Email or password is wrong"],JSON_PRETTY_PRINT);
+            if(!isset($loggedUser)){
+                http_response_code(401);
+                echo json_encode(["message"=>"Email or password is wrong","result"=>false],JSON_PRETTY_PRINT);
             }
             else{
                 $_SESSION["user_id"] = $loggedUser['id'];
-                echo json_encode(["message"=>"login was succesfull","user_id"=>$loggedUser['id']], JSON_PRETTY_PRINT);
+                echo json_encode(["message"=>"login was succesfull","user_id"=>$loggedUser['id'],"result"=>true], JSON_PRETTY_PRINT);
             }
         }
     }
