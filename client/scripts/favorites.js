@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded",async (e)=>{
     })
     if(response.ok){
         const data = await response.json();
-
     }
     else{
         console.log(response)

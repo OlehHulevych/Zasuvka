@@ -12,7 +12,17 @@
     {
         "id": 3,
         "userId": 4,
-        "items": []
+        "items": [
+            {
+                "id": 1,
+                "name": "Audi 100",
+                "price": 30000,
+                "currency": null,
+                "photo": "\/uploads\/products\/Audi_100_0_audi_general.jpg",
+                "productId": 11,
+                "FavoriteListId": 3
+            }
+        ]
     },
     {
         "id": 4,

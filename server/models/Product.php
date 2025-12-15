@@ -134,7 +134,7 @@ class Product{
         $products = $this->getData();
         $productForDeleting = $this->getById($id);
         $photos = $productForDeleting['photos'];
-        foreach ($photos as $photo){
+        foreach ($photos as &$photo){
             $fullPath = __DIR__ . "/.." . $photo;
             if(file_exists($fullPath)){
                 unlink($fullPath);

@@ -51,7 +51,7 @@ class ProductController
             echo json_encode(["message"=>"Something went wrong"], JSON_PRETTY_PRINT);
         }
         else{
-            echo json_encode(["message"=>"Something went wrong", "items"=>$items], JSON_PRETTY_PRINT);
+            echo json_encode(["message"=>"You got items", "items"=>$items], JSON_PRETTY_PRINT);
         }
     }
     public function create(){

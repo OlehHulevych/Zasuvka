@@ -10,7 +10,6 @@ const addForm = document.getElementById("Add_Product_Form")
 addForm.addEventListener('submit', async(e)=>{
     e.preventDefault();
     const newFormData = new FormData(addForm);
-    addForm.price = parseInt(addForm.price);
     console.log(newFormData)
         const response = await fetch(config.API_URL + "/product", {
             method:"POST",
