@@ -13,5 +13,20 @@
         "phone": "+4206699038493289044398904830298",
         "description": "Gucci was founded in 1921 by Guccio Gucci (1881\u20131953) in Florence, Tuscany. Under the direction of Aldo Gucci (son of Guccio), Gucci became a global brand, and was considered emblematic of the Italian economic miracle. Following family feuds during the 1980s, the Gucci family was entirely ousted from the capital of the company by 1993. After this crisis, the brand was revived and in 1999 Gucci became a subsidiary of the French conglomerate PPR, which later renamed itself to Kering.",
         "category": "Digital goods"
+    },
+    "9": {
+        "id": 11,
+        "name": "Audi 100",
+        "userId": 4,
+        "photos": [
+            "\/uploads\/products\/Audi_100_0_audi_general.jpg",
+            "\/uploads\/products\/Audi_100_1_audi_old.jpeg",
+            "\/uploads\/products\/Audi_100_2_audi_sport.jpeg"
+        ],
+        "price": 30000,
+        "author": "Hulevych",
+        "phone": "608819232",
+        "description": "Audi 100 je automobilem vy\u0161\u0161\u00ed st\u0159edn\u00ed t\u0159\u00eddy, kter\u00fd v letech 1968 a\u017e 1994 vyr\u00e1b\u011bla n\u011bmeck\u00e1 automobilka Audi. Vyr\u00e1b\u011blo se jako sedan nebo kombi. Jeho n\u00e1stupcem bylo Audi A6.",
+        "category": "Cars"
     }
 }

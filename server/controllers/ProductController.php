@@ -100,7 +100,7 @@ class ProductController
             http_response_code(403);
             echo json_encode(["message"=>"access is denied"], JSON_PRETTY_PRINT);
         }
-        $productId = $_POST['id'] ?? null;
+        $productId = $_GET['id'] ?? null;
         $name = $_POST['name'] ?? null;
         $price = $_POST['price'] ?? null;
         $description = $_POST['description'] ?? null;

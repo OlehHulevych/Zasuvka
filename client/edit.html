@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upravit inzerát</title>
+    <link rel="stylesheet" href="/Zasuvka/client/assets/style_edit.css">
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <button class="back-button">
+                <a href="/Zasuvka/client/myProducts.html" class="back-button-text">← Zpět do mých inzerátů</a>
+            </button>
+        </div>
+    </header>
+
+    <form class="form" id="edit_form">
+        <div class="container">
+            
+            <div class="images">
+                <div class="main-image-container">
+                    <img src="/Zasuvka/client/assets/photos/monesy.jpg"
+                            alt="Hlavní fotografie" 
+                            class="main-image" 
+                            id="mainImage">
+                    <input type="file" id="newPhoto" name="newPhotos" accept="image/*" class="hidden-input" multiple>
+                </div>
+
+                <div class="main-photo-btn">
+                    <button type="button" class="action-btn edit-main-btn" id="btnChangeMain">
+                        <p>Add new photos</p>
+                    </button>
+                </div>
+
+                <div id="image_container" class="images-container" id="imagesContainer">
+                    
+                    <div class="images-wrapper">
+                        <img src="/Zasuvka/client/assets/photos/monesy.jpg" class="image2">
+                        <div class="delete-images-icon" title="Smazat">×</div>
+                    </div>
+
+                    <div class="images-wrapper">
+                        <img src="/Zasuvka/client/assets/photos/Snímek obrazovky 2025-12-10 125017.png" class="image2">
+                        <div class="delete-images-icon" title="Smazat">×</div>
+                    </div>
+
+                    <button type="button" class="foto-button add-photo-btn" id="btnAddPhoto">
+                        <p>+</p>
+                    </button>
+                    <input type="file" id="addPhotoInput" accept="image/*" class="hidden-input">
+                </div>
+            </div>
+
+            <div class="info-container">
+                <div class="product-card">
+
+                    <div class="form-group">
+                        <label class="input-label">Název inzerátu</label>
+                        <input id="name" name="name" type="text" class="edit-input title-input" value="CzechYou Company" required>
+                    </div>
+
+                    <div class="form-group cost">
+                        <label class="input-label">Cena</label>
+                        <input id="price" name="price" type="number" class="edit-input input-cost" value="52" required>
+                        <div class="kc">Kč</div>
+                    </div>
+                    <div class="description-container">
+                        <h2 class="title">Popis</h2>
+                        <textarea id = "description" name="description" class="edit-textarea" rows="10">CzechYou - провідна мовна школа Чехії, яка спеціалізується на ефективній підготовці студентів</textarea>
+                    </div>
+
+
+                    <button type="submit" class="save-button">Uložit změny</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script type="module" src="/Zasuvka/client/scripts/edit.js"></script>
+</body>
+</html>
