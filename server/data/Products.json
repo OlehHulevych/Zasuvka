@@ -16,14 +16,13 @@
     },
     "9": {
         "id": 11,
-        "name": "Audi 100",
+        "name": "Audi A6 C4",
         "userId": 4,
         "photos": [
             "\/uploads\/products\/Audi_100_0_audi_general.jpg",
-            "\/uploads\/products\/Audi_100_1_audi_old.jpeg",
-            "\/uploads\/products\/Audi_100_2_audi_sport.jpeg"
+            "\/uploads\/products\/Audi_A6_C4_0_s4.jpg"
         ],
-        "price": 30000,
+        "price": 70000,
         "author": "Hulevych",
         "phone": "608819232",
         "description": "Audi 100 je automobilem vy\u0161\u0161\u00ed st\u0159edn\u00ed t\u0159\u00eddy, kter\u00fd v letech 1968 a\u017e 1994 vyr\u00e1b\u011bla n\u011bmeck\u00e1 automobilka Audi. Vyr\u00e1b\u011blo se jako sedan nebo kombi. Jeho n\u00e1stupcem bylo Audi A6.",

@@ -15,7 +15,7 @@
         </div>
     </header>
 
-    <form class="form" id="edit_form">
+    <form class="form" id="edit_form" enctype="multipart/form-data" method="post">
         <div class="container">
             
             <div class="images">
@@ -24,7 +24,7 @@
                             alt="Hlavní fotografie" 
                             class="main-image" 
                             id="mainImage">
-                    <input type="file" id="newPhoto" name="newPhotos" accept="image/*" class="hidden-input" multiple>
+                    <input type="file" id="newPhoto" name="newPhotos[]" accept="image/*" class="hidden-input" multiple>
                 </div>
 
                 <div class="main-photo-btn">

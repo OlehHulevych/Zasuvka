@@ -15,7 +15,7 @@ export const editFetch = async (productId) =>{
     document.getElementById("mainImage").src = config.API_STATIC+editItem?.photos[0];
     const image_container = document.getElementById("image_container");
     let containerHTML = ``
-    for(let photo of editItem?.photos){
+    for(let photo of Object.values(editItem?.photos)){
         containerHTML+=`<div class="images-wrapper">
                         <img src="${config.API_STATIC+photo}" class="image2">
                         <div data-path=${photo} class="delete-images-icon" title="Smazat">×</div>

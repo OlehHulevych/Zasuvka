@@ -1,4 +1,5 @@
 import {editFetch} from "./editFetch.js";
+import {config} from "./config.js"
 
 document.addEventListener("DOMContentLoaded", async()=>{
     let deletedImages = [];
@@ -83,8 +84,20 @@ document.addEventListener("DOMContentLoaded", async()=>{
     editForm.addEventListener("submit",async(e)=>{
         e.preventDefault();
         let newFormData=  new FormData(editForm);
-        newFormData.append("deletePhotos",deletedImages);
+        newFormData.append("deletePhotos[]",deletedImages);
         console.log(newFormData);
+        const response = await fetch(config.API_URL + `/product/update?id=${product_id}`,{
+            method:"POST",
+            body:newFormData,
+            credentials:"include"
+        });
+        if(response.ok){
+            console.log(response)
+        }
+        else{
+            console.log("Something went wrong please try again later")
+            console.log(response)
+        }
     })
 
 

@@ -104,23 +104,22 @@ class ProductController
         $name = $_POST['name'] ?? null;
         $price = $_POST['price'] ?? null;
         $description = $_POST['description'] ?? null;
-        $deletePhotos = $_POST['delete_photos'] ?? null;
-        $newPhotosForProduct = $_POST['new_photos'] ?? null;
+        $deletePhotos = $_POST['deletePhotos'] ?? null;
+        $newPhotosForProduct = $_POST['newPhotos'] ?? null;
 
-        if(isset($_POST['delete_photos'])){
-            $deletePhotos = $_POST['delete_photos'];
+        if(isset($_POST['deletePhotos'])){
+            $deletePhotos = $_POST['deletePhotos'];
             foreach ($deletePhotos as $deletePhoto) {
                 $fullPath = __DIR__ . '/../' . $deletePhoto;
-                echo "Hello Everybody";
                 if(file_exists($fullPath)){
                     unlink($fullPath);
                 }
             }
         }
-        if(isset($_FILES['new_photos'])){
+        if(isset($_FILES['newPhotos'])){
 
-            $newPhotos = $_FILES['new_photos'];
-            if(!is_array($_FILES['new_photos'])){
+            $newPhotos = $_FILES['newPhotos'];
+            if(!is_array($_FILES['newPhotos'])){
                 $newPhotos = explode('/', $newPhotos);
             }
             foreach ($newPhotos['name'] as $key=>$originalName){

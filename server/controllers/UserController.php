@@ -52,9 +52,10 @@ class UserController
         }
     }
     public function login(){
+
         $email = $_POST['email'];
         $password = $_POST['password'];
-
+        session_regenerate_id(true);
         if(!$email || !$password){
             http_response_code(400);
             echo json_encode(["message"=>"Something is missing"], JSON_PRETTY_PRINT);
