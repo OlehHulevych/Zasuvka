@@ -15,8 +15,8 @@
         "items": [
             {
                 "id": 1,
-                "name": "Audi 100",
-                "price": 30000,
+                "name": "Audi A6 C4",
+                "price": 85000,
                 "currency": null,
                 "photo": "\/uploads\/products\/Audi_100_0_audi_general.jpg",
                 "productId": 11,

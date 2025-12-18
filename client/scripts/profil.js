@@ -1,9 +1,11 @@
 import {config} from "./config.js"
+import {logout} from "./logout.js";
 
 const edit = document.querySelector(".edit");
 const blockView = document.querySelector(".blockView");
 const blockView2 = document.querySelector(".blockView2");
 const cancel = document.querySelector(".cansel");
+const logout_button = document.getElementById("logout_button")
 
 
 edit.addEventListener('click', () => {
@@ -15,6 +17,13 @@ cancel.addEventListener('click', () => {
     blockView.style.display = "block";
     blockView2.style.display = "none";
 });
+
+logout_button.addEventListener('click',async (e)=>{
+    e.preventDefault();
+    await logout();
+})
+
+
 
 
 document.addEventListener("DOMContentLoaded", ()=>{

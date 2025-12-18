@@ -193,3 +193,7 @@ button.my_products_button a{
     color: white;
 
 }
+
+.logout_button{
+    margin-left: 10px;
+}
