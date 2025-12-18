@@ -622,19 +622,20 @@ a.add_product_button:hover{
 }
 @media screen and (max-width:540px){
      .ad_name{
+        max-width: 30vw;
         font-size: 2.5vw;
     }
     .ad_price{
         font-size: 2.7vw;
     }
     .ad_item{
-        width: 45%;
+        width: 47%;
     }
     .ad_state{
         font-size: 2.4vw;
     }
     .ad_author{
-        font-size: 2.4vw;
+        font-size: 3vw;
     }
     .ad_listing h2{
         font-size: 28px;
@@ -646,14 +647,15 @@ a.add_product_button:hover{
 }
 
 @media screen and (max-width:430px){
-    .ad_name{
-        font-size: 2.6vw;
-    }
+
     .ad_information{
         padding: 10px;
     }
     .img_container{
-        height: 80px;
+        height: 150px;
+    }
+    .ad_name{
+        font-size: 14px;
     }
 }
 
