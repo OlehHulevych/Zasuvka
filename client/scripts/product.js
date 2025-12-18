@@ -81,11 +81,19 @@ document.addEventListener("DOMContentLoaded", async (e)=>{
     });
     const favoriteCheckBox = document.getElementById("favoriteCheckbox");
     favoriteCheckBox.addEventListener("click", async ()=>{
-        if(!favoriteCheckBox.checked){
-            await addOrDeleteProductFromFavorites(true, product_id)
+        if(sessionStorage.getItem('user_id')==null){
+            favoriteCheckBox.checke=false;
+            window.location.href = "/Zasuvka/client/login.html"
+
         }
         else{
-            await addOrDeleteProductFromFavorites(false,product_id)
+            if(!favoriteCheckBox.checked){
+                await addOrDeleteProductFromFavorites(true, product_id)
+            }
+            else{
+                await addOrDeleteProductFromFavorites(false,product_id)
+            }
         }
+
     })
 })

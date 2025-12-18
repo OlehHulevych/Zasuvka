@@ -501,7 +501,7 @@ a.add_product_button:hover{
 .ad_item img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
 
 }
 .img_container{
@@ -559,7 +559,7 @@ a.add_product_button:hover{
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
     gap: 4rem;
     flex-wrap: wrap;
 }
