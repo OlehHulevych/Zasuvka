@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdocumentor configVersion="3">
+    <title>Zásuvka API</title>
+
+    <paths>
+        <output>docs</output>
+        <cache>.phpdoc/cache</cache>
+    </paths>
+
+    <version number="1.0.0">
+        <api>
+            <source dsn=".">
+                <path>**/*.php</path>
+
+                <path>README.md</path>
+            </source>
+            <ignore>
+                <path>vendor/**/*</path>
+                <path>docs/**/*</path>
+                <path>.git/**/*</path>
+                <path>.idea/**/*</path>
+            </ignore>
+        </api>
+    </version>
+</phpdocumentor>

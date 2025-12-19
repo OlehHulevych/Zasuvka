@@ -3,9 +3,29 @@
 require_once __DIR__."/../models/User.php";
 require_once  __DIR__. "/../models/Product.php";
 
+/**
+ * Třída AdminController
+ *
+ * Zpracovává administrativní požadavky týkající se správy uživatelů a produktů.
+ * Zajišťuje ověření oprávnění (zda je uživatel admin) a vrací odpovědi ve formátu JSON.
+ *
+ * @package App\Controllers
+ */
 class AdminController{
+    /**
+     * @var User Instance modelu pro práci s uživateli.
+     */
     private User $User;
+
+    /**
+     * @var Product Instance modelu pro práci s produkty.
+     */
     private Product $Product;
+
+    /**
+     * Konstruktor třídy.
+     * Inicializuje modely User a Product.
+     */
     public function __construct()
     {
         $this->User = new User();
@@ -13,6 +33,18 @@ class AdminController{
     }
 
 
+    /**
+     * Získá seznam všech produktů.
+     *
+     * Umožňuje filtrování podle kategorie, vyhledávání a stránkování.
+     * Očekává parametry v URL (GET request).
+     *
+     * @api
+     * @param string|null $_GET['category'] Kategorie produktu (volitelné).
+     * @param string      $_GET['search']   Vyhledávací dotaz (povinné).
+     * @param int|null    $_GET['page']     Číslo stránky pro stránkování (volitelné).
+     * @return void Vypíše JSON odpověď se seznamem produktů.
+     */
     public function getAllProducts(){
         $category = trim($_GET['category']) ?? null;
         $search = $_GET['search'] ?? null;
@@ -26,6 +58,15 @@ class AdminController{
 
     }
 
+    /**
+     * Povýší uživatele na administrátora nebo změní jeho roli.
+     *
+     * Vyžaduje přihlášení a roli administrátora.
+     *
+     * @api
+     * @param int $_GET['id'] ID uživatele, který má být povýšen.
+     * @return void Vypíše JSON odpověď o úspěchu nebo chybě.
+     */
     public function toPromote(){
         if(!isset($_SESSION['user_id'])){
             http_response_code(401);
@@ -47,6 +88,11 @@ class AdminController{
         }
     }
 
+    /**
+     * Získá celkový počet uživatelů v systému.
+     *
+     * @return void Vypíše JSON odpověď obsahující počet uživatelů ({length: int}).
+     */
     public function getCounOfUsers(){
         $length = $this->User->getCountOfUsers();
         if($length){
@@ -58,6 +104,12 @@ class AdminController{
         }
 
     }
+
+    /**
+     * Získá celkový počet produktů v systému.
+     *
+     * @return void Vypíše JSON odpověď obsahující počet produktů ({length: int}).
+     */
     public function getCounOfProducts(){
         $length = $this->Product->getCountOfProducts();
         if($length){
@@ -70,6 +122,15 @@ class AdminController{
 
     }
 
+    /**
+     * Získá seznam všech uživatelů se stránkováním.
+     *
+     * Vyžaduje přihlášení a roli administrátora.
+     *
+     * @api
+     * @param int $_GET['page'] Číslo stránky.
+     * @return void Vypíše JSON odpověď se seznamem uživatelů.
+     */
     public function getAllUsers(){
         if(!isset($_SESSION['user_id'])){
             http_response_code(401);
@@ -94,6 +155,15 @@ class AdminController{
         }
     }
 
+    /**
+     * Smaže konkrétní produkt.
+     *
+     * Vyžaduje přihlášení.
+     *
+     * @api
+     * @param int $_GET['id'] ID produktu ke smazání.
+     * @return void Vypíše JSON odpověď o výsledku operace.
+     */
     public function deleteProduct(){
         if(!isset($_SESSION['user_id'])){
             http_response_code(401);
@@ -115,6 +185,16 @@ class AdminController{
             echo json_encode(["message"=>"Something went wrong"],JSON_PRETTY_PRINT);
         }
     }
+
+    /**
+     * Smaže konkrétního uživatele.
+     *
+     * Vyžaduje přihlášení.
+     *
+     * @api
+     * @param int $_GET['user_id'] ID uživatele ke smazání.
+     * @return void Vypíše JSON odpověď o výsledku operace.
+     */
     public function deleteUser(){
         if(!isset($_SESSION['user_id'])){
             http_response_code(401);

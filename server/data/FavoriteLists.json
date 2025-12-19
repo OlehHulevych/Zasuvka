@@ -21,6 +21,15 @@
                 "photo": "\/uploads\/products\/Audi_100_0_audi_general.jpg",
                 "productId": 11,
                 "FavoriteListId": 3
+            },
+            {
+                "id": 2,
+                "name": "Gucci clothes",
+                "price": 500,
+                "currency": null,
+                "photo": "\/uploads\/products\/Gucci_clothes_0_92af397ac2de2bf71ae3dc3836d8e3e7.jpg",
+                "productId": 10,
+                "FavoriteListId": 3
             }
         ]
     },

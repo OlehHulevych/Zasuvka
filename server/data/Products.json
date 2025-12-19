@@ -27,5 +27,21 @@
         "phone": "608819232",
         "description": "Audi 100 je automobilem vy\u0161\u0161\u00ed st\u0159edn\u00ed t\u0159\u00eddy, kter\u00fd v letech 1968 a\u017e 1994 vyr\u00e1b\u011bla n\u011bmeck\u00e1 automobilka Audi. Vyr\u00e1b\u011blo se jako sedan nebo kombi. Jeho n\u00e1stupcem bylo Audi A6.",
         "category": "Cars"
+    },
+    "10": {
+        "id": 12,
+        "name": "Samsung Galaxy",
+        "userId": 4,
+        "photos": [
+            "\/uploads\/products\/Samsung_phone_0_Back.png",
+            "\/uploads\/products\/Samsung_phone_1_camera.png",
+            "\/uploads\/products\/Samsung_phone_2_Front.png",
+            "\/uploads\/products\/Samsung_phone_3_product.png"
+        ],
+        "price": 3000,
+        "author": "Hulevych",
+        "phone": "608819232",
+        "description": "The product line includes the Galaxy S series of high-end smartphones, the Galaxy Z series of foldable smartphones, the Galaxy A, M, and F series of mid-range and budget smartphones, the Galaxy Tab series of tablets, and the Galaxy Watch series of smartwatches. The Galaxy TabPro S is the first Samsung Galaxy-branded Windows 10 device that was announced at CES 2016. In 2020, Samsung added the Galaxy Chromebook 2-in-1 laptop running ChromeOS to the Galaxy branding lineup.[3] The Samsung Galaxy XR, first released on 21 October 2025, is one of the first major extended-reality devices to feature the Android XR operating system.",
+        "category": "Electronics"
     }
 }

@@ -4,13 +4,33 @@ require_once __DIR__ . "/../models/User.php";
 require_once __DIR__ . "/../models/Product.php";
 require_once __DIR__ . "/../models/FavoriteList.php";
 require_once  __DIR__ . "/../models/FavoriteListItem.php";
+
+/**
+ * Třída ProductController
+ *
+ * Zajišťuje kompletní správu produktů (inzerátů).
+ * Řeší výpis, filtrování, vytváření, úpravu (včetně nahrávání obrázků) a mazání produktů.
+ *
+ * @package App\Controllers
+ */
 class ProductController
 {
+    /** @var User Model pro práci s uživateli. */
     private $User;
+
+    /** @var Product Model pro práci s produkty. */
     private $Product;
+
+    /** @var FavoriteList Model pro seznamy oblíbených. */
     private $FavoriteList;
+
+    /** @var FavoriteListItem Model pro položky v oblíbených. */
     private $FavoriteListItem;
 
+    /**
+     * Konstruktor třídy.
+     * Inicializuje instance všech potřebných modelů.
+     */
     public function __construct(){
         $this->User = new User();
         $this->Product = new Product();
@@ -18,6 +38,19 @@ class ProductController
         $this->FavoriteListItem = new FavoriteListItem();
     }
 
+    /**
+     * Získá seznam produktů s možností filtrování.
+     *
+     * Přijímá parametry z URL (GET) pro vyhledávání, kategorie, cenu a stránkování.
+     *
+     * @api
+     * @param string|null $_GET['category'] Kategorie pro filtrování.
+     * @param string|null $_GET['search']   Hledaný výraz.
+     * @param int         $_GET['page']     Číslo stránky (offset).
+     * @param int         $_GET['low_cost'] Minimální cena.
+     * @param int         $_GET['big_cost'] Maximální cena.
+     * @return void Vypíše JSON s nalezenými produkty.
+     */
     public function getAll(){
         $category = $_GET['category'] ?? null;
         $search = $_GET['search'] ?? null;
@@ -28,6 +61,14 @@ class ProductController
         echo json_encode(["message"=>"The products are retrieved", "products"=>$products], JSON_PRETTY_PRINT);
 
     }
+
+    /**
+     * Získá detail konkrétního produktu podle ID.
+     *
+     * @api
+     * @param int $_GET['id'] ID produktu.
+     * @return void Vypíše JSON s daty produktu nebo chybu 404.
+     */
     public function getProductById(){
         $id = $_GET['id'];
         $product = $this->Product->getById($id);
@@ -39,6 +80,15 @@ class ProductController
             echo json_encode(["message"=>"The product is found", "item"=>$product]);
         }
     }
+
+    /**
+     * Získá produkty vytvořené aktuálně přihlášeným uživatelem.
+     *
+     * Vyžaduje přihlášení uživatele.
+     *
+     * @api
+     * @return void Vypíše JSON se seznamem produktů uživatele.
+     */
     public function getProductByUserId(){
         if(!isset($_SESSION['user_id'])){
             http_response_code(403);
@@ -54,6 +104,21 @@ class ProductController
             echo json_encode(["message"=>"You got items", "items"=>$items], JSON_PRETTY_PRINT);
         }
     }
+
+    /**
+     * Vytvoří nový produkt.
+     *
+     * Zpracuje POST data a nahraje obrázky (Files) na server do složky `uploads/products/`.
+     * Vyžaduje přihlášení.
+     *
+     * @api
+     * @param string $_POST['name']        Název produktu.
+     * @param string $_POST['category']    Kategorie.
+     * @param int    $_POST['price']       Cena.
+     * @param string $_POST['description'] Popis produktu.
+     * @param array  $_FILES['photos']     Obrázky k nahrání.
+     * @return void Vypíše JSON s vytvořeným produktem.
+     */
     public function create(){
         if(!isset($_SESSION['user_id'])){
             http_response_code(403);
@@ -95,6 +160,19 @@ class ProductController
         }
 
     }
+
+    /**
+     * Aktualizuje existující produkt.
+     *
+     * Umožňuje změnu textových údajů, smazání starých fotek a nahrání nových.
+     * Vyžaduje přihlášení a vlastnictví produktu (kontroluje se v modelu/DB).
+     *
+     * @api
+     * @param int   $_GET['id']             ID produktu k úpravě.
+     * @param array $_POST['deletePhotos']  Seznam cest k fotkám, které se mají smazat.
+     * @param array $_FILES['newPhotos']    Nové fotky k nahrání.
+     * @return void Vypíše JSON s aktualizovaným produktem.
+     */
     public function update(){
         if(!isset($_SESSION['user_id'])){
             http_response_code(403);
@@ -107,6 +185,7 @@ class ProductController
         $deletePhotos = $_POST['deletePhotos'] ?? null;
         $newPhotosForProduct = $_POST['newPhotos'] ?? null;
 
+        // Mazání starých fotek ze serveru
         if(isset($_POST['deletePhotos'])){
             $deletePhotos = $_POST['deletePhotos'];
             foreach ($deletePhotos as $deletePhoto) {
@@ -116,6 +195,7 @@ class ProductController
                 }
             }
         }
+        // Nahrávání nových fotek
         if(isset($_FILES['newPhotos'])){
 
             $newPhotos = $_FILES['newPhotos'];
@@ -143,6 +223,16 @@ class ProductController
             echo json_encode(["message"=>"The product is not updated"],JSON_PRETTY_PRINT);
         }
     }
+
+    /**
+     * Smaže produkt.
+     *
+     * Vyžaduje přihlášení a kontrolu oprávnění (zda produkt patří uživateli).
+     *
+     * @api
+     * @param int $_GET['id'] ID produktu ke smazání.
+     * @return void Vypíše JSON potvrzení nebo chybu.
+     */
     public function delete(){
         if(!isset($_SESSION['user_id'])){
             echo "access is denied";

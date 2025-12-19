@@ -1,13 +1,49 @@
 <?php
+/**
+ * ... popis ...
+ * @package App\Controllers
+ */
 require_once __DIR__ .'/../models/User.php';
+
+/**
+ * Třída UserController
+ *
+ * Zajišťuje správu uživatelů, včetně autentizace (login/logout), registrace,
+ * úpravy profilu a nahrávání avatarů.
+ * Řídí také přístupová práva (např. pouze admin může vypsat všechny uživatele).
+ *
+ * @package App\Controllers
+ */
 class UserController
 {
+    /** @var User Instance modelu pro práci s databází uživatelů. */
     private $User;
+
+    /**
+     * Konstruktor třídy.
+     * Inicializuje model User.
+     */
     public function __construct()
     {
         $this->User = new User();
     }
 
+    /**
+     * Registruje nového uživatele.
+     *
+     * Zpracovává POST data (jméno, email, heslo...) a nahrává profilovou fotku
+     * do složky `uploads/avatars/`.
+     * Provádí validaci emailu a kontrolu povinných polí.
+     *
+     * @api
+     * @param string      $_POST['name']     Jméno uživatele.
+     * @param string      $_POST['email']    Emailová adresa.
+     * @param string      $_POST['password'] Heslo (bude zahashováno v modelu).
+     * @param string      $_POST['phone']    Telefonní číslo.
+     * @param string      $_POST['role']     Role uživatele (výchozí: 'user').
+     * @param array|null  $_FILES['photo']   Profilová fotka (volitelné).
+     * @return void Vypíše JSON odpověď s vytvořeným uživatelem nebo chybou.
+     */
     public function register(){
 
         $name = $_POST['name'] ?? null;
@@ -51,6 +87,17 @@ class UserController
 
         }
     }
+
+    /**
+     * Přihlásí uživatele do systému.
+     *
+     * Ověří email a heslo. Při úspěchu regeneruje ID session a uloží `user_id`.
+     *
+     * @api
+     * @param string $_POST['email']    Email uživatele.
+     * @param string $_POST['password'] Heslo uživatele.
+     * @return void Vypíše JSON odpověď o výsledku přihlášení.
+     */
     public function login(){
 
         $email = $_POST['email'];
@@ -73,6 +120,15 @@ class UserController
         }
     }
 
+    /**
+     * Aktualizuje profil přihlášeného uživatele.
+     *
+     * Umožňuje změnu údajů a profilové fotky.
+     * Pokud se nahrává nová fotka, stará je smazána (unlink) a nahrazena novou.
+     *
+     * @api
+     * @return void Vypíše JSON odpověď s aktualizovanými daty.
+     */
     public function update(){
         if(!isset($_SESSION['user_id'])){
             http_response_code(400);
@@ -127,6 +183,14 @@ class UserController
 
     }
 
+    /**
+     * Získá seznam všech uživatelů.
+     *
+     * Tato metoda je dostupná pouze pro uživatele s rolí 'admin'.
+     *
+     * @api
+     * @return void Vypíše JSON seznam uživatelů nebo chybu 404 (Access denied).
+     */
     public function getALl(){
         if(!isset($_SESSION['user_id'])){
             http_response_code(404);
@@ -144,6 +208,14 @@ class UserController
 
     }
 
+    /**
+     * Získá data aktuálně přihlášeného uživatele (Autorizace).
+     *
+     * Slouží k ověření, zda je uživatel stále přihlášen a k načtení jeho dat pro frontend.
+     *
+     * @api
+     * @return void Vypíše JSON data uživatele.
+     */
     public function authorize ():void{
         if(!isset($_SESSION['user_id'])){
             http_response_code(404);
@@ -158,6 +230,13 @@ class UserController
         echo json_encode(["message"=>"The data is retrieved", "user"=>$user], JSON_PRETTY_PRINT);
     }
 
+    /**
+     * Získá uživatele podle ID z URL.
+     *
+     * @api
+     * @param int $_GET['id'] ID hledaného uživatele.
+     * @return void Vypíše JSON data uživatele.
+     */
     public function getById():void{
         $user = $this->User->getUserById($_GET['id']);
         if(!$user){
@@ -167,11 +246,31 @@ class UserController
         }
         echo json_encode(["message"=>"The data is retrieved", "user"=>$user], JSON_PRETTY_PRINT);
     }
+
+    /**
+     * Odhlásí uživatele.
+     *
+     * Zničí aktuální session (session_destroy).
+     *
+     * @api
+     * @return void Vypíše JSON potvrzení o odhlášení.
+     */
     public function logout(){
         session_destroy();
         http_response_code(200);
         echo json_encode(["message"=>"The user is logged out"]);
     }
+
+    /**
+     * Smaže uživatele.
+     *
+     * Umožní smazání pouze pokud je přihlášený uživatel administrátor,
+     * nebo pokud uživatel maže svůj vlastní účet.
+     *
+     * @api
+     * @param int $_GET['id'] ID uživatele ke smazání.
+     * @return void Vypíše JSON o úspěchu nebo chybě přístupu.
+     */
     public function delete(){
         if(!$_SESSION['user_id']){
             http_response_code(403);
@@ -188,7 +287,7 @@ class UserController
         }
     }
 
-    
+
 
 
 }

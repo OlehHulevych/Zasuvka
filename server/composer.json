@@ -1,0 +1,7 @@
+{
+  "name": "zasuvka/server",
+  "description": "Můj projekt...",
+    "require-dev": {
+        "phpdocumentor/phpdocumentor": "^3.9"
+    }
+}
