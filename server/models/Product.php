@@ -69,15 +69,16 @@ class Product{
     public function getAll($page, $category=null , $search=null, $lowcost=null, $bigcost=null ){
 
         $items = $this->getData();
-        if($category){
-            $items = array_filter($items, fn($item)=> $item['category']==$category);
+        if($category && $category!=='null'){
+            $items = array_filter($items, fn($item)=> $item['category']===$category);
 
         }
-        if($search){
+        if($search && $search !== 'null'){
             $items = array_filter($items,  fn($item)=>str_contains(strtolower($item['name']), strtolower($search)));
 
+
         }
-        if($lowcost || $bigcost){
+        if(($lowcost && $lowcost!=="null") || ($bigcost && $bigcost!=="null")){
             if($bigcost && !$lowcost){
                 $items = array_filter($items, fn($item)=>$item['price']<=$bigcost);
             }
@@ -226,7 +227,7 @@ class Product{
      * @return array Struktura obsahující data pro danou stránku a metadata stránkování.
      */
     private function paginate($items, $page){
-        $limit = 10;
+        $limit = 5;
         $total = count($items);
         $totalPages = ceil($total/$limit);
         $offset = ($page-1)*$limit;

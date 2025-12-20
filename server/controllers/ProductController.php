@@ -54,9 +54,10 @@ class ProductController
     public function getAll(){
         $category = $_GET['category'] ?? null;
         $search = $_GET['search'] ?? null;
-        $page  = $_GET['page'] ?? 0;
-        $lowcost = $_GET['low_cost'] ?? 0;
-        $bigcost = $_GET["big_cost"] ?? 0;
+        $page  = $_GET['page'] ?? 1;
+        $lowcost = $_GET['low_cost'] ?? null;
+        $bigcost = $_GET["big_cost"] ?? null;
+
         $products = $this->Product->getAll($page, $category, $search, (int)$lowcost, (int)$bigcost);
         echo json_encode(["message"=>"The products are retrieved", "products"=>$products], JSON_PRETTY_PRINT);
 

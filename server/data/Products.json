@@ -12,7 +12,7 @@
         "author": "Tomio",
         "phone": "+4206699038493289044398904830298",
         "description": "Gucci was founded in 1921 by Guccio Gucci (1881\u20131953) in Florence, Tuscany. Under the direction of Aldo Gucci (son of Guccio), Gucci became a global brand, and was considered emblematic of the Italian economic miracle. Following family feuds during the 1980s, the Gucci family was entirely ousted from the capital of the company by 1993. After this crisis, the brand was revived and in 1999 Gucci became a subsidiary of the French conglomerate PPR, which later renamed itself to Kering.",
-        "category": "Digital goods"
+        "category": "Clothes"
     },
     "9": {
         "id": 11,
@@ -42,6 +42,52 @@
         "author": "Hulevych",
         "phone": "608819232",
         "description": "The product line includes the Galaxy S series of high-end smartphones, the Galaxy Z series of foldable smartphones, the Galaxy A, M, and F series of mid-range and budget smartphones, the Galaxy Tab series of tablets, and the Galaxy Watch series of smartwatches. The Galaxy TabPro S is the first Samsung Galaxy-branded Windows 10 device that was announced at CES 2016. In 2020, Samsung added the Galaxy Chromebook 2-in-1 laptop running ChromeOS to the Galaxy branding lineup.[3] The Samsung Galaxy XR, first released on 21 October 2025, is one of the first major extended-reality devices to feature the Android XR operating system.",
+        "category": "Electronics"
+    },
+    "11": {
+        "id": 13,
+        "name": "New fantastic table",
+        "userId": 4,
+        "photos": [
+            "\/uploads\/products\/New_fantastic_table_0_1-810x702.jpg",
+            "\/uploads\/products\/New_fantastic_table_1_7719.jpg",
+            "\/uploads\/products\/New_fantastic_table_2_element-12-700x500.jpg",
+            "\/uploads\/products\/New_fantastic_table_3_H1-3-800x800.png"
+        ],
+        "price": 300,
+        "author": "Hulevych",
+        "phone": "608819232",
+        "description": "Minimalist Design: Stripping away of all unnecessary elements and focusing on what needs to be there, the minimalistic coffee table can be summed up: it's simple, it's tasteful, and it creates the clean and clutter-free space that\u2019s perfect for relaxing",
+        "category": "Furniture"
+    },
+    "12": {
+        "id": 14,
+        "name": "Bently 2025",
+        "userId": 4,
+        "photos": [
+            "\/uploads\/products\/Bently_2025_0_bentley_continental-gt__495193173f.jpg",
+            "\/uploads\/products\/Bently_2025_1_gettyimages-539927312-612x612.jpg",
+            "\/uploads\/products\/Bently_2025_2_Image20241104083801.png"
+        ],
+        "price": 10000000,
+        "author": "Hulevych",
+        "phone": "608819232",
+        "description": "Bentley is a prestigious British manufacturer of handcrafted luxury cars and SUVs, known for blending extreme performance with opulent interiors featuring fine leather, wood, and cutting-edge tech, embodying \"fast, good, best in its class\" since 1919,",
+        "category": "Cars"
+    },
+    "13": {
+        "id": 15,
+        "name": "Iphone new collection",
+        "userId": 4,
+        "photos": [
+            "\/uploads\/products\/Iphone_new_collection_0_apple-iphone-air-2.jpg",
+            "\/uploads\/products\/Iphone_new_collection_1_iphone_1.jpeg",
+            "\/uploads\/products\/Iphone_new_collection_2_photo-1591337676887-a217a6970a8a.jpeg"
+        ],
+        "price": 30000,
+        "author": "Hulevych",
+        "phone": "608819232",
+        "description": "An iPhone is a line of touchscreen smartphones by Apple, merging a mobile phone, iPod, and internet communicator, running the iOS system, known for its user-friendly interface, powerful chips, advanced cameras, and ecosystem integration (App Store, iCloud). Key features include intuitive touch controls, durable designs (Ceramic Shield), regular iOS updates for new features, and strong privacy\/security.",
         "category": "Electronics"
     }
 }

@@ -25,12 +25,27 @@ user_menu_cancel_menu.addEventListener("click", ()=>{
 })
 
 let searchBarForm = document.getElementById("search_bar")
+let mobileSearchBarForm = document.getElementById("mobile_search_form")
+console.log(mobileSearchBarForm)
 
-searchBarForm.addEventListener("submit",(e)=>{
-    e.preventDefault()
-    const query = searchBarForm.elements['search'].value;
-    window.location.href = `/Zasuvka/client/result.html?query=${encodeURIComponent(query)}`
-})
+
+
+
+    searchBarForm.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        const query = searchBarForm.elements['search'].value;
+        window.location.href = `/Zasuvka/client/result.html?search=${query}&page=1`
+    })
+
+    mobileSearchBarForm.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        const query = document.getElementById("mobile_search").value
+
+        console.log(query)
+        window.location.href = `/Zasuvka/client/result.html?search=${query}&page=1`
+    })
+
+
 
 const category_buttons = document.querySelectorAll(".category-item");
 

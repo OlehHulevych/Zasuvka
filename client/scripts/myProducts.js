@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         <div class="product-price">${item.price} Kč</div>
                     </div>
            
-                     <button class="view-button"><a href="/Zasuvka/client/product.html?id=${item.productId}">Zobrazit</a></button>
+                     <button class="view-button"><a href="/Zasuvka/client/product.html?id=${item.id}">Zobrazit</a></button>
                 </div>
             </div>`
             document.getElementById("item_container").innerHTML = containerHTML;

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výsledky vyhledávání</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/Zasuvka/client/assets/searchResultCategories.css">
+</head>
+<body>
+    <header>
+        <button class="logo-container">
+            <img class="logo-img" src="/Zasuvka/client/assets/logo.png" alt="Logo">
+            <h1 class="logo-text">Zásuvka</h1>
+        </button>
+
+        <form class="search_bar">
+            <input type="text" class="search_bar_input">
+            <button type="submit" class="search_bar_button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+
+        <div class="header-icons">
+            <button class="icon-wrapper favorites">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+            </button>
+            <button class="icon-wrapper profil">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+   <div class="categories">
+        <ul>
+            <button class="categories-button" data-category="Clothes">Oblečení</button>
+            <button class="categories-button" data-category="Cars">Auta</button>
+            <button class="categories-button" data-category="Furniture">Nábytek</button>
+            <button class="categories-button" data-category="Electronics">Electronika</button>
+            <button class="categories-button" data-category="Digital">Digitální zboží</button>
+        </ul>
+    </div>
+
+    <div class="main-container">
+        <h1 class="categories-title">Elektronika</h1>
+        <p class="subtitle" id="resultCount">0 výsledků</p>
+
+        <div class="products-list" id="productsList">
+            
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="https://cdn.pixabay.com/photo/2022/09/25/22/25/iphones-7479304_1280.jpg" alt="Product" class="card-image">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="product-name">iPhone 14 Pro Max</h3>
+                        <div class="product-price">25 000 Kč</div>
+                    </div>
+                    <div class="card-meta">
+                        <div class="icon1">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <p>Praha</p>
+                        </div>
+                        <div class="icon2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <p>Artem Hulevych</p>
+                        </div>
+                    </div>
+                    <button class="view-button">Zobrazit</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="https://media.istockphoto.com/id/1399695296/cs/fotografie/p%C5%99%C3%ADle%C5%BEitostn%C3%BD-mu%C5%BE-na-voln%C3%A9-noze-pracuj%C3%ADc%C3%AD-online-s-macbookem-a-mobiln%C3%ADm-telefonem-a-pit%C3%AD.webp?s=2048x2048&w=is&k=20&c=puGEblwDMjBPEYg8orY4OVQ1ZsWOrGeQieij_bP3QpI=" alt="Product" class="card-image">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="product-name">MacBook Air M1</h3>
+                        <div class="product-price">18 000 Kč</div>
+                    </div>
+                    <div class="card-meta">
+                        <div class="icon1">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <p>Brno</p>
+                        </div>
+                        <div class="icon2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <p>Jan Novák</p>
+                        </div>
+                    </div>
+                    <button class="view-button">Zobrazit</button>
+                </div>
+            </div>
+            
+             <div class="card">
+                <div class="card-image-container">
+                    <img src="/Zasuvka/client/assets/photos/monesy.jpg" alt="Product" class="card-image">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="product-name">AirPods Pro</h3>
+                        <div class="product-price">4 500 Kč</div>
+                    </div>
+                    <div class="card-meta">
+                        <div class="icon1">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <p>Ostrava</p>
+                        </div>
+                        <div class="icon2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <p>Petr Svoboda</p>
+                        </div>
+                    </div>
+                    <button class="view-button">Zobrazit</button>
+                </div>
+            </div>
+
+             <div class="card">
+                <div class="card-image-container">
+                    <img src="/Zasuvka/client/assets/photos/Snímek obrazovky 2025-12-08 124112.png" alt="Product" class="card-image">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="product-name">PlayStation 5</h3>
+                        <div class="product-price">10 000 Kč</div>
+                    </div>
+                    <div class="card-meta">
+                        <div class="icon1">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <p>Praha</p>
+                        </div>
+                        <div class="icon2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <p>Artem Hulevych</p>
+                        </div>
+                    </div>
+                    <button class="view-button">Zobrazit</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="/Zasuvka/client/assets/photos/Snímek obrazovky 2025-12-08 124112.png" alt="Product" class="card-image">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="product-name">PlayStation 5</h3>
+                        <div class="product-price">10 000 Kč</div>
+                    </div>
+                    <div class="card-meta">
+                        <div class="icon1">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <p>Praha</p>
+                        </div>
+                        <div class="icon2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <p>Artem Hulevych</p>
+                        </div>
+                    </div>
+                    <button class="view-button">Zobrazit</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="/Zasuvka/client/assets/photos/Snímek obrazovky 2025-12-08 124112.png" alt="Product" class="card-image">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="product-name">iPhone 13</h3>
+                        <div class="product-price">15 000 Kč</div>
+                    </div>
+                    <div class="card-meta">
+                        <div class="icon1">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <p>Brno</p>
+                        </div>
+                        <div class="icon2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <p>Jan Novák</p>
+                        </div>
+                    </div>
+                    <button class="view-button">Zobrazit</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="/Zasuvka/client/assets/photos/monesy.jpg" alt="Product" class="card-image">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="product-name">Samsung Galaxy S22</h3>
+                        <div class="product-price">12 000 Kč</div>
+                    </div>
+                    <div class="card-meta">
+                        <div class="icon1">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <p>Praha</p>
+                        </div>
+                        <div class="icon2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <p>Artem Hulevych</p>
+                        </div>
+                    </div>
+                    <button class="view-button">Zobrazit</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="/Zasuvka/client/assets/photos/Snímek obrazovky 2025-12-08 124112.png" alt="Product" class="card-image">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="product-name">Xbox Series X</h3>
+                        <div class="product-price">11 000 Kč</div>
+                    </div>
+                    <div class="card-meta">
+                        <div class="icon1">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <p>Ostrava</p>
+                        </div>
+                        <div class="icon2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <p>Petr Svoboda</p>
+                        </div>
+                    </div>
+                    <button class="view-button">Zobrazit</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="/Zasuvka/client/assets/photos/Snímek obrazovky 2025-12-08 124112.png" alt="Product" class="card-image">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="product-name">Nintendo Switch</h3>
+                        <div class="product-price">6 500 Kč</div>
+                    </div>
+                    <div class="card-meta">
+                        <div class="icon1">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <p>Plzeň</p>
+                        </div>
+                        <div class="icon2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <p>Jan Novák</p>
+                        </div>
+                    </div>
+                    <button class="view-button">Zobrazit</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="/Zasuvka/client/assets/photos/monesy.jpg" alt="Product" class="card-image">
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="product-name">iPad Air</h3>
+                        <div class="product-price">14 000 Kč</div>
+                    </div>
+                    <div class="card-meta">
+                        <div class="icon1">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <p>Praha</p>
+                        </div>
+                        <div class="icon2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <p>Artem Hulevych</p>
+                        </div>
+                    </div>
+                    <button class="view-button">Zobrazit</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pagination" id="pagination">
+            <button class="page-btn active">1</button>
+            
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+
+        </div>
+    </div>
+
+    <script type="module" src="/Zasuvka/client/scripts/searchResultCategories.js"></script>
+</body>
+</html>
