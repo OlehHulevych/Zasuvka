@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let avatar = document.querySelector(".avatar#avatar");
 
     if(!sessionStorage.getItem("user_id")){
-        window.location.href = "/Zasuvka/client/index.html"
+        window.location.href = "/Zasuvka/client/login.html"
     }
 
     name2.textContent = sessionStorage.getItem("user_name")

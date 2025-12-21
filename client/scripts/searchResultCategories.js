@@ -82,14 +82,14 @@ document.addEventListener('DOMContentLoaded', async (e) => {
     const iconButtonFavorites = document.querySelector(".favorites")
 
     iconButtonFavorites.addEventListener("click", function() {
-        window.location.href = "favorites.html"
+        window.location.href = "/Zasuvka/client/favorite.html"
     })
 
     // человек
     const iconButtonProfil = document.querySelector(".profil")
 
     iconButtonProfil.addEventListener("click", function() {
-        window.location.href = "profil.html"
+        window.location.href = "/Zasuvka/client/profil.html"
     })
 
 
@@ -105,6 +105,13 @@ document.addEventListener('DOMContentLoaded', async (e) => {
             window.location.href = url.toString();
         });
     });
+
+
+    const search_bar = document.getElementById("search_bar");
+    search_bar.addEventListener("submit",()=>{
+        const query = searchBarForm.elements['search'].value;
+        window.location.href = `/Zasuvka/client/result.html?search=${query}`
+    })
 
 
     // пагинация
