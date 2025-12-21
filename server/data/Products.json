@@ -9,6 +9,7 @@
             "\/uploads\/products\/Gucci_clothes_2_images.jpeg"
         ],
         "price": 500,
+        "location": "Tokio",
         "author": "Tomio",
         "phone": "+4206699038493289044398904830298",
         "description": "Gucci was founded in 1921 by Guccio Gucci (1881\u20131953) in Florence, Tuscany. Under the direction of Aldo Gucci (son of Guccio), Gucci became a global brand, and was considered emblematic of the Italian economic miracle. Following family feuds during the 1980s, the Gucci family was entirely ousted from the capital of the company by 1993. After this crisis, the brand was revived and in 1999 Gucci became a subsidiary of the French conglomerate PPR, which later renamed itself to Kering.",
@@ -17,6 +18,7 @@
     "9": {
         "id": 11,
         "name": "Audi A6 C4",
+        "location": "Lviv",
         "userId": 4,
         "photos": [
             "\/uploads\/products\/Audi_100_0_audi_general.jpg",
@@ -31,6 +33,7 @@
     "10": {
         "id": 12,
         "name": "Samsung Galaxy",
+        "location": "Ostrava",
         "userId": 4,
         "photos": [
             "\/uploads\/products\/Samsung_phone_0_Back.png",
@@ -47,6 +50,7 @@
     "11": {
         "id": 13,
         "name": "New fantastic table",
+        "location": "Brno",
         "userId": 4,
         "photos": [
             "\/uploads\/products\/New_fantastic_table_0_1-810x702.jpg",
@@ -63,6 +67,7 @@
     "12": {
         "id": 14,
         "name": "Bently 2025",
+        "location": "Brno",
         "userId": 4,
         "photos": [
             "\/uploads\/products\/Bently_2025_0_bentley_continental-gt__495193173f.jpg",
@@ -78,6 +83,7 @@
     "13": {
         "id": 15,
         "name": "Iphone new collection",
+        "location": "Brno",
         "userId": 4,
         "photos": [
             "\/uploads\/products\/Iphone_new_collection_0_apple-iphone-air-2.jpg",
@@ -89,5 +95,21 @@
         "phone": "608819232",
         "description": "An iPhone is a line of touchscreen smartphones by Apple, merging a mobile phone, iPod, and internet communicator, running the iOS system, known for its user-friendly interface, powerful chips, advanced cameras, and ecosystem integration (App Store, iCloud). Key features include intuitive touch controls, durable designs (Ceramic Shield), regular iOS updates for new features, and strong privacy\/security.",
         "category": "Electronics"
+    },
+    "14": {
+        "id": 16,
+        "name": "King size room",
+        "userId": 4,
+        "location": "Praha",
+        "photos": [
+            "\/uploads\/products\/King_size_room_0_images.jpeg",
+            "\/uploads\/products\/King_size_room_1_sksdr-five-r1lwefd4s28ycvha3ihvfha2ep0rypcx45le3d5ka8.jpg",
+            "\/uploads\/products\/King_size_room_2_THW-Iona-Bed-House-Chenille-Sky-high-footboard-dark-tapered-feet-LOW-RES.jpg"
+        ],
+        "price": 30000,
+        "author": "Hulevych",
+        "phone": "608819232",
+        "description": "Kingsize pokoj (King Size Room) je hotelov\u00fd pokoj s prostornou man\u017eelskou postel\u00ed o velikosti King Size (nej\u010dast\u011bji 180x200 cm), kter\u00fd nab\u00edz\u00ed pohodl\u00ed pro dv\u011b osoby, \u010dasto s nadstandardn\u00edm vybaven\u00edm, prostorn\u011bj\u0161\u00ed koupelnou a p\u0159\u00edjemn\u00fdm designem, ide\u00e1ln\u00ed pro ty, kdo preferuj\u00ed v\u00edce prostoru a komfort p\u0159i sp\u00e1nku",
+        "category": "Furniture"
     }
 }

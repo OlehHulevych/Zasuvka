@@ -152,11 +152,11 @@ class Product{
      * @param string $category    Kategorie.
      * @return array Nově vytvořený produkt.
      */
-    public function create($name, $userId,  $price, $photos, $description, $category){
+    public function create($name, $userId,  $price, $photos, $description, $category, $location){
         $products = $this->getData();
         $newId= count($products)?end($products)['id']+1:1;
         $productUser = $this->User->getUserById($userId);
-        $newProduct = ["id"=>$newId,"name"=>$name, "userId"=>$userId, "photos"=>$photos, "price"=>$price, "author"=>$productUser['name'], "phone"=>$productUser['phone'], "description"=>$description, "category"=>$category];
+        $newProduct = ["id"=>$newId,"name"=>$name, "userId"=>$userId,"location"=>$location, "photos"=>$photos, "price"=>$price, "author"=>$productUser['name'], "phone"=>$productUser['phone'], "description"=>$description, "category"=>$category];
         $products[] = $newProduct;
         $this->saveData($products);
         return $newProduct;
@@ -178,7 +178,7 @@ class Product{
      * @param array|null $newPhotos    Pole cest k novým fotkám.
      * @return array|null Upravený produkt nebo null při chybě/neoprávněném přístupu.
      */
-    public function update($id, $userId, $name, $price, $description, $deletePhotos, $newPhotos){
+    public function update($id, $userId, $name, $price, $description, $deletePhotos, $newPhotos, ){
         $products = $this->getData();
 //        foreach ($deletePhotos as $deletePhoto){
 //            echo "This is" . $deletePhoto;
@@ -193,6 +193,7 @@ class Product{
                 $product['name'] = $name ?? $product['name'];
                 $product['price'] = (int)$price ?? $product['price'];
                 $product['description'] = $description?? $product['description'];
+
 
                 // Mazání označených fotek ze seznamu
                 if (!empty($deletePhotos)) {

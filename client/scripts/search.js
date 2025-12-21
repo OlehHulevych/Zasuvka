@@ -29,7 +29,7 @@ export const searchFunction = async (e)=>{
                 <div class="product-price">$${item.price}</div>
             </div>
             <div class="card-row-mid">
-
+            
 
             </div>
             <div class="product-desc">

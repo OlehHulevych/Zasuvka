@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/Zasuvka/client/assets/style_adminPanel.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <h1 class="logo-text">Admin Panel</h1>
+            </div>
+
+            <button class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <p>Odhlásit se</p>
+            </button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <h2 class="page-title">Všechny inzeráty</h2>
+        <p class="subtitle">0 inzerátů</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Název</th>
+                        <th>Kategorie</th>
+                        <th>Cena</th>
+                        <th>Město</th>
+                        <th>Prodejce</th>
+                        <th>Datum</th>
+                        <th class="text-right">Akce</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="id-col">#1</td>
+                        <td class="name-col">iPhone 14 Pro Max 256GB</td>
+                        <td>Electronics</td>
+                        <td class="price-col">25 000 Kč</td>
+                        <td>Praha</td>
+                        <td>Marie Svobodová</td>
+                        <td>10.12.2024</td>
+                        <td class="actions-col">
+                            <button class="action-btn view-btn"><i class="fa-regular fa-eye"></i></button>
+                            <button class="action-btn delete-btn"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="id-col">#2</td>
+                        <td class="name-col">Samsung Galaxy S24 Ultra</td>
+                        <td>Electronics</td>
+                        <td class="price-col">28 000 Kč</td>
+                        <td>Brno</td>
+                        <td>Jan Novák</td>
+                        <td>09.12.2024</td>
+                        <td class="actions-col">
+                            <button class="action-btn view-btn"><i class="fa-regular fa-eye"></i></button>
+                            <button class="action-btn delete-btn"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="id-col">#3</td>
+                        <td class="name-col">MacBook Pro 14" M3</td>
+                        <td>Electronics</td>
+                        <td class="price-col">45 000 Kč</td>
+                        <td>Ostrava</td>
+                        <td>Petr Dvořák</td>
+                        <td>08.12.2024</td>
+                        <td class="actions-col">
+                            <button class="action-btn view-btn"><i class="fa-regular fa-eye"></i></button>
+                            <button class="action-btn delete-btn"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="id-col">#4</td>
+                        <td class="name-col">iPad Air 2024</td>
+                        <td>Electronics</td>
+                        <td class="price-col">18 000 Kč</td>
+                        <td>Plzeň</td>
+                        <td>Eva Nováková</td>
+                        <td>08.12.2024</td>
+                        <td class="actions-col">
+                            <button class="action-btn view-btn"><i class="fa-regular fa-eye"></i></button>
+                            <button class="action-btn delete-btn"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="id-col">#5</td>
+                        <td class="name-col">AirPods Pro 2</td>
+                        <td>Electronics</td>
+                        <td class="price-col">6 500 Kč</td>
+                        <td>Liberec</td>
+                        <td>Tomáš Černý</td>
+                        <td>07.12.2024</td>
+                        <td class="actions-col">
+                            <button class="action-btn view-btn"><i class="fa-regular fa-eye"></i></button>
+                            <button class="action-btn delete-btn"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="id-col">#6</td>
+                        <td class="name-col">Apple Watch Series 9</td>
+                        <td>Electronics</td>
+                        <td class="price-col">12 000 Kč</td>
+                        <td>Olomouc</td>
+                        <td>Lukáš Procházka</td>
+                        <td>07.12.2024</td>
+                        <td class="actions-col">
+                            <button class="action-btn view-btn"><i class="fa-regular fa-eye"></i></button>
+                            <button class="action-btn delete-btn"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="id-col">#7</td>
+                        <td class="name-col">Sony PlayStation 5</td>
+                        <td>Electronics</td>
+                        <td class="price-col">15 000 Kč</td>
+                        <td>Praha</td>
+                        <td>Anna Kučerová</td>
+                        <td>06.12.2024</td>
+                        <td class="actions-col">
+                            <button class="action-btn view-btn"><i class="fa-regular fa-eye"></i></button>
+                            <button class="action-btn delete-btn"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="id-col">#8</td>
+                        <td class="name-col">Nintendo Switch OLED</td>
+                        <td>Electronics</td>
+                        <td class="price-col">9 500 Kč</td>
+                        <td>Brno</td>
+                        <td>Martin Novotný</td>
+                        <td>05.12.2024</td>
+                        <td class="actions-col">
+                            <button class="action-btn view-btn"><i class="fa-regular fa-eye"></i></button>
+                            <button class="action-btn delete-btn"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="id-col">#9</td>
+                        <td class="name-col">Vintage Leather Sofa</td>
+                        <td>Furniture</td>
+                        <td class="price-col">8 500 Kč</td>
+                        <td>Praha</td>
+                        <td>Jan Novák</td>
+                        <td>05.12.2024</td>
+                        <td class="actions-col">
+                            <button class="action-btn view-btn"><i class="fa-regular fa-eye"></i></button>
+                            <button class="action-btn delete-btn"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="id-col">#10</td>
+                        <td class="name-col">Winter Jacket North Face</td>
+                        <td>Clothes</td>
+                        <td class="price-col">2 800 Kč</td>
+                        <td>Plzeň</td>
+                        <td>Eva Nováková</td>
+                        <td>04.12.2024</td>
+                        <td class="actions-col">
+                            <button class="action-btn view-btn"><i class="fa-regular fa-eye"></i></button>
+                            <button class="action-btn delete-btn"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination" id="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">></button>
+        </div>
+    </div>
+
+    <script type="module" src="/Zasvuka/client/scripts/adminPanel.js"></script>
+</body>
+</html>

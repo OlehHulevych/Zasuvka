@@ -51,9 +51,11 @@ const category_buttons = document.querySelectorAll(".category-item");
 
 category_buttons.forEach((category_button)=>{
     category_button.addEventListener("click",(e)=>{
+        e.stopPropagation()
         e.preventDefault()
         const query = category_button.dataset.category;
-        window.location.href = `/Zasuvka/client/result.html?category=${encodeURIComponent(query)}`
+        console.log(query)
+        window.location.href = `/Zasuvka/client/result.html?category=${query}`
     })
 })
 

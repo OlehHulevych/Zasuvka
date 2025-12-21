@@ -130,6 +130,7 @@ class ProductController
         $category = trim($_POST['category']);
         $price = (int)$_POST['price'];
         $description = trim($_POST['description']);
+        $location = trim($_POST['location']);
         $photos = [];
         if(!$name || !$category || !$price || !$description){
             echo json_encode(["message"=>"Something is missing"], JSON_PRETTY_PRINT);
@@ -151,7 +152,7 @@ class ProductController
         }
 
 
-        $newProduct = $this->Product->create($name, $id, $price, $photos, $description, $category);
+        $newProduct = $this->Product->create($name, $id, $price, $photos, $description, $category, $location);
         if($newProduct){
             echo json_encode(['message'=>"The product is created", 'product'=>$newProduct], JSON_PRETTY_PRINT);
         }

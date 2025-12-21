@@ -22,10 +22,11 @@ canselButton.addEventListener("click", function() {
 
 
 
-const parsingProduct = async (name,description,photos,price,userId) =>{
+const parsingProduct = async (name,description,photos,price,userId, location) =>{
     document.getElementById("product_name").innerText = name;
     document.getElementById("product_description").innerText = description
     document.getElementById("product_price").innerText = price+"Kč";
+    document.getElementById("location").innerText = location
 
     const response = await fetch(config.API_URL+`/user/id?id=${userId}`);
     if(response.ok){
@@ -63,7 +64,7 @@ document.addEventListener("DOMContentLoaded", async (e)=>{
     });
     if(response.ok){
         const data = await response.json();
-        await parsingProduct(data.item.name, data.item.description, data.item.photos, data.item.price,data.item.userId)
+        await parsingProduct(data.item.name, data.item.description, data.item.photos, data.item.price,data.item.userId, data.item.location)
         const isInFavorites = await checkInProducts(data.item.id);
         if(isInFavorites){
             document.getElementById("favoriteCheckbox").checked = true;
