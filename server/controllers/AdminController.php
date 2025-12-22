@@ -84,7 +84,7 @@ class AdminController{
             echo json_encode(["message"=>"Something went wrong on the server","status"=>false]);
         }
         else{
-            echo json_encode(["message"=>"The use is promoted","result"=>true]);
+            echo json_encode(["message"=>"The user is promoted","result"=>true]);
         }
     }
 
@@ -145,9 +145,9 @@ class AdminController{
             http_response_code(400);
         }
         $page = $_GET['page'];
-        $users = $this->User->getAllUser($page);
+        $users = $this->User->getAllUsers($page);
         if($users){
-            echo json_encode(["message"=>"The users are retrived", "users"=>$users]);
+            echo json_encode(["message"=>"The users are retrieved", "users"=>$users]);
         }
         else{
             http_response_code(404);

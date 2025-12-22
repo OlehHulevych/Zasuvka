@@ -33,7 +33,7 @@ class Product{
      *
      * @return array Pole všech produktů.
      */
-    private function getData(){
+    public function getData(){
         if(!file_exists($this->file)){
             file_put_contents($this->file,json_encode([]));
         }

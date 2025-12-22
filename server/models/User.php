@@ -4,6 +4,7 @@
  * @package App\Models
  */
 require_once __DIR__ . "/FavoriteList.php";
+require_once  __DIR__ . "/User.php";
 
 /**
  * Třída User
@@ -12,6 +13,7 @@ require_once __DIR__ . "/FavoriteList.php";
  * Data jsou ukládána do JSON souboru (`data/users.json`).
  * Zajišťuje registraci (vytváření), přihlášení (autentizaci), úpravu profilu,
  * správu rolí a mazání uživatelů.
+ *
  *
  * @package App\Models
  */
@@ -22,12 +24,14 @@ class User {
     /** @var FavoriteList Instance modelu pro správu oblíbených položek. */
     private $FavoriteList;
 
+
     /**
      * Konstruktor třídy.
      * Inicializuje model FavoriteList.
      */
     public function __construct(){
         $this->FavoriteList = new FavoriteList();
+
     }
 
     /**
@@ -74,7 +78,7 @@ class User {
      * @param int $page Číslo požadované stránky.
      * @return array|null Data stránky (items, totalPages...) nebo null při chybě.
      */
-    public function getAllUser($page){
+    public function getAllUsers($page){
         $users = $this->getData();
         $userPaginated = $this->paginate($users, $page);
         if($userPaginated){
@@ -283,7 +287,13 @@ class User {
         if(file_exists($fullPath)){
             unlink($fullPath);
         }
-
+        $product = new Product();
+        $products = $product->getData();
+        foreach ($products as &$item){
+            if($item['userId']==$id){
+                $product->delete($item['id'], $id);
+            }
+        }
         // Smazání záznamu uživatele
         $filteredUsers = array_filter($users, fn($user)=>$user['id'] != $id);
         $this->saveData($filteredUsers);

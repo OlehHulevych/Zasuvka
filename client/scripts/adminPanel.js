@@ -1,5 +1,6 @@
 import {config} from "./config.js";
 import {fetchProducts} from "./fetchProducts.js";
+import {fetchUsers} from "./fetchUsers.js";
 
 document.addEventListener('DOMContentLoaded', async () => {
 
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     await fetchProducts(1);
+    await fetchUsers(1)
 
     const delete_product_buttons = document.querySelectorAll("#delete_product_button");
     delete_product_buttons.forEach(button=>{
@@ -53,6 +55,31 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
             catch (error){
                 console.log(error)
+            }
+        })
+    })
+
+    const user_promote_buttons = document.querySelectorAll("#user_promote_button");
+    user_promote_buttons.forEach(button=>{
+        button.addEventListener("click", async()=>{
+            const id = button.dataset.id;
+            try{
+                const response = await fetch(config.API_URL+`/admin/user/promote?id=${id}`, {
+                    headers:{
+                        "Content-Type":"application/json"
+                    },
+                    method:"GET"
+                })
+                if(response.ok){
+                    const data = await response.json();
+                    console.log(data);
+                }
+                else{
+                    console.log(response)
+                }
+            }
+            catch (e){
+                console.error(e);
             }
         })
     })
@@ -109,9 +136,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const banButtons = document.querySelectorAll('.ban-btn');
     banButtons.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', async () => {
             const row = button.closest('tr');
             const icon = button.querySelector('i');
+            const id = button.dataset.id
             
             row.classList.toggle('banned');
 
@@ -121,6 +149,25 @@ document.addEventListener('DOMContentLoaded', async () => {
             } else {
                 icon.className = 'fa-solid fa-ban';
                 button.style.color = '';
+            }
+            try{
+                const response = await fetch(config.API_URL + `/admin/user?user_id=${id}`,{
+                    headers:{
+                        "Content-Type":"application-json"
+                    },
+                    method:"DELETE",
+                    credentials:"include"
+                });
+                if(response.ok){
+                    const data=  await  response.json()
+                    console.log(data)
+                }
+                else{
+                    console.log(response)
+                }
+            }
+            catch (error){
+                console.error(error)
             }
         });
     });

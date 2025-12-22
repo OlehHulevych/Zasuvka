@@ -6,7 +6,7 @@
         "photoPath": "\/uploads\/avatars\/Oleh_hulevych@gmail.com_user.jpg",
         "phone": "608819232",
         "password": "$2y$12$ixWUWxNu47GXYuin6Wn3SOe\/BCKqQ1CfTyWy38PujTVXn9ps7gINe",
-        "role": "user"
+        "role": "admin"
     },
     "2": {
         "id": 3,
@@ -15,7 +15,7 @@
         "photoPath": "\/uploads\/avatars\/Artem_admin@gmail.com_admin.png",
         "phone": "608819232",
         "password": "$2y$12$rh0Mp8XOy7RaW7wlrzgxlekcBYhC0eJSQIR4QYUt0P2t3obdVurZa",
-        "role": "admin"
+        "role": "user"
     },
     "3": {
         "id": 4,
@@ -33,15 +33,6 @@
         "photoPath": "\/uploads\/avatars\/Taras_taras@gmail.com_avatar.png",
         "phone": "+4206078999127",
         "password": "$2y$10$eKuaj1t1mvVldGTyTh4vn.EuiKSmcSe3PH41pT9Vvp5ft0wQZfpz6",
-        "role": "admin"
-    },
-    "5": {
-        "id": 6,
-        "name": "Pitomio",
-        "email": "okurkaOkamura@gmail.com",
-        "photoPath": "\/uploads\/avatars\/Tomio_tomioOkamura@gmail.com_images.jpeg",
-        "phone": "+4206078999127",
-        "password": "$2y$10$oxMFPgvYpliXxp9jSgY.0e0FxR.hTzc.tBjzKNDfw\/r4mGL7oCyeS",
         "role": "user"
     },
     "6": {
@@ -51,6 +42,6 @@
         "photoPath": "\/uploads\/avatars\/Oleh_adminoleh@gmail.com_admin.png",
         "phone": "666888999",
         "password": "$2y$10$vIpwD1DTbJL8OoGdznnAJOIUW..lxQxRPPujY6P4VBscRlO2.OD9W",
-        "role": "admin"
+        "role": "user"
     }
 }
