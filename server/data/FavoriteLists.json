@@ -12,17 +12,8 @@
     {
         "id": 3,
         "userId": 4,
-        "items": [
-            {
-                "id": 1,
-                "name": "Audi A6 C4",
-                "price": 85000,
-                "currency": null,
-                "photo": "\/uploads\/products\/Audi_100_0_audi_general.jpg",
-                "productId": 11,
-                "FavoriteListId": 3
-            },
-            {
+        "items": {
+            "1": {
                 "id": 2,
                 "name": "Gucci clothes",
                 "price": 500,
@@ -30,8 +21,17 @@
                 "photo": "\/uploads\/products\/Gucci_clothes_0_92af397ac2de2bf71ae3dc3836d8e3e7.jpg",
                 "productId": 10,
                 "FavoriteListId": 3
+            },
+            "2": {
+                "id": 3,
+                "name": "Audi A6 C4",
+                "price": 85000,
+                "currency": null,
+                "photo": "\/uploads\/products\/Audi_100_0_audi_general.jpg",
+                "productId": 11,
+                "FavoriteListId": 3
             }
-        ]
+        }
     },
     {
         "id": 4,

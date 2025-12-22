@@ -52,6 +52,28 @@ header {
     padding: 30px 16px;
 }
 
+.btn {
+    border: 1px solid #d4d7de;
+    background: white;
+    color: #4b5563;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background: #f3f4f6;
+    color: #111;
+}
+
+.btn:focus {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
 .page-title {
     font-size: 28px;
     margin-bottom: 5px;
@@ -163,6 +185,39 @@ td {
     background-color: #fee2e2;
 }
 
+.promote-btn {
+    color: #059669; 
+}
+
+.promote-btn:hover {
+    background-color: #d1fae5;
+}
+
+.ban-btn {
+    color: #dc2626; 
+}
+
+.ban-btn:hover {
+    background-color: #fee2e2;
+}
+
+.role-badge {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.role-badge.user {
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+.role-badge.admin {
+    background-color: #dbeafe;
+    color: #2563eb;
+}
+
 .pagination {
     display: flex;
     justify-content: center;
@@ -190,4 +245,22 @@ td {
     background: #2563eb;
     color: white;
     border-color: #2563eb;
+}
+
+tr.banned {
+    background-color: #fee2e2 !important;
+    color: #9ca3af;
+}
+
+tr.banned .name-col {
+    color: #9ca3af;
+    text-decoration: line-through;
+}
+
+tr.banned .role-badge {
+    opacity: 0.5;
+}
+
+tr.banned .action-btn {
+    opacity: 1;
 }
