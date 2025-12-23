@@ -33,30 +33,6 @@ class AdminController{
     }
 
 
-    /**
-     * Získá seznam všech produktů.
-     *
-     * Umožňuje filtrování podle kategorie, vyhledávání a stránkování.
-     * Očekává parametry v URL (GET request).
-     *
-     * @api
-     * @param string|null $_GET['category'] Kategorie produktu (volitelné).
-     * @param string      $_GET['search']   Vyhledávací dotaz (povinné).
-     * @param int|null    $_GET['page']     Číslo stránky pro stránkování (volitelné).
-     * @return void Vypíše JSON odpověď se seznamem produktů.
-     */
-    public function getAllProducts(){
-        $category = trim($_GET['category']) ?? null;
-        $search = $_GET['search'] ?? null;
-        $page  = $_GET['page'] ?? null;
-        if(!isset($search)){
-            http_response_code(400);
-            echo json_encode(["message"=>"There is no search query"]);
-        }
-        $products = $this->Product->getAll($page, $category, $search);
-        echo json_encode(["message"=>"The products are retrieved", "products"=>$products], JSON_PRETTY_PRINT);
-
-    }
 
     /**
      * Povýší uživatele na administrátora nebo změní jeho roli.
@@ -88,39 +64,9 @@ class AdminController{
         }
     }
 
-    /**
-     * Získá celkový počet uživatelů v systému.
-     *
-     * @return void Vypíše JSON odpověď obsahující počet uživatelů ({length: int}).
-     */
-    public function getCounOfUsers(){
-        $length = $this->User->getCountOfUsers();
-        if($length){
-            echo json_encode(["length"=>$length],JSON_PRETTY_PRINT);
-        }
-        else{
-            http_response_code(404);
-            echo json_encode(["message"=>"Something went wrong"]);
-        }
 
-    }
 
-    /**
-     * Získá celkový počet produktů v systému.
-     *
-     * @return void Vypíše JSON odpověď obsahující počet produktů ({length: int}).
-     */
-    public function getCounOfProducts(){
-        $length = $this->Product->getCountOfProducts();
-        if($length){
-            echo json_encode(["length"=>$length],JSON_PRETTY_PRINT);
-        }
-        else{
-            http_response_code(404);
-            echo json_encode(["message"=>"Something went wrong"]);
-        }
 
-    }
 
     /**
      * Získá seznam všech uživatelů se stránkováním.
@@ -164,27 +110,7 @@ class AdminController{
      * @param int $_GET['id'] ID produktu ke smazání.
      * @return void Vypíše JSON odpověď o výsledku operace.
      */
-    public function deleteProduct(){
-        if(!isset($_SESSION['user_id'])){
-            http_response_code(401);
-            echo json_encode(["message"=>"The user is not authorized"],JSON_PRETTY_PRINT);
-        }
-        if(!isset($_GET['id'])){
-            http_response_code(400);
-            echo json_encode(["message"=>"The ID is not found"]);
-        }
 
-        $id = $_GET['id'];
-
-        $result = $this->Product->delete($id, $_SESSION['user_id']);
-        if($result){
-            echo json_encode(["message"=>"The item was deleted", "result"=>$result],JSON_PRETTY_PRINT);
-
-        }
-        else{
-            echo json_encode(["message"=>"Something went wrong"],JSON_PRETTY_PRINT);
-        }
-    }
 
     /**
      * Smaže konkrétního uživatele.

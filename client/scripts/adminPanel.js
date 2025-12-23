@@ -1,6 +1,7 @@
 import {config} from "./config.js";
 import {fetchProducts} from "./fetchProducts.js";
 import {fetchUsers} from "./fetchUsers.js";
+import {logout} from "./logout.js";
 
 document.addEventListener('DOMContentLoaded', async () => {
 
@@ -110,7 +111,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         adsSection.style.display = 'none';
     });
 
-
+    const logout_button = document.getElementById("logout-btn")
+    logout_button.addEventListener("click",async()=>{
+        await logout();
+    })
     // счетчик обьявлений
     function updateCounter() {
         const adsRows = document.querySelectorAll('#ads-section tbody tr');

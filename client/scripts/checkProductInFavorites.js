@@ -12,7 +12,7 @@ if(sessionStorage.getItem("user_id")!=null){
     if(response.ok){
         const data = await response.json();
         const favoriteList = data.list.items;
-        for(let item of favoriteList){
+        for(let item of Object.values(favoriteList)){
             if(item.productId === productId){
                 return true;
             }

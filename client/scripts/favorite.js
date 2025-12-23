@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         const data = await response.json()
         let favoriteList = data.list.items;
         let containerHTML = ``;
-        for (let item of favoriteList){
+        for (let item of Object.values(favoriteList)){
             containerHTML+=`
                 <div class="card" data-id=${item.productId}>
                     <div class="card-image-container">

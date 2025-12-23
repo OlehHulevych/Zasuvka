@@ -47,8 +47,6 @@ class ProductController
      * @param string|null $_GET['category'] Kategorie pro filtrování.
      * @param string|null $_GET['search']   Hledaný výraz.
      * @param int         $_GET['page']     Číslo stránky (offset).
-     * @param int         $_GET['low_cost'] Minimální cena.
-     * @param int         $_GET['big_cost'] Maximální cena.
      * @return void Vypíše JSON s nalezenými produkty.
      */
     public function getAll(){
@@ -117,6 +115,7 @@ class ProductController
      * @param string $_POST['category']    Kategorie.
      * @param int    $_POST['price']       Cena.
      * @param string $_POST['description'] Popis produktu.
+     * @param string $_POST['location'] Lokace produktu.
      * @param array  $_FILES['photos']     Obrázky k nahrání.
      * @return void Vypíše JSON s vytvořeným produktem.
      */

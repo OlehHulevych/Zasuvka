@@ -6,41 +6,22 @@
 require_once __DIR__ . "/FavoriteList.php";
 require_once  __DIR__ . "/User.php";
 
-/**
- * Třída User
- *
- * Slouží jako Model pro správu uživatelů.
- * Data jsou ukládána do JSON souboru (`data/users.json`).
- * Zajišťuje registraci (vytváření), přihlášení (autentizaci), úpravu profilu,
- * správu rolí a mazání uživatelů.
- *
- *
- * @package App\Models
- */
+
 class User {
-    /** @var string Cesta k souboru s daty uživatelů. */
+
     private $file = __DIR__ . "/../data/users.json";
 
-    /** @var FavoriteList Instance modelu pro správu oblíbených položek. */
+
     private $FavoriteList;
 
 
-    /**
-     * Konstruktor třídy.
-     * Inicializuje model FavoriteList.
-     */
+
     public function __construct(){
         $this->FavoriteList = new FavoriteList();
 
     }
 
-    /**
-     * Načte data ze souboru JSON.
-     *
-     * Pokud soubor neexistuje, vytvoří nový.
-     *
-     * @return array Pole všech uživatelů.
-     */
+
     private function getData(){
         if(!file_exists($this->file)){
             file_put_contents($this->file,json_encode([]));
@@ -50,34 +31,20 @@ class User {
 
     }
 
-    /**
-     * Uloží data do souboru JSON.
-     *
-     * @param array $data Data k uložení.
-     * @return void
-     */
+
     private function saveData ($data)
     {
         file_put_contents($this->file, json_encode($data,JSON_PRETTY_PRINT));
 
     }
 
-    /**
-     * Získá všechny uživatele bez stránkování.
-     *
-     * @return array Seznam všech uživatelů.
-     */
+
     public function getAll(){
         return $this->getData();
 
     }
 
-    /**
-     * Získá uživatele se stránkováním.
-     *
-     * @param int $page Číslo požadované stránky.
-     * @return array|null Data stránky (items, totalPages...) nebo null při chybě.
-     */
+
     public function getAllUsers($page){
         $users = $this->getData();
         $userPaginated = $this->paginate($users, $page);
@@ -89,22 +56,13 @@ class User {
         }
     }
 
-    /**
-     * Vrátí celkový počet uživatelů v systému.
-     *
-     * @return int Počet uživatelů.
-     */
+
     public function getCountOfUsers(){
         $users =$this->getData();
         return count($users);
     }
 
-    /**
-     * Vyhledá uživatele podle ID.
-     *
-     * @param int $id ID uživatele.
-     * @return array|null Nalezený uživatel nebo null.
-     */
+
     public function getUserById($id){
         $users = $this->getData();
         foreach ($users as $user){
@@ -116,20 +74,7 @@ class User {
 
     }
 
-    /**
-     * Vytvoří nového uživatele (Registrace).
-     *
-     * Kontroluje duplicitu emailu. Heslo je před uložením zahashováno.
-     * Po vytvoření uživatele mu automaticky založí prázdný seznam oblíbených položek.
-     *
-     * @param string $name      Jméno.
-     * @param string $email     Email (unikátní identifikátor).
-     * @param string $photoPath Cesta k nahrané fotce.
-     * @param string $phone     Telefon.
-     * @param string $password  Heslo (plain text).
-     * @param string $role      Role ('user' nebo 'admin').
-     * @return array|null Nově vytvořený uživatel nebo null, pokud email již existuje.
-     */
+
     public function create($name, $email, $photoPath, $phone, $password, $role){
         $checkuser = false;
         $users = $this->getData();
@@ -153,15 +98,7 @@ class User {
     }
 
 
-    /**
-     * Ověří přihlášení uživatele.
-     *
-     * Porovná zadaný email a ověří heslo pomocí `password_verify`.
-     *
-     * @param string $email    Zadaný email.
-     * @param string $password Zadané heslo.
-     * @return array|null Data uživatele při úspěchu, jinak null.
-     */
+
     public function login($email, $password){
         $users = $this->getData();
         $foundUser = null;
@@ -183,19 +120,7 @@ class User {
         }
     }
 
-    /**
-     * Aktualizuje data uživatele.
-     *
-     * Pokud je zadáno nové heslo, automaticky se zahashuje.
-     * Pokud je hodnota parametru null, zachová se původní hodnota.
-     *
-     * @param int         $id       ID uživatele.
-     * @param string|null $name     Nové jméno.
-     * @param string|null $email    Nový email.
-     * @param string|null $phone    Nový telefon.
-     * @param string|null $password Nové heslo.
-     * @return array|null Aktualizovaný uživatel nebo null, pokud ID neexistuje.
-     */
+
     public function update($id,$name, $email,  $phone, $password){
         $users = $this->getData();
         $updatedUser = null;
@@ -221,13 +146,7 @@ class User {
 
     }
 
-    /**
-     * Pomocná metoda pro stránkování.
-     *
-     * @param array $items Vstupní pole.
-     * @param int   $page  Číslo stránky.
-     * @return array Data stránky.
-     */
+
     private function paginate($items, $page){
         $limit = 5;
         $total = count($items);
@@ -237,12 +156,7 @@ class User {
         return ["items"=>$paginated, "totalPages"=>$totalPages, "page"=>$page];
     }
 
-    /**
-     * Přepíná roli uživatele mezi 'admin' a 'user'.
-     *
-     * @param int $id ID uživatele.
-     * @return array|null Aktualizovaný uživatel nebo null.
-     */
+
     public function promoteToAdminOrUser(int $id){
         $users = $this->getData();
         $updatedUser = null;
@@ -267,16 +181,7 @@ class User {
         }
     }
 
-    /**
-     * Smaže uživatele.
-     *
-     * Kromě smazání záznamu z JSONu také:
-     * 1. Smaže soubor s profilovou fotkou (pokud existuje).
-     * 2. Smaže seznam oblíbených položek tohoto uživatele.
-     *
-     * @param int $id ID uživatele.
-     * @return bool Vždy vrací true (pokud nenastane fatální chyba).
-     */
+
     public function delete($id){
         $users = $this->getData();
         $userForDeleting  = $this->getUserById($id);

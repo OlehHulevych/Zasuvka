@@ -11,35 +11,15 @@ Search.appendIndex(
             "summary": "Konstruktor\u0020t\u0159\u00EDdy.",
             "url": "classes/AdminController.html#method___construct"
         },                {
-            "fqsen": "\\AdminController\u003A\u003AgetAllProducts\u0028\u0029",
-            "name": "getAllProducts",
-            "summary": "Z\u00EDsk\u00E1\u0020seznam\u0020v\u0161ech\u0020produkt\u016F.",
-            "url": "classes/AdminController.html#method_getAllProducts"
-        },                {
             "fqsen": "\\AdminController\u003A\u003AtoPromote\u0028\u0029",
             "name": "toPromote",
             "summary": "Pov\u00FD\u0161\u00ED\u0020u\u017Eivatele\u0020na\u0020administr\u00E1tora\u0020nebo\u0020zm\u011Bn\u00ED\u0020jeho\u0020roli.",
             "url": "classes/AdminController.html#method_toPromote"
         },                {
-            "fqsen": "\\AdminController\u003A\u003AgetCounOfUsers\u0028\u0029",
-            "name": "getCounOfUsers",
-            "summary": "Z\u00EDsk\u00E1\u0020celkov\u00FD\u0020po\u010Det\u0020u\u017Eivatel\u016F\u0020v\u0020syst\u00E9mu.",
-            "url": "classes/AdminController.html#method_getCounOfUsers"
-        },                {
-            "fqsen": "\\AdminController\u003A\u003AgetCounOfProducts\u0028\u0029",
-            "name": "getCounOfProducts",
-            "summary": "Z\u00EDsk\u00E1\u0020celkov\u00FD\u0020po\u010Det\u0020produkt\u016F\u0020v\u0020syst\u00E9mu.",
-            "url": "classes/AdminController.html#method_getCounOfProducts"
-        },                {
             "fqsen": "\\AdminController\u003A\u003AgetAllUsers\u0028\u0029",
             "name": "getAllUsers",
             "summary": "Z\u00EDsk\u00E1\u0020seznam\u0020v\u0161ech\u0020u\u017Eivatel\u016F\u0020se\u0020str\u00E1nkov\u00E1n\u00EDm.",
             "url": "classes/AdminController.html#method_getAllUsers"
-        },                {
-            "fqsen": "\\AdminController\u003A\u003AdeleteProduct\u0028\u0029",
-            "name": "deleteProduct",
-            "summary": "Sma\u017Ee\u0020konkr\u00E9tn\u00ED\u0020produkt.",
-            "url": "classes/AdminController.html#method_deleteProduct"
         },                {
             "fqsen": "\\AdminController\u003A\u003AdeleteUser\u0028\u0029",
             "name": "deleteUser",
@@ -386,10 +366,10 @@ Search.appendIndex(
             "summary": "Z\u00EDsk\u00E1\u0020v\u0161echny\u0020u\u017Eivatele\u0020bez\u0020str\u00E1nkov\u00E1n\u00ED.",
             "url": "classes/User.html#method_getAll"
         },                {
-            "fqsen": "\\User\u003A\u003AgetAllUser\u0028\u0029",
-            "name": "getAllUser",
+            "fqsen": "\\User\u003A\u003AgetAllUsers\u0028\u0029",
+            "name": "getAllUsers",
             "summary": "Z\u00EDsk\u00E1\u0020u\u017Eivatele\u0020se\u0020str\u00E1nkov\u00E1n\u00EDm.",
-            "url": "classes/User.html#method_getAllUser"
+            "url": "classes/User.html#method_getAllUsers"
         },                {
             "fqsen": "\\User\u003A\u003AgetCountOfUsers\u0028\u0029",
             "name": "getCountOfUsers",
