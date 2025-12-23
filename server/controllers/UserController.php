@@ -75,13 +75,13 @@ class UserController
                 echo json_encode(["message"=>"Something went wrong on the server"],JSON_PRETTY_PRINT);
             }
             $newUser = $this->User->create($name, $email, $photoPath, $phone, $password, $role);
-            if($newUser){
+            if(isset($newUser['id'])){
                 echo json_encode(["message"=>"The user is created", "user"=>$newUser], JSON_PRETTY_PRINT);
 
             }
             else{
                 http_response_code(404);
-                echo json_encode(["message"=>"Something went wrong"], JSON_PRETTY_PRINT);
+                echo json_encode(["message"=>$newUser], JSON_PRETTY_PRINT);
 
             }
 
@@ -105,13 +105,13 @@ class UserController
         session_regenerate_id(true);
         if(!$email || !$password){
             http_response_code(400);
-            echo json_encode(["message"=>"Something is missing"], JSON_PRETTY_PRINT);
+            echo json_encode(["message"=>"Něco chybi"], JSON_PRETTY_PRINT);
         }
         else{
             $loggedUser = $this->User->login($email, $password);
-            if(!isset($loggedUser)){
+            if(!isset($loggedUser["id"])){
                 http_response_code(401);
-                echo json_encode(["message"=>"Email or password is wrong","result"=>false],JSON_PRETTY_PRINT);
+                echo json_encode(["message"=>$loggedUser,"result"=>false],JSON_PRETTY_PRINT);
             }
             else{
                 $_SESSION["user_id"] = $loggedUser['id'];

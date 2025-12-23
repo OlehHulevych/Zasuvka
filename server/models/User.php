@@ -139,7 +139,7 @@ class User {
             }
         }
         if($checkuser){
-            return null;
+            return "Účet s tímto e-mailem již existuje";
         }
         $newid = count($users) ? end($users)['id']+1:1;
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -171,14 +171,14 @@ class User {
             }
         }
         if($foundUser==null){
-            return null;
+            return "Uživatel nebyl nalezen";
         }
         else{
             if(password_verify($password, $foundUser['password'])){
                 return $foundUser;
             }
             else{
-                return null;
+                return "Zadal jste neplatné heslo";
             }
         }
     }

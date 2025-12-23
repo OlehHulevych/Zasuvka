@@ -19,24 +19,21 @@
         
         <p class="text1">Vytvořte si účet a začněte nakupovat</p>
         <div class="warning_block">
-            The email or password is wrong
+            Chybi
         </div>
         <form id="registration-form" method="post" enctype="multipart/form-data">
-            <label for="name">Jméno a příjmení</label>
-            <input class="inputs" type="text" id="name" name="name" required>
+            <label class="required-label" for="name">Jméno a příjmení</label>
+            <input class="inputs" type="text" id="name" name="name" >
         
-            <label for="email">Email</label>
-            <input class="inputs" type="email" id="email" name="email" required>
+            <label class="required-label" for="email">Email</label>
+            <input class="inputs" type="email" id="email" name="email" >
         
-            <label for="phone">Telefonní číslo</label>
-            <input class="inputs" type="tel" id="phone" name="phone" maxlength="11" required>
+            <label class="required-label" for="phone">Telefonní číslo</label>
+            <input class="inputs" type="tel" id="phone" name="phone" maxlength="13" minlength="13" >
 
-            <label for="password">Heslo</label>
-            <input class="inputs" type="password" id="password" name="password" required>
+            <label class="required-label" for="password">Heslo</label>
+            <input class="inputs" type="password" id="password" name="password" >
 
-            
-            <input class="checkbox" type="checkbox" id="checkbox" name="checkbox" required>
-            <label class="checkbox-label" for="checkbox">Souhlasím s Podmínkami služby a Zásadami ochrany osobních údajů</label>
             <label for="photo">Photo for avatar</label>
             <input class="hidden_input" type="file" name="photo" id="photo" accept="image/*">
             <label for="photo" class="custom_button">Zvolte foto</label>

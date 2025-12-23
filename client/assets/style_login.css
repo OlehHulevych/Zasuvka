@@ -132,7 +132,7 @@ button:hover {
     margin-top: 20px;
 }
 
-.warning{
+.warning_block{
     width: 100%;
     height: 10vh;
     background-color: #f67373;
@@ -146,6 +146,15 @@ button:hover {
     align-items: center;
     margin-bottom:10px ;
 }
-.warning.active{
+.warning_block.active{
     display: flex;
+}
+.required-label::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+}
+
+.input-invalid{
+    border: red 1px solid;
 }

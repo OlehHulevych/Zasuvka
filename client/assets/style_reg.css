@@ -151,3 +151,13 @@ button:hover {
     display: flex;
 }
 
+.required-label::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+}
+
+.input-invalid{
+    border: red 1px solid;
+}
+

@@ -43,5 +43,23 @@
         "phone": "666888999",
         "password": "$2y$10$vIpwD1DTbJL8OoGdznnAJOIUW..lxQxRPPujY6P4VBscRlO2.OD9W",
         "role": "user"
+    },
+    "7": {
+        "id": 8,
+        "name": "",
+        "email": "",
+        "photoPath": null,
+        "phone": "",
+        "password": "$2y$10$YtFjlqKAfynGcW2QfH4aj.zW20960WDxI8xbRJ2xalilZ2u96Bvza",
+        "role": "user"
+    },
+    "8": {
+        "id": 9,
+        "name": "Oleh",
+        "email": "hul@gmail.com",
+        "photoPath": "\/uploads\/avatars\/Oleh_hul@gmail.com_images.jpeg",
+        "phone": "+420607788192",
+        "password": "$2y$10$YSIuvNX2BbxWpW1pTE2kmefizCsIAKZu2GFc.swwMhJYLXZvJVUNS",
+        "role": "user"
     }
 }
