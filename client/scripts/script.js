@@ -34,7 +34,7 @@ console.log(mobileSearchBarForm)
     searchBarForm.addEventListener("submit",(e)=>{
         e.preventDefault()
         const query = searchBarForm.elements['search'].value;
-        window.location.href = `/Zasuvka/client/result.html?search=${query}&page=1`
+        window.location.href = `/~hulevole/Zasuvka/client/result.html?search=${query}&page=1`
     })
 
     mobileSearchBarForm.addEventListener("submit",(e)=>{
@@ -42,7 +42,7 @@ console.log(mobileSearchBarForm)
         const query = document.getElementById("mobile_search").value
 
         console.log(query)
-        window.location.href = `/Zasuvka/client/result.html?search=${query}&page=1`
+        window.location.href = `/~hulevole/Zasuvka/client/result.html?search=${query}&page=1`
     })
 
 
@@ -55,7 +55,7 @@ category_buttons.forEach((category_button)=>{
         e.preventDefault()
         const query = category_button.dataset.category;
         console.log(query)
-        window.location.href = `/Zasuvka/client/result.html?category=${query}`
+        window.location.href = `/~hulevole/Zasuvka/client/result.html?category=${query}`
     })
 })
 
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
                         <img src="${config.API_STATIC}${item.photos[0]}" alt="">
                     </div>
                     <div class="ad_information">
-                        <a href="/Zasuvka/client/product.html?id=${item.id}" class="ad_name">${item.name}</a>
+                        <a href="/~hulevole/Zasuvka/client/product.html?id=${item.id}" class="ad_name">${item.name}</a>
                         <div class="ad_price">${item.price} Kč</div>
                         <div class="ad_author">${item.author}</div>
                     </div> 
@@ -95,8 +95,12 @@ document.addEventListener("DOMContentLoaded",async()=>{
 
     })
     box.innerHTML = productHtml;
-    const userResponse = await fetch(config.API_URL+"/user/authorize",{
-        method:"GET"
+    const userResponse = await fetch(config.API_URL + "/user/authorize", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        credentials: "include"
     });
     if(userResponse.ok){
         const data = await userResponse.json();

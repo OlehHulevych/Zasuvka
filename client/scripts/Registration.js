@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded",(e)=>{
                     warning_block.classList.remove("active")
                     const result = await response.json();
                     console.log('Success', result);
-                    window.location.href = "/Zasuvka/Client/login.html"
+                    window.location.href = "/~hulevole/Zasuvka/client/login.html"
                 }
                 else{
                     const result = await response.json();

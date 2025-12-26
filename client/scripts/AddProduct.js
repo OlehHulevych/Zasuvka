@@ -2,7 +2,7 @@ import {config} from "./config.js";
 
 document.addEventListener("DOMContentLoaded",()=>{
     if(sessionStorage.getItem('user_id')==null){
-        window.location.href = "/Zasuvka/client/login.html"
+        window.location.href = "/~hulevole/Zasuvka/client/login.html"
     }
 })
 const warning_block = document.querySelector("div.warning_block")
@@ -19,7 +19,7 @@ addForm.addEventListener('submit', async(e)=>{
         if(response.ok){
             const data = await response.json();
             console.log(data);
-            window.location.href = "/Zasuvka/client/"
+            window.location.href = "/~hulevole/Zasuvka/client/"
         }
         else{
             console.log(response)

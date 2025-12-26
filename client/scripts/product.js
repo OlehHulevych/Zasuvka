@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", async (e)=>{
     favoriteCheckBox.addEventListener("click", async ()=>{
         if(sessionStorage.getItem('user_id')==null){
             favoriteCheckBox.checke=false;
-            window.location.href = "/Zasuvka/client/login.html"
+            window.location.href = "/~hulevole/Zasuvka/client/login.html"
 
         }
         else{

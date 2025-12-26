@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", (e)=>{
                     const userId = data.user_id;
                     sessionStorage.setItem("user_id", userId);
                     console.log(sessionStorage.getItem("user_id"));
-                    window.location.href = "/Zasuvka/client"
+                    window.location.href = "/~hulevole/Zasuvka/client"
                 }
                 else{
                     const data = await response.json();

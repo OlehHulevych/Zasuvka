@@ -198,6 +198,7 @@ header {
 
 .description-container {
     margin-bottom: 20px;
+    word-break: break-word;
 }
 
 .title {

@@ -6,7 +6,7 @@ import {logout} from "./logout.js";
 document.addEventListener('DOMContentLoaded', async () => {
 
     if(sessionStorage.getItem("user_id")==null){
-        window.location.href = "/Zasuvka/client/login.html"
+        window.location.href = "/~hulevole/Zasuvka/client/login.html"
     }
     let user = null
     try{
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     if(user?.role!=="admin"){
-        window.location.href = "/Zasuvka/client/login.html"
+        window.location.href = "/~hulevole/Zasuvka/client/login.html"
     }
 
     await fetchProducts(1);

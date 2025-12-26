@@ -35,7 +35,7 @@ export const fetchProducts = async (page)=>{
                 <td>${product.location}</td>
                 <td>${product.author}</td>
                 <td class="actions-col">
-                    <button class="action-btn view-btn"><a href="/Zasuvka/client/product.html?id=${product.id}"><i class="fa-regular fa-eye"></i></a></button>
+                    <button class="action-btn view-btn"><a href="/~hulevole/Zasuvka/client/product.html?id=${product.id}"><i class="fa-regular fa-eye"></i></a></button>
                     <button data-id=${product.id} id="delete_product_button" class="action-btn delete-btn"><i class="fa-regular fa-trash-can"></i></button>
                 </td>
             </tr>

@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let avatar = document.querySelector(".avatar#avatar");
 
     if(!sessionStorage.getItem("user_id")){
-        window.location.href = "/Zasuvka/client/login.html"
+        window.location.href = "/~hulevole/Zasuvka/client/login.html"
     }
 
     name2.textContent = sessionStorage.getItem("user_name")
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         if(response.ok){
             const result = await response.json()
             console.log(result)
-            window.location.href = "/Zasuvka/client"
+            window.location.href = "/~hulevole/Zasuvka/client"
         }
         else{
             console.log(response)

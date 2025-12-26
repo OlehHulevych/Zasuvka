@@ -3,7 +3,7 @@ import {addOrDeleteProductFromFavorites} from "./addProductToFavorites.js";
 
 document.addEventListener('DOMContentLoaded', async function() {
     if(sessionStorage.getItem("user_id")==null){
-        window.location.href = "/Zasuvka/client/login.html"
+        window.location.href = "/~hulevole/Zasuvka/client/login.html"
     }
 
     const response = await fetch(config.API_URL+"/favorites", {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                             <div class="product-price">${item.price} Kč</div>
                         </div>
 
-                        <button class="view-button"><a href="/Zasuvka/client/product.html?id=${item.productId}">Zobrazit</a></button>
+                        <button class="view-button"><a href="/~hulevole/Zasuvka/client/product.html?id=${item.productId}">Zobrazit</a></button>
                     </div>
                 </div>`
                 document.getElementById("item_container").innerHTML = containerHTML;

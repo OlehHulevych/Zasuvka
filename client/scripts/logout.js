@@ -11,7 +11,7 @@ export const logout = async () =>{
         const data = await response.json();
         console.log(data);
         sessionStorage.clear();
-        window.location.href="/Zasuvka/client/"
+        window.location.href="/~hulevole/Zasuvka/client/"
 
     }
     else{

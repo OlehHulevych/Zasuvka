@@ -64,7 +64,7 @@ class UserController
 
         $email = $_POST['email'];
         $password = $_POST['password'];
-        session_regenerate_id(true);
+
         if(!$email || !$password){
             http_response_code(400);
             echo json_encode(["message"=>"Něco chybi"], JSON_PRETTY_PRINT);

@@ -36,7 +36,7 @@ $uri  = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 // Odstranění kořenové složky pro lokální vývojové prostředí.
 // @todo Při nasazení na produkci tuto část upravte nebo odstraňte podle konfigurace serveru.
-$uri = str_replace('/Zasuvka/server', '', $uri);
+$uri = str_replace('/~hulevole/Zasuvka/server', '', $uri);
 
 /** * @var string $method HTTP sloveso požadavku (GET, POST, DELETE, atd.).
  */
@@ -143,7 +143,7 @@ elseif($uri == "/admin/product" && $method === "DELETE"){
 
 
 else{
-    
+
     http_response_code(400);
     echo json_encode(["message" => "Tato trasa neexistuje (Route not found)"]);
 }

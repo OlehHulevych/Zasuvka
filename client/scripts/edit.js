@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", async()=>{
             credentials:"include"
         });
         if(response.ok){
-            window.location.href = `/Zasuvka/client/product.html?id=${product_id}`
+            window.location.href = `/~hulevole/Zasuvka/client/product.html?id=${product_id}`
         }
         else{
             console.log("Something went wrong please try again later")

@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
                             <p>${product.author}</p>
                         </div>
                     </div>
-                    <button class="view-button"><a href="/Zasuvka/client/product.html?id=${product.id}">Zobrazit</a></button>
+                    <button class="view-button"><a href="/~hulevole/Zasuvka/client/product.html?id=${product.id}">Zobrazit</a></button>
                 </div>
             </div>
         `
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
     const backButton = document.querySelector(".logo-container")
 
     backButton.addEventListener("click", function() {
-        window.location.href = "index.html"
+        window.location.href = "/~hulevole/Zasuvka/client/index.html"
     })
 
 
@@ -86,14 +86,14 @@ document.addEventListener('DOMContentLoaded', async (e) => {
     const iconButtonFavorites = document.querySelector(".favorites")
 
     iconButtonFavorites.addEventListener("click", function() {
-        window.location.href = "/Zasuvka/client/favorite.html"
+        window.location.href = "/~hulevole/Zasuvka/client/favorite.html"
     })
 
     // человек
     const iconButtonProfil = document.querySelector(".profil")
 
     iconButtonProfil.addEventListener("click", function() {
-        window.location.href = "/Zasuvka/client/profil.html"
+        window.location.href = "/~hulevole/Zasuvka/client/profil.html"
     })
 
 
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
     const search_bar = document.getElementById("search_bar");
     search_bar.addEventListener("submit",()=>{
         const query = searchBarForm.elements['search'].value;
-        window.location.href = `/Zasuvka/client/result.html?search=${query}`
+        window.location.href = `/~hulevole/Zasuvka/client/result.html?search=${query}`
     })
 
 
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
         button.addEventListener('click',(e)=>{
             e.preventDefault();
             const page = button.innerText;
-            window.location.href = `/Zasuvka/client/result.html?search=${search}&page=${page}&category=${category}&low_cost=${low_cost}&big_cost=${big_cost}`
+            window.location.href = `/~hulevole/Zasuvka/client/result.html?search=${search}&page=${page}&category=${category}&low_cost=${low_cost}&big_cost=${big_cost}`
         })
     })
 

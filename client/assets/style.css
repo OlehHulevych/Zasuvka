@@ -559,7 +559,7 @@ a.add_product_button:hover{
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: space-between;
     gap: 4rem;
     flex-wrap: wrap;
 }
