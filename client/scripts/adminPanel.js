@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             headers:{
                 "Content-Type":"application/json"
             },
-            method:"GET"
+            method:"GET",
+            credentials: "include"
         })
         if(response.ok){
             const data = await response.json();
@@ -61,31 +62,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         })
     })
 
-    const user_promote_buttons = document.querySelectorAll("#user_promote_button");
-    user_promote_buttons.forEach(button=>{
-        button.addEventListener("click", async()=>{
-            const id = button.dataset.id;
-            try{
-                const response = await fetch(config.API_URL+`/admin/user/promote?id=${id}`, {
-                    headers:{
-                        "Content-Type":"application/json"
-                    },
-                    method:"GET",
-                    credentials:"include"
-                })
-                if(response.ok){
-                    const data = await response.json();
-                    console.log(data);
-                }
-                else{
-                    console.log(response)
-                }
-            }
-            catch (e){
-                console.error(e);
-            }
-        })
-    })
+
 
     
     // клики на кнопки
