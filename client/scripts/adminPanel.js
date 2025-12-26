@@ -44,7 +44,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                     headers:{
                         "Content-Type":"application/json"
                     },
-                    method:"DELETE"
+                    method:"DELETE",
+                    credentials:"include"
                 })
                 if(response.ok){
                     const data = await response.json();
