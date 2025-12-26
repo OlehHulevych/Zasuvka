@@ -69,7 +69,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                     headers:{
                         "Content-Type":"application/json"
                     },
-                    method:"GET"
+                    method:"GET",
+                    credentials:"include"
                 })
                 if(response.ok){
                     const data = await response.json();
