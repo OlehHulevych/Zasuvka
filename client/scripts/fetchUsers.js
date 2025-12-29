@@ -81,6 +81,43 @@ export const fetchUsers = async (page)=>{
             }
         })
     })
+    const banButtons = document.querySelectorAll('.ban-btn');
+    banButtons.forEach(button => {
+        button.addEventListener('click', async () => {
+            const row = button.closest('tr');
+            const icon = button.querySelector('i');
+            const id = button.dataset.id
+
+            row.classList.toggle('banned');
+
+            if (row.classList.contains('banned')) {
+                icon.className = 'fa-solid fa-lock-open';
+                button.style.color = '#6b7280';
+            } else {
+                icon.className = 'fa-solid fa-ban';
+                button.style.color = '';
+            }
+            try{
+                const response = await fetch(config.API_URL + `/admin/user?user_id=${id}`,{
+                    headers:{
+                        "Content-Type":"application-json"
+                    },
+                    method:"DELETE",
+                    credentials:"include"
+                });
+                if(response.ok){
+                    const data=  await  response.json()
+                    console.log(data)
+                }
+                else{
+                    console.log(response)
+                }
+            }
+            catch (error){
+                console.error(error)
+            }
+        });
+    });
     const product_pagination_buttons = document.querySelectorAll("#user-page-button")
     product_pagination_buttons.forEach(button=>{
         button.addEventListener("click",async()=>{

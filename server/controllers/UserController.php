@@ -17,10 +17,10 @@ class UserController
 
     public function register(){
 
-        $name = $_POST['name'] ?? null;
-        $email = $_POST['email'] ?? null;
+        $name = strip_tags($_POST['name']) ?? null;
+        $email = strip_tags($_POST['email']) ?? null;
         $password = $_POST['password']?? null;
-        $phone  = $_POST['phone']??null;
+        $phone  = strip_tags($_POST['phone'])??null;
         $role = $_POST['role'] ?? 'user';
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
             http_response_code(400);

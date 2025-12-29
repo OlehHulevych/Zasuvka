@@ -123,16 +123,19 @@ class ProductController
         if(!isset($_SESSION['user_id'])){
             http_response_code(403);
             echo json_encode(["message"=>"The user is not authorized"]);
+            return;
         }
         $id = $_SESSION['user_id'];
-        $name = trim($_POST['name']);
-        $category = trim($_POST['category']);
+        $name = strip_tags(trim($_POST['name']));
+        $category = strip_tags(trim($_POST['category']));
         $price = (int)$_POST['price'];
-        $description = trim($_POST['description']);
-        $location = trim($_POST['location']);
+        $description = strip_tags(trim($_POST['description']));
+        $location = strip_tags(trim($_POST['location']));
         $photos = [];
         if(!$name || !$category || !$price || !$description){
-            echo json_encode(["message"=>"Something is missing"], JSON_PRETTY_PRINT);
+            http_response_code(400);
+            echo json_encode(["message"=>"Něco chybi"], JSON_PRETTY_PRINT);
+            return;
         }
 
         $uploadDir =  __DIR__ . "/../uploads/products/";
@@ -146,6 +149,7 @@ class ProductController
             }
             else{
                 echo "The photo is not saved";
+                return;
             }
 
         }
@@ -180,9 +184,9 @@ class ProductController
             echo json_encode(["message"=>"access is denied"], JSON_PRETTY_PRINT);
         }
         $productId = $_GET['id'] ?? null;
-        $name = $_POST['name'] ?? null;
+        $name = strip_tags(trim($_POST['name'])) ?? null;
         $price = $_POST['price'] ?? null;
-        $description = $_POST['description'] ?? null;
+        $description = strip_tags(trim($_POST['description'])) ?? null;
         $deletePhotos = $_POST['deletePhotos'] ?? null;
         $newPhotosForProduct = $_POST['newPhotos'] ?? null;
 

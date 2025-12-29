@@ -7,7 +7,8 @@ ini_set('session.cookie_httponly', '1');
 session_start();
 
 $allowedOrigins = [
-    'http://zwa.toad.cz'
+    'http://zwa.toad.cz',
+    'https://zwa.toad.cz'
 ];
 
 if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowedOrigins, true)) {

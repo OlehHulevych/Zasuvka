@@ -1,4 +1,5 @@
 import {config} from "./config.js";
+import {validateString} from "./Validation.js";
 
 document.addEventListener("DOMContentLoaded",(e)=>{
     e.preventDefault()
@@ -10,31 +11,45 @@ document.addEventListener("DOMContentLoaded",(e)=>{
         const data = Object.fromEntries(formData)
         let check = false
         let condition = false
+
+
         console.log(data);
         if(!check){
+
             for(const[key,value] of formData){
-                if (value===""||value.name === "" || value.size === 0) {
+                let validation = validateString(value) ;
+                console.log(validation)
+                if (value===""||value.name === "" || value.size === 0 || validation ) {
                     document.getElementById(key).classList.add("input-invalid")
                     let newKey=""
                     switch (key){
                         case "name":
-                            newKey = "jmeno"
+                            newKey = "Jmeno"
                             break;
                         case "email":
-                            newKey = "email"
+                            newKey = "Email"
                             break
                         case "phone":
-                            newKey = "čislo telefonu"
+                            newKey = "Čislo telefonu"
                             break;
                         case "password":
-                            newKey = "heslo";
+                            newKey = "Heslo";
                             break
                         case "photo":
-                            newKey = "obrázek"
+                            newKey = "Obrázek"
                             break;
                     }
-                    warning_block.classList.add("active")
-                    warning_block.innerText+=" "+newKey+" "
+                    if(validation){
+                        warning_block.classList.add("active")
+                        warning_block.innerText=" "+newKey+" má špatný format"
+                        break;
+                    }
+                    else{
+                        warning_block.classList.add("active")
+                        warning_block.innerText+=" "+newKey+" "
+                        break;
+                    }
+
 
                 }
                 else{

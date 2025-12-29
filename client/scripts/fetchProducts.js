@@ -56,6 +56,31 @@ export const fetchProducts = async (page)=>{
             `
         }
     }
+    const delete_product_buttons = document.querySelectorAll("#delete_product_button");
+    delete_product_buttons.forEach(button=>{
+        button.addEventListener("click", async(e)=>{
+            const id = button.dataset.id;
+            try{
+                const response = await fetch(config.API_URL+`/product?id=${id}`,{
+                    headers:{
+                        "Content-Type":"application/json"
+                    },
+                    method:"DELETE",
+                    credentials:"include"
+                })
+                if(response.ok){
+                    const data = await response.json();
+                    console.log(data);
+                }
+                else{
+                    console.log(response)
+                }
+            }
+            catch (error){
+                console.log(error)
+            }
+        })
+    })
     pagination_block.innerHTML = newPaginationHTML;
     const product_pagination_buttons = document.querySelectorAll("#product-page-button")
     product_pagination_buttons.forEach(button=>{
