@@ -71,7 +71,7 @@ class User {
         $users = $this->getData();
         foreach ($users as $user){
             if($user['id']==$id){
-                return ["id"=>$user['id'], "name"=>$user['name'], "phone"=>$user['phone'], "role"=>$user['role'], "photoPath"=>$user['photoPath'], "email"=>$user['email'] ];
+                return $user;
             }
         }
         return null;
@@ -116,7 +116,7 @@ class User {
         }
         else{
             if(password_verify($password, $foundUser['password'])){
-                return ["id"=>$foundUser['id'], "name"=>$foundUser['name'], "phone"=>$foundUser['phone'], "role"=>$foundUser['role'], "photoPath"=>$foundUser['photoPath'], 'email'=>$foundUser['email'] ];
+                return ["id"=>$foundUser['id'], "name"=>$foundUser['name'], "phone"=>$foundUser['phone'], "role"=>$foundUser['role'], "photoPath"=>$foundUser['photoPath'], $email=>$foundUser['email'] ];
             }
             else{
                 return "Zadal jste neplatné heslo";
