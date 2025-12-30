@@ -4,6 +4,7 @@ require_once __DIR__ . "/../models/User.php";
 require_once __DIR__ . "/../models/Product.php";
 require_once __DIR__ . "/../models/FavoriteList.php";
 require_once  __DIR__ . "/../models/FavoriteListItem.php";
+require_once __DIR__ . "/../service/ImageService.php";
 
 /**
  * Třída ProductController
@@ -26,6 +27,8 @@ class ProductController
 
     /** @var FavoriteListItem Model pro položky v oblíbených. */
     private $FavoriteListItem;
+    private $ImageService;
+
 
     /**
      * Konstruktor třídy.
@@ -36,6 +39,7 @@ class ProductController
         $this->Product = new Product();
         $this->FavoriteList = new FavoriteList();
         $this->FavoriteListItem = new FavoriteListItem();
+        $this->ImageService = new ImageService();
     }
 
     /**
@@ -138,19 +142,19 @@ class ProductController
             return;
         }
 
-        $uploadDir =  __DIR__ . "/../uploads/products/";
+        $uploadDir =  __DIR__ . "/../uploads/products/original/";
+        $uploadDirCopy =  __DIR__ . "/../uploads/products/copy/";
         foreach ($_FILES['photos']['name'] as $key=>$originalName){
             $filename = $name . "_" . $key . "_" . basename($originalName);
             $tmpName = $_FILES['photos']['tmp_name'][$key];
             $formatedName = str_replace(" ", "_", $filename);
+            $copyTargetPath = $uploadDirCopy . $formatedName;
             $targetPath = $uploadDir . $formatedName;
-            if(move_uploaded_file($tmpName , $targetPath)){
-                $photos[] = '/uploads/products/' . $formatedName;
+            if ($this->ImageService->compressImage($tmpName, $copyTargetPath, 75, 1000)) {
+                $photos[] = '/uploads/products/copy/' . $filename;
             }
-            else{
-                echo "The photo is not saved";
-                return;
-            }
+            move_uploaded_file($tmpName , $targetPath);
+
 
         }
 
@@ -211,9 +215,11 @@ class ProductController
                 $filename = $name . "_" . $key . "_" . basename($originalName);
                 $tmp_name = $newPhotos['tmp_name'][$key];
                 $formatedName = str_replace(" ", "_", $filename);
-                $targetPath = __DIR__ . "/../uploads/products/" . $formatedName;
+                $copyTargetPath =  __DIR__ . "/../uploads/products/copy/" . $formatedName;
+                $this->ImageService->compressImage($tmp_name,$copyTargetPath,75,1000);
+                $targetPath = __DIR__ . "/../uploads/products/original/" . $formatedName;
                 if(move_uploaded_file($tmp_name, $targetPath)){
-                    $newPhotosForProduct[] = '/uploads/products/' . $formatedName;
+                    $newPhotosForProduct[] = '/uploads/products/copy/' . $formatedName;
                 }
 
             }

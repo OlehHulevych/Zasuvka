@@ -20,6 +20,9 @@ class Product{
             file_put_contents($this->file,json_encode([]));
         }
         $items = json_decode(file_get_contents($this->file),true);
+        usort($items, function($a, $b){
+            return $a['id']<=> $b['id'];
+        });
         return $items?:[];
 
     }

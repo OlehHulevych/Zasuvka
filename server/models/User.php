@@ -26,7 +26,11 @@ class User {
         if(!file_exists($this->file)){
             file_put_contents($this->file,json_encode([]));
         }
+
         $items = json_decode(file_get_contents($this->file),true);
+        usort($items, function($a, $b){
+            return $a['id']<=> $b['id'];
+        });
         return $items?:[];
 
     }
@@ -112,7 +116,7 @@ class User {
         }
         else{
             if(password_verify($password, $foundUser['password'])){
-                return $foundUser;
+                return ["id"=>$foundUser['id'], "name"=>$foundUser['name'], "phone"=>$foundUser['phone'], "role"=>$foundUser['role'], "photoPath"=>$foundUser['photoPath'], $email=>$foundUser['email'] ];
             }
             else{
                 return "Zadal jste neplatné heslo";
